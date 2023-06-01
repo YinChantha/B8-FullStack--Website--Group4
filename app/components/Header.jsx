@@ -1,10 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import { useRouter } from "next/router";
 
 const Header = () => {
-  // const router = useRouter();
   return (
     <header className="header w-full">
       <div className="container flex flex-row justify-between">
@@ -21,21 +19,21 @@ const Header = () => {
             Home
           </Link>
           <Link
-            href="/comparisons"
+            href="/pages/comparisons"
             className="hover:bg-lime-900 md:p-0 md:my-0"
           >
             Comparisons
           </Link>
-          <Link href="/resources" className="hover:bg-lime-900 md:p-0 md:my-0">
+          <Link href="/pages/resources" className="hover:bg-lime-900 md:p-0 md:my-0">
             Resources
           </Link>
-          <Link href="/promotions" className="hover:bg-lime-900 md:p-0 md:my-0">
+          <Link href="/pages/promotions" className="hover:bg-lime-900 md:p-0 md:my-0">
             Promotions
           </Link>
-          <Link href="/aboutus" className="hover:bg-lime-900 md:p-0 md:my-0">
+          <Link href="/pages/aboutus" className="hover:bg-lime-900 md:p-0 md:my-0">
             About Us
           </Link>
-          <Link href="/account" className="hover:bg-lime-900 md:p-0 md:my-0">
+          <Link href="/pages/account" className="hover:bg-lime-900 md:p-0 md:my-0">
             Account
           </Link>
         </div>
