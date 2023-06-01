@@ -2,8 +2,8 @@ import React from "react";
 
 const Comparisons = () => {
   return (
-    <div className="text-center">
-      Comparisons
+    <div className="text-center font-bold">
+      Comparisons homepage
     </div>
   );
 };
