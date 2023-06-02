@@ -2,23 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  box-sizing: border-box;
-} */
 
-.header {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: right;
-  background-color: #56606d;
-  color: #fff;
-  box-sizing: border-box;
-}
 
-/* .link a {
-  color: #fff;
-  text-decoration: none;
-  padding: 1rem;
-  box-sizing: border-box;
-} */
