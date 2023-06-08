@@ -1,67 +1,300 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu, Transition } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpenCompare, setIsOpenCompare] = useState(false);
+  const [isOpenResources, setIsOpenResources] = useState(false);
+
+  const handleToggleCompare = () => {
+    setIsOpenCompare(!isOpenCompare);
+  };
+
+  const handleToggleResources = () => {
+    setIsOpenResources(!isOpenResources);
+  };
   return (
-    <header className="header m-auto flex justify-center w-full bg-white drop-shadow-lg">
-      <div className="container flex flex-row justify-between mx-5">
-        <div className="logo flex justify-center items-center">
+    <header className="header h-45 text-gray-500 font-semibold text-base z-10">
+      <div className="nav-container flex justify-between flex-row px-28 py-5">
+        <div className="nav1 flex md:flex-row">
+          <div className="logo flex justify-center items-center mr-8">
+            <Image
+              src="/images/brand-logo.png"
+              alt="logo"
+              width={147}
+              height={32}
+            />
+          </div>
+          <div className="link hidden 2lg:flex items-center 2lg:flex-row space-x-8 md:visible flex-col">
+            <Link
+              href="/"
+              replace
+              className=" hover:bg-slate-600 hover:text-white"
+            >
+              Home
+            </Link>
+            <Link href="/" replace onClick={handleToggleCompare}>
+              {isOpenCompare ? (
+                <div className="flex flex-row">
+                  <p className="pr-2">Comparisions</p>
+                  <Image
+                    src="/images/arrow-up.png"
+                    alt="arrow up"
+                    width={20}
+                    height={20}
+                    className="arrow-up"
+                  />
+                  <div className="absolute z-10 bg-white rounded-lg drop-shadow-md w-max p-9 flex flex-row mt-10">
+                    <div className="flex flex-col">
+                      <div className="pb-4">
+                        <Link href="/" className="flex flex-row ">
+                          <div className="relative px-8 w-80 ">
+                            <Image
+                              src="/images/compare-loans.png"
+                              alt="compare loans icon"
+                              width={20}
+                              height={20}
+                              className="absolute top-1 left-0"
+                            />
+                            <p className="text-gray-900 inline-block">
+                              Compare Loans
+                              <br />
+                              <span className="text-gray-500 font-normal">
+                                Compare different loan options to make an
+                                informed decision.
+                              </span>
+                            </p>
+                          </div>
+                        </Link>
+                      </div>
+                      <div className="pb-4">
+                        <Link href="/">
+                          <div className="relative px-8 w-80">
+                            <Image
+                              src="/images/compare-save-acc.png"
+                              alt="compare saveing acc icon"
+                              width={20}
+                              height={20}
+                              className="absolute top-1 left-0"
+                            />
+                            <p className="text-gray-900 inline-block">
+                              Compare Saving Accounts
+                              <br />
+                              <span className="text-gray-500 font-normal">
+                                Explore a wide range of savings accounts & find
+                                the best option for you.
+                              </span>
+                            </p>
+                          </div>
+                        </Link>
+                      </div>
+                      <div className="pb-4">
+                        <Link href="/">
+                          <div className="relative px-8 w-80">
+                            <Image
+                              src="/images/compare-fixed-dep.png"
+                              alt="compare fixed deposit icon"
+                              width={20}
+                              height={20}
+                              className="absolute top-1 left-0"
+                            />
+                            <p className="text-gray-900 inline-block">
+                              Compare Fixed Deposit Accounts
+                              <br />
+                              <span className="text-gray-500 font-normal">
+                                Maximize your savings with fixed deposit account
+                                comparison.
+                              </span>
+                            </p>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="m-auto bg-gray-100 p-3 rounded-lg">
+                      <div className="compare-pic w-72 flex flex-col items-left pl-1.5 py-1 ">
+                        <Image
+                          src="/images/compare-pic.png"
+                          alt="comparison pic"
+                          width={280}
+                          height={280}
+                          className="pb-2"
+                        />
+                        <div className="compare-below-pic relative item mt-2">
+                          <Image
+                            src="/images/green-dot.png"
+                            alt="green dot"
+                            width={10}
+                            height={10}
+                            className="absolute top-2 left-0"
+                          />
+                          <p className="px-4 text-gray-900">
+                            We’ve just released an update!
+                          </p>
+                        </div>
+                        <div className="font-normal">
+                          <p className="">
+                            Check out the all new features view. Pages now load
+                            faster.
+                          </p>
+                        </div>
+                        <div className="mt-2">
+                          <button className="dismiss-btn pr-12">Dismiss</button>
+                          <button className="changelog-btn text-red-600">
+                            Changelog
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-row">
+                  <p className="pr-2">Comparisions</p>
+                  <Image
+                    src="/images/arrow-down.png"
+                    alt="arrow down"
+                    width={20}
+                    height={20}
+                    className="arrow-down"
+                  />
+                </div>
+              )}
+            </Link>
+            <Link href="/" onClick={handleToggleResources} className=" ">
+              {isOpenResources ? (
+                <div className="flex flex-row">
+                  <p className="pr-2">Resources</p>
+                  <Image
+                    src="/images/arrow-up.png"
+                    alt="arrow up"
+                    width={20}
+                    height={20}
+                    className="arrow-up"
+                  />
+                  <div className="resource-dropdown p-9 flex flex-row mt-10 absolute z-10 bg-white rounded-lg drop-shadow-md">
+                    <div className="resource-content relative w-80">
+                      <div className="finan-article bg-blue-300 ">
+                        <Image
+                          src="/images/finance-article.png"
+                          alt="finance article icon"
+                          width={20}
+                          height={20}
+                          className="absolute top-1 left-0"
+                        />
+                        <p className="text-gray-900 font-semibold absolute left-8">
+                          Financial Articles
+                          <br />
+                          <span className="font-normal text-gray-500">
+                            Compare different loan options to make an informed
+                            decision.
+                          </span>
+                        </p>
+                      </div>
+                      <div className="guide-tutorial relative mt-24 bg-slate-400">
+                        <Image
+                          src="/images/guide-tutorial.png"
+                          alt=" guide tutorial icon"
+                          width={20}
+                          height={20}
+                          className="absolute left-0"
+                        />
+                        <p className="text-gray-900 font-semibold absolute left-8">
+                          Guides and Tutorials
+                          <br />
+                          <span className="font-normal text-gray-500">
+                            Explore a wide range of savings accounts & find the
+                            best option for you.
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="video-resource flex flex-col ml-5 bg-gray-100 w-72 p-2 rounded-lg">
+                      <button className="resource-pic p-2 flex flex-row">
+                        <Image
+                          src="/images/vdo-player.png"
+                          alt="resource-pic "
+                          width={280}
+                          height={280}
+                        />
+                      </button>
+                      <p className="p-2 text-gray-900 font-semibold">
+                        We’ve just released an update!
+                        <br />
+                        <span className="font-normal text-gray-500">
+                          Check out the all new features view. Pages now load
+                          faster.
+                        </span>
+                      </p>
+                      <button className="watch-vdo-btn flex flex-row justify-start items-center p-2">
+                        <Image
+                          src="/images/play-icon.png"
+                          alt="play button icon"
+                          width={20}
+                          height={20}
+                          className=""
+                        />
+                        <p className="pl-2 font-semibold text-red-600 ">Watch Video</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-row">
+                  <p className="pr-2">Resources</p>
+                  <Image
+                    src="/images/arrow-down.png"
+                    alt="arrow down"
+                    width={20}
+                    height={20}
+                    className="arrow-down"
+                  />
+                </div>
+              )}
+            </Link>
+            <Link
+              href="/pages/promotions"
+              className=" hover:bg-slate-600 hover:text-white"
+            >
+              Promotions
+            </Link>
+          </div>
+        </div>
+        <div className="nav2 w-fit hidden 2lg:flex justify-around items-center md:flex-row gap-x-2">
+          <div className="language  px-4">
+            <button className="flex flex-row justify-center items-center">
+              <Image
+                src="/images/language.png"
+                alt="language-logo"
+                width="18"
+                height="18"
+                className="pr-0.5"
+              />
+              <p>English</p>
+            </button>
+          </div>
+          <hr className="line w-0.5 h-5 bg-gray-200"/>
+          {/* <div className="line bg-gray-200 h-6 w-px"></div> */}
+          <div className="login-btn px-4 ">
+            <button>Login</button>
+          </div>
+          <div className="compare-btn">
+            <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg">
+              Start Compare
+            </button>
+          </div>
+        </div>
+        <button className="z-0 2lg:hidden ">
           <Image
-            src="/Proadvisor - v1-02.png"
-            alt="logo"
-            width="78"
-            height="78"
+            src="/images/nav-menu.png"
+            alt="nav-menu icon"
+            width={70}
+            height={70}
           />
-        </div>
-        <div className="link hidden md:flex items-center md:flex-row flex-col ">
-          <Link
-            href="/"
-            replace
-            className="p-5 hover:bg-slate-600 hover:text-white"
-          >
-            Home
-          </Link>
-          <Link
-            href="/pages/comparisons"
-            className="p-5 hover:bg-slate-600 hover:text-white"
-          >
-            Comparisons
-          </Link>
-          <Link
-            href="/pages/resources"
-            className="p-5 hover:bg-slate-600 hover:text-white"
-          >
-            Resources
-          </Link>
-          <Link
-            href="/pages/promotions"
-            className="p-5 hover:bg-slate-600 hover:text-white"
-          >
-            Promotions
-          </Link>
-          <Link
-            href="/pages/aboutus"
-            className="p-5 hover:bg-slate-600 hover:text-white"
-          >
-            About Us
-          </Link>
-          <Link
-            href="/pages/account"
-            className="p-5 hover:bg-slate-600 hover:text-white"
-          >
-            Account
-          </Link>
-        </div>
-        <div>
-          <Image
-            src="/menu-bar.png"
-            alt="menu"
-            width={50}
-            height={50}
-            className="cursor-pointer md:hidden"
-          />
-        </div>
+        </button>
       </div>
     </header>
   );
