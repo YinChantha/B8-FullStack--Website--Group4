@@ -278,7 +278,9 @@ const Header = () => {
           <hr className="line w-0.5 h-5 bg-gray-200"/>
           {/* <div className="line bg-gray-200 h-6 w-px"></div> */}
           <div className="login-btn px-4 ">
-            <button>Login</button>
+            <button>
+              <Link href="pages/account" >Login</Link>
+            </button>
           </div>
           <div className="compare-btn">
             <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg">
