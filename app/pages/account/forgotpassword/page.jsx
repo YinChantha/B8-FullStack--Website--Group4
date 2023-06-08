@@ -1,13 +1,41 @@
+"use client"
+
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
+// import imgLogo from "../public/images/logo.png";
+import Image from "next/image";
 import { FiUser } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsKeyboard } from "react-icons/bs";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
-import { HiOutlineKey } from "react-icons/hi";
-import { BiArrowBack } from "react-icons/bi";
+import { RxDotFilled } from "react-icons/rx";
+import UserDetials from "./userdetials/page";
+import CheckEmail from "./checkemail/page";
+import SetNewPassword from "./setnewpassword/page";
+import Successfully from "./successfully/page";
 
-export default function User() {
+export default function ForgotPassword() {
+  const [open, setOpen] = useState(true);
+
+  const pages = [
+    {
+      id: 1,
+      name: <UserDetials />
+      // url: 'https://images.unsplash.com/photo-1680399524821-d4e6b225b0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+    },
+    {
+      id: 2,
+      name: <CheckEmail />
+    }
+  ]
+
+  const [pageIndex, setPageIndex] = useState(0)
+
+  const goToPage = (pageIndex) => {
+    setPageIndex(pageIndex)
+  }
+
   return (
     <>
       {/* container */}
@@ -98,37 +126,23 @@ export default function User() {
 
         {/* Right side */}
         <div className="flex md:w-3/5 m-auto mt-20 justify-center items-center">
-          <div className="flex flex-col max-w-[400px] justify-center items-center">
-            <div className="flex w-10 h-10 border-2 rounded-lg border-gray-300 ">
-              <HiOutlineKey className="my-auto mx-auto" />
-            </div>
+          <UserDetials className={`${open} ? 'hidden' `}/>
+          {/* <CheckEmail /> */}
+          {/* <SetNewPassword /> */}
+          {/* <Successfully /> */}
+          
+          {/* {pages.map((page) => (
+            <div key={page.id} id={page.id} name={page.name} />
+          ))} */}
 
-            <div className="flex flex-col items-center justify-center mt-8">
-              <h2 className="text-2xl font-semibold text-gray-800">
-                Forgot password?
-              </h2>
-              <p className="text-gray-600">
-                No worries, we'll send you reset instructions.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-2 w-full mt-8">
-              <label className="text-gray-600">Email</label>
-              <input
-                className="p-2 rounded-lg border-2 border-gray-100"
-                type="text"
-                id="email"
-                placeholder="Enter you email"
-              />
-            </div>
-            <button className="p-2 rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400">
-              Reset password
-            </button>
-            <button className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
-              <BiArrowBack color="gray-900" size={20} />
-              <p className="text-gray-900 hover:text-gray-500">Back to log in</p>
-            </button>
-          </div>
+          
+          {/* <div key={pageIndex} onClick={() => goToPage(pageIndex)} className='w-full h-auto'>
+            {pages.map((page, pageIndex) => (
+              <div className='text-2xl cursor-pointer'>
+                <RxDotFilled />
+              </div>
+            ))}
+          </div> */}
         </div>
       </div>
     </>

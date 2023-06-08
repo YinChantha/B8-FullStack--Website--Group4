@@ -43,7 +43,9 @@ const Account = () => {
                 <label>Remember me</label>
               </div>
 
-              <button className="text-red-600">Forgot password</button>
+              <button className="text-red-600">
+                <Link href='pages/account/forgotpassword'>Forgot password</Link>
+              </button>
             </div>
 
             <div className="flex justify-center bg-red-500 p-2 rounded-lg mt-5 hover:bg-red-400 text-white">
