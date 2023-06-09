@@ -5,17 +5,20 @@ const LandingPage = () => {
   return (
     <div className="landing-page">
       <div className="landing-sect1 flex flex-col justify-center items-center px-52 py-24">
-        <div className="flex flex-row justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl">
-          <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl">
+        <div className="flex flex-row justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl shrink-0">
+          <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl shrink-0">
             New feature
           </p>
-          <div className="flex flex-row gap-1">
-            <p className="text-red-700">Let’s try our ChatGPT Integration</p>
+          <div className="flex flex-row gap-1 shrink-0">
+            <p className="text-red-700 shrink-0">
+              Let’s try our ChatGPT Integration
+            </p>
             <Image
               src="/images/arrow-right.png"
               alt="arrow-right icon"
               width={15}
               height={15}
+              className="shrink-0"
             />
           </div>
         </div>
@@ -26,11 +29,11 @@ const LandingPage = () => {
           Our platform provides a comprehensive suite of cutting-edge tools and
           expert guidance to empower you in making informed financial decisions.
         </p>
-        <div className="btn flex flex-row font-semibold text-lg pt-12 gap-x-3.5">
-          <button className="learn-more text-gray-700 rounded-lg px-5 py-3 border-gray-300 border-2">
+        <div className="btn flex 2lg:flex-row justify-center items-center font-semibold text-lg pt-12 gap-x-3.5 md:flex-col gap-y-3">
+          <button className="learn-more text-gray-700 rounded-lg 2lg:px-5 py-3 border-gray-300 border-2 hover:bg-gray-50 md:px-32">
             Learn more
           </button>
-          <button className="get-started text-white bg-red-500 rounded-lg px-5 py-3">
+          <button className="get-started text-white bg-red-500 rounded-lg 2lg:px-5 py-3 hover:bg-red-600 md:px-32">
             Get started
           </button>
         </div>
@@ -42,12 +45,12 @@ const LandingPage = () => {
           className="pt-16"
         />
       </div>
-      <div className="list-banks flex flex-col mt-24">
+      <div className="list-banks flex 2lg:flex-col justify-center items-center mt-24 px-28 md:mt-16 flex-col">
         <p className="font-normal text-gray-600 text-center">
           The trusted provider over 150+ companies from Cambodia, of accuracy
           rates and financial information
         </p>
-        <div className="bank flex flex-row justify-center items-center pt-8 gap-x-12">
+        <div className="bank flex 2lg:flex-row justify-center items-center pt-8 gap-x-12 md:flex-col gap-y-8 mt-8">
           <Image
             src="/images/vattanac-bank.png"
             alt="vattanac-bank logo"

@@ -31,7 +31,7 @@ const Header = () => {
             <Link
               href="/"
               replace
-              className=" hover:bg-red-50 p-2.5 rounded-lg"
+              className=" hover:bg-gray-50 p-2.5 rounded-lg"
             >
               Home
             </Link>
@@ -39,7 +39,7 @@ const Header = () => {
               href="/"
               replace
               onClick={handleToggleCompare}
-              className="hover:bg-red-50 p-2.5 rounded-lg"
+              className="hover:bg-gray-50 p-2.5 rounded-lg"
             >
               {isOpenCompare ? (
                 <div className="flex flex-row">
@@ -170,7 +170,7 @@ const Header = () => {
             <Link
               href="/"
               onClick={handleToggleResources}
-              className="hover:bg-red-50 p-2.5 rounded-lg "
+              className="hover:bg-gray-50 p-2.5 rounded-lg "
             >
               {isOpenResources ? (
                 <div className="flex flex-row">
@@ -266,7 +266,7 @@ const Header = () => {
             </Link>
             <Link
               href="/pages/promotions"
-              className=" hover:bg-red-50 p-2.5 rounded-lg"
+              className=" hover:bg-gray-50 p-2.5 rounded-lg"
             >
               Promotions
             </Link>
@@ -274,7 +274,7 @@ const Header = () => {
         </div>
         <div className="nav2 w-fit hidden 2lg:flex justify-around items-center md:flex-row gap-x-2">
           <div className="language  px-4">
-            <button className="flex flex-row justify-center items-center hover:bg-red-50 p-2.5 rounded-lg">
+            <button className="flex flex-row justify-center items-center hover:bg-gray-50 p-2.5 rounded-lg">
               <Image
                 src="/images/language.png"
                 alt="language-logo"
@@ -286,11 +286,11 @@ const Header = () => {
             </button>
           </div>
           <hr className="line w-0.5 h-5 bg-gray-200" />
-          <div className="login-btn px-4 hover:bg-red-50 p-2.5 rounded-lg">
+          <div className="login-btn px-4 hover:bg-gray-50 p-2.5 rounded-lg">
             <button>Login</button>
           </div>
           <div className="compare-btn">
-            <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg">
+            <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600">
               Start Compare
             </button>
           </div>
