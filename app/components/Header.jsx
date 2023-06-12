@@ -8,6 +8,7 @@ import { useState } from "react";
 const Header = () => {
   const [isOpenCompare, setIsOpenCompare] = useState(false);
   const [isOpenResources, setIsOpenResources] = useState(false);
+  const [openNavbar, setOpenNavbar] = useState(true)
 
   const handleToggleCompare = () => {
     setIsOpenCompare(!isOpenCompare);
@@ -16,6 +17,10 @@ const Header = () => {
   const handleToggleResources = () => {
     setIsOpenResources(!isOpenResources);
   };
+
+  const handleOpenNavbar = () => {
+    setOpenNavbar(!openNavbar)
+  }
   return (
     <header className="header h-45 text-gray-500 font-semibold text-base z-10">
       <div className="nav-container flex justify-between flex-row px-28 py-5">
@@ -279,7 +284,7 @@ const Header = () => {
           {/* <div className="line bg-gray-200 h-6 w-px"></div> */}
           <div className="login-btn px-4 ">
             <button>
-              <Link href="pages/account" >Login</Link>
+              <Link href="pages/account" onClick={handleOpenNavbar} >Login</Link>
             </button>
           </div>
           <div className="compare-btn">

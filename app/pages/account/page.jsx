@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 
 const Account = () => {
+
+  const [openNav, setOpenNav] = useState(true)
   return (
     <>
       {/* login container */}
