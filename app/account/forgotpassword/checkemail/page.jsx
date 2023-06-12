@@ -25,7 +25,7 @@ export default function CheckEmail() {
 
           <div className="flex flex-col gap-4 ml-10 mt-14">
             {/* user details */}
-            <buton className="flex gap-3 cursor-pointer">
+            <div className="flex gap-3 cursor-pointer">
               <Link
                 href="/account/forgotpassword/userdetials"
                 className="flex gap-3"
@@ -42,10 +42,10 @@ export default function CheckEmail() {
                   </p>
                 </div>
               </Link>
-            </buton>
+            </div>
 
             {/* check email  */}
-            <buton className="flex gap-3 cursor-pointer">
+            <div className="flex gap-3 cursor-pointer">
               <Link
                 href="/account/forgotpassword/checkemail"
                 className="flex gap-3"
@@ -62,7 +62,7 @@ export default function CheckEmail() {
                   </p>
                 </div>
               </Link>
-            </buton>
+            </div>
 
             {/* choose a password  */}
             <div className="flex gap-3">
@@ -130,23 +130,23 @@ export default function CheckEmail() {
               </p>
             </div>
 
-            <button className="p-2 rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400">
+            <div className="flex justify-center p-2 rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400">
               Open email app
-            </button>
+            </div>
             <div className="flex gap-1 mt-8">
               <p className="text-gray-600 text-[13px]">
                 Don't receive the email?
               </p>
-              <button className="text-red-600 text-[13px]">
+              <div className="flex justify-center text-red-600 text-[13px]">
                 Click to resend
-              </button>
+              </div>
             </div>
-            <button className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
+            <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
               <BiArrowBack color="gray-900" size={20} />
-              <p className="text-gray-900 hover:text-gray-500">
+              <Link href='/account' className="text-gray-900 hover:text-gray-500">
                 Back to log in
-              </p>
-            </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

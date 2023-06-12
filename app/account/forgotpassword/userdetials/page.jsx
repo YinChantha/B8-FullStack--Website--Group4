@@ -25,7 +25,7 @@ export default function UserDetials() {
 
           <div className="flex flex-col gap-4 ml-10 mt-14">
             {/* user details */}
-            <buton className="flex gap-3 cursor-pointer">
+            <div className="flex gap-3 cursor-pointer">
               <Link
                 href="/account/forgotpassword/userdetials"
                 className="flex gap-3"
@@ -42,10 +42,10 @@ export default function UserDetials() {
                   </p>
                 </div>
               </Link>
-            </buton>
+            </div>
 
             {/* check email  */}
-            <buton className="flex gap-3 cursor-pointer ">
+            <div className="flex gap-3 cursor-pointer ">
               <Link
                 href="/account/forgotpassword/checkemail"
                 className="flex gap-3 hover:text-gray-700"
@@ -62,7 +62,7 @@ export default function UserDetials() {
                   </p>
                 </div>
               </Link>
-            </buton>
+            </div>
 
             {/* choose a password  */}
             <div className="flex gap-3">
@@ -139,17 +139,17 @@ export default function UserDetials() {
                 placeholder="Enter you email"
               />
             </div>
-            <button
+            <div
               href="pages/account/forgotpassword/detials"
-              className="p-2 rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400"
+              className="flex p-2 justify-center rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400 cursor-pointer"
             >
               Reset
-            </button>
+            </div>
             <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
               <BiArrowBack color="gray-900" size={20} />
-              <p className="text-gray-900 hover:text-gray-500">
+              <Link href='/account' className="text-gray-900 hover:text-gray-500 cursor-pointer">
                 Back to log in
-              </p>
+              </Link>
             </div>
           </div>
         </div>
