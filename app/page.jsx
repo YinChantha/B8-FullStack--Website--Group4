@@ -57,7 +57,7 @@ export default function Home() {
         numquam in perferendis praesentium! Ipsam nostrum rerum ducimus, harum
         autem praesentium provident dignissimos. Nemo laboriosam tempore
         architecto fuga voluptatibus modi voluptate! Voluptatum ducimus iure,
-        quos minus illum aliquid eius ipsam sint laborum, ex unde deserunt
+        quos minus idflum aliquid eius ipsam sint laborum, ex unde deserunt
         quidem repellendus totam aspernatur placeat, maiores dolorum dicta.
         Nobis.
       </p>

@@ -1,13 +1,18 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isOpenCompare, setIsOpenCompare] = useState(false);
   const [isOpenResources, setIsOpenResources] = useState(false);
+
+  const router = useRouter()  
+  const { asPath } = router;
+  console.log(asPath);
 
   const handleToggleCompare = () => {
     setIsOpenCompare(!isOpenCompare);
@@ -255,7 +260,7 @@ const Header = () => {
               )}
             </Link>
             <Link
-              href="/pages/promotions"
+              href="/promotions"
               className=" hover:bg-slate-600 hover:text-white"
             >
               Promotions
@@ -279,7 +284,7 @@ const Header = () => {
           {/* <div className="line bg-gray-200 h-6 w-px"></div> */}
           <div className="login-btn px-4 ">
             <button>
-              <Link href="pages/account" >Login</Link>
+              <Link href="/account" >Login</Link>
             </button>
           </div>
           <div className="compare-btn">
