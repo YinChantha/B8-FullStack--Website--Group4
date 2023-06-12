@@ -1,14 +1,23 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isOpenCompare, setIsOpenCompare] = useState(false);
   const [isOpenResources, setIsOpenResources] = useState(false);
   const [openNavbar, setOpenNavbar] = useState(true)
+
+  const router = useRouter();
+  const { asPath } = router;
+  console.log(asPath);
+
+  const router = useRouter();
+  const { asPath } = router;
+  console.log(asPath);
 
   const handleToggleCompare = () => {
     setIsOpenCompare(!isOpenCompare);
@@ -37,11 +46,16 @@ const Header = () => {
             <Link
               href="/"
               replace
-              className=" hover:bg-slate-600 hover:text-white"
+              className=" hover:bg-gray-50 p-2.5 rounded-lg"
             >
               Home
             </Link>
-            <Link href="/" replace onClick={handleToggleCompare}>
+            <Link
+              href="/"
+              replace
+              onClick={handleToggleCompare}
+              className="hover:bg-gray-50 p-2.5 rounded-lg"
+            >
               {isOpenCompare ? (
                 <div className="flex flex-row">
                   <p className="pr-2">Comparisions</p>
@@ -168,7 +182,11 @@ const Header = () => {
                 </div>
               )}
             </Link>
-            <Link href="/" onClick={handleToggleResources} className=" ">
+            <Link
+              href="/"
+              onClick={handleToggleResources}
+              className="hover:bg-gray-50 p-2.5 rounded-lg "
+            >
               {isOpenResources ? (
                 <div className="flex flex-row">
                   <p className="pr-2">Resources</p>
@@ -241,7 +259,9 @@ const Header = () => {
                           height={20}
                           className=""
                         />
-                        <p className="pl-2 font-semibold text-red-600 ">Watch Video</p>
+                        <p className="pl-2 font-semibold text-red-600 ">
+                          Watch Video
+                        </p>
                       </button>
                     </div>
                   </div>
@@ -260,8 +280,8 @@ const Header = () => {
               )}
             </Link>
             <Link
-              href="/pages/promotions"
-              className=" hover:bg-slate-600 hover:text-white"
+              href="/promotions"
+              className=" hover:bg-gray-50 p-2.5 rounded-lg"
             >
               Promotions
             </Link>
@@ -269,7 +289,7 @@ const Header = () => {
         </div>
         <div className="nav2 w-fit hidden 2lg:flex justify-around items-center md:flex-row gap-x-2">
           <div className="language  px-4">
-            <button className="flex flex-row justify-center items-center">
+            <button className="flex flex-row justify-center items-center hover:bg-gray-50 p-2.5 rounded-lg">
               <Image
                 src="/images/language.png"
                 alt="language-logo"
@@ -280,15 +300,13 @@ const Header = () => {
               <p>English</p>
             </button>
           </div>
-          <hr className="line w-0.5 h-5 bg-gray-200"/>
-          {/* <div className="line bg-gray-200 h-6 w-px"></div> */}
-          <div className="login-btn px-4 ">
-            <button>
-              <Link href="pages/account" onClick={handleOpenNavbar} >Login</Link>
-            </button>
+
+          <hr className="line w-0.5 h-5 bg-gray-200" />
+          <div className="login-btn px-4 hover:bg-gray-50 p-2.5 rounded-lg">
+            <Link href="/account">Login</Link>
           </div>
           <div className="compare-btn">
-            <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg">
+            <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600">
               Start Compare
             </button>
           </div>

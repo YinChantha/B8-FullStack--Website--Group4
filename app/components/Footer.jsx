@@ -5,7 +5,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className="footer px-28 ">
-      <div className="foot-sect1 flex flex-row justify-between items-start  py-16 ">
+      <div className="foot-sect1 flex 2lg:flex-row justify-between items-start  py-16 md:flex-col">
         <p className="font-semibold text-gray-900 text-xl flex-1">
           Unlock Your Financial Potential with Proadvisor!
           <br />
@@ -14,17 +14,17 @@ const Footer = () => {
             rates and financial information.
           </span>
         </p>
-        <div className="foot-sect1-btn flex flex-row gap-x-3 w-96 justify-end text-base">
-          <button className=" text-gray-700 font-semibold rounded-lg px-5 py-3 border-gray-300 border-2">
+        <div className="foot-sect1-btn flex 2lg:flex-row gap-x-3 w-96 justify-end text-base md:flex-col pt-8 gap-y-3">
+          <button className=" text-gray-700 font-semibold rounded-lg px-5 py-3 border-gray-300 border-2 hover:bg-gray-50">
             Learn more
           </button>
-          <button className=" text-white font-semibold rounded-lg px-5 py-3  bg-red-500">
+          <button className=" text-white font-semibold rounded-lg px-5 py-3  bg-red-500 hover:bg-red-600">
             Get started
           </button>
         </div>
       </div>
       <hr className="bg-gray-300 h-0.5" />
-      <div className="foot-sect2 flex flex-row justify-between pt-8">
+      <div className="foot-sect2 flex 2lg:flex-row justify-between pt-8 md:flex-col">
         <div className="company-logo-text w-80">
           <img
             src="/images/brand-logo.png"
@@ -37,55 +37,103 @@ const Footer = () => {
             empower individuals in making informed financial decisions.
           </p>
         </div>
-        <div className="flex justify-around lg:gap-28">
-          <div className="foot-comparisons flex flex-col ">
-            <p className="text-gray-400 font-semibold text-sm pb-4">
-              Comparisons
-            </p>
-            <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/">Loans</Link>
-              <Link href="/">Saving Accounts</Link>
-              <Link href="/">Fixed Deposit</Link>
+        <div className="flex 2lg:flex-row justify-around gap-28 md:flex-col gap-y-8">
+          <div className="flex 2lg:flex-row gap-28 2lg:mt-0 md:mt-12">
+            <div className="foot-comparisons flex 2lg:flex-col  md:flex-col ">
+              <p className="text-gray-400 font-semibold text-sm pb-4">
+                Comparisons
+              </p>
+              <div className="text-gray-500 font-semibold text-base flex 2lg:flex-col md:flex-col">
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Loans
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Saving Accounts
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Fixed Deposit
+                </Link>
+              </div>
+            </div>
+            <div className="foot-company flex flex-col">
+              <p className="text-gray-400 font-semibold text-sm pb-4">
+                Company
+              </p>
+              <div className="text-gray-500 font-semibold text-base flex flex-col">
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  About us
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Media kit
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Contact
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="foot-company flex flex-col">
-            <p className="text-gray-400 font-semibold text-sm pb-4">Company</p>
-            <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/">About us</Link>
-              <Link href="/">Media kit</Link>
-              <Link href="/">Contact</Link>
+          <div className="flex 2lg:flex-row 2lg:gap-28 md:gap-x-36">
+            <div className="foot-resources flex flex-col">
+              <p className="text-gray-400 font-semibold text-sm pb-4">
+                Resources
+              </p>
+              <div className="text-gray-500 font-semibold text-base flex flex-col">
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Articles
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Guides
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Tutorials
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Help centre
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Support
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="foot-resources flex flex-col">
-            <p className="text-gray-400 font-semibold text-sm pb-4">
-              Resources
-            </p>
-            <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/">Articles</Link>
-              <Link href="/">Guides</Link>
-              <Link href="/">Tutorials</Link>
-              <Link href="/">Help centre</Link>
-              <Link href="/">Support</Link>
-            </div>
-          </div>
-          <div className="foot-social flex flex-col">
-            <p className="text-gray-400 font-semibold text-sm pb-4">Social</p>
-            <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/">Twitter</Link>
-              <Link href="/">LinkedIn</Link>
-              <Link href="/">Facebook</Link>
-              <Link href="/">GitHub</Link>
-              <Link href="/">Dribbble</Link>
+            <div className="foot-social flex flex-col">
+              <p className="text-gray-400 font-semibold text-sm pb-4">Social</p>
+              <div className="text-gray-500 font-semibold text-base flex flex-col">
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Twitter
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  LinkedIn
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Facebook
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  GitHub
+                </Link>
+                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                  Dribbble
+                </Link>
+              </div>
             </div>
           </div>
           <div className="foot-legal flex flex-col">
             <p className="text-gray-400 font-semibold text-sm pb-4">Social</p>
             <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/">Terms</Link>
-              <Link href="/">Privacy</Link>
-              <Link href="/">Cookies</Link>
-              <Link href="/">Settings</Link>
-              <Link href="/">Contact</Link>
+              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                Terms
+              </Link>
+              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                Privacy
+              </Link>
+              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                Cookies
+              </Link>
+              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                Settings
+              </Link>
+              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                Contact
+              </Link>
             </div>
           </div>
         </div>

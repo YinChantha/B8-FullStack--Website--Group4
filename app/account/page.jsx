@@ -1,4 +1,10 @@
+<<<<<<< HEAD:app/pages/account/page.jsx
 import React, { useState } from "react";
+=======
+"use client";
+
+import React from "react";
+>>>>>>> 9df08a5d03cb97279aba673b341ea3acb8431111:app/account/page.jsx
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 
@@ -45,22 +51,22 @@ const Account = () => {
                 <label>Remember me</label>
               </div>
 
-              <button className="text-red-600">
-                <Link href='pages/account/forgotpassword'>Forgot password</Link>
-              </button>
+              <div className="text-red-600">
+                <Link href='/account/forgotpassword/userdetials'>Forgot password</Link>
+              </div>
             </div>
 
             <div className="flex justify-center bg-red-500 p-2 rounded-lg mt-5 hover:bg-red-400 text-white">
-              Sign in
+              <Link href='' >Sign up</Link>
             </div>
             <div className="flex flex-row justify-center gap-2 items-center rounded-lg p-2 border-2 border-gray-100 mt-3 hover:border-red-500">
               <FcGoogle className="w-[25px] h-auto" />
               Login with Google
             </div>
 
-            <div className="flex justify-center gap-2 mt-5 text-gray-600">
+            <div className="flex justify-center gap-2 mt-5 text-gray-600 cursor-pointer">
               <p>Don't have an account?</p>
-              <Link href="/pages/account/useraccount" className="text-red-600">
+              <Link href="/account/signup/usersignupdetials" className="text-red-600">
                 Sign up
               </Link>
             </div>
@@ -70,7 +76,7 @@ const Account = () => {
         </div>
 
         {/* right side */}
-        <div className="relative w-1/2 h-full mr-5 hidden md:block">
+        <div className="relative w-1/2 h-full mr-5 hidden md:inline">
           <img
             src="/images/girl.png"
             alt="girl"
