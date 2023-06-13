@@ -5,3 +5,17 @@
 .react-tel-input .form-control {
     @apply !w-full py-5 !border-2 !border-gray-100 !rounded-lg !text-base;
 }
+
+.signup-btn {
+    @apply flex p-2 rounded-lg items-center justify-center bg-red-500 w-full mt-5 text-white hover:bg-red-400 cursor-pointer;
+}
+.right-container {
+    @apply flex md:w-3/5 mx-auto mt-20 justify-center;
+}
+.box-icon {
+    @apply flex w-10 h-10 border-2 rounded-lg border-gray-300;
+}
+.brand-container {
+    @apply absolute flex flex-row justify-between items-center mx-8 bottom-5 left-0 right-0
+}
+

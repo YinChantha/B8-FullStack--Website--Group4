@@ -50,8 +50,8 @@ const Account = () => {
               </div>
             </div>
 
-            <div className="flex justify-center bg-red-500 p-2 rounded-lg mt-5 hover:bg-red-400 text-white">
-              <Link href='' >Sign up</Link>
+            <div className="signup-btn">
+              <Link href='' >Sign in</Link>
             </div>
             <div className="flex flex-row justify-center gap-2 items-center rounded-lg p-2 border-2 border-gray-100 mt-3 hover:border-red-500">
               <FcGoogle className="w-[25px] h-auto" />

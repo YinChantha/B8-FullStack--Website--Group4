@@ -5,7 +5,7 @@ import { Combobox, Transition } from '@headlessui/react'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 
 export default function CountrySelect({data, selected, setSelected}) {
-    
+  
   const [query, setQuery] = useState('')
 
   const filterCountry =
