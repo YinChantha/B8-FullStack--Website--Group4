@@ -16,9 +16,9 @@ const Header = () => {
     setIsOpenResources(!isOpenResources);
   };
   return (
-    <header className="header h-45 text-gray-500 font-semibold text-base z-10">
+    <header className="header h-45 text-gray-500 font-semibold text-base z-10 border-b-1 border-gray-100">
       <div className="nav-container flex justify-between flex-row px-28 py-5">
-        <div className="nav1 flex md:flex-row">
+        <div className="nav1 flex flex-row">
           <div className="logo flex justify-center items-center mr-8">
             <Image
               src="/images/brand-logo.png"
@@ -27,9 +27,9 @@ const Header = () => {
               height={32}
             />
           </div>
-          <div className="link hidden 2lg:flex items-center 2lg:flex-row space-x-8 md:visible flex-col">
+          <div className="link flex flex-row items-center space-x-8  ">
             <Link
-              href="/"
+              href="/landingPage"
               replace
               className=" hover:bg-gray-50 p-2.5 rounded-lg"
             >
@@ -265,14 +265,14 @@ const Header = () => {
               )}
             </Link>
             <Link
-              href="/pages/promotions"
+              href="/promotions"
               className=" hover:bg-gray-50 p-2.5 rounded-lg"
             >
               Promotions
             </Link>
           </div>
         </div>
-        <div className="nav2 w-fit hidden 2lg:flex justify-around items-center md:flex-row gap-x-2">
+        <div className="nav2 w-fit gap-x-2 hidden lg:flex justify-around items-center ">
           <div className="language  px-4">
             <button className="flex flex-row justify-center items-center hover:bg-gray-50 p-2.5 rounded-lg">
               <Image
@@ -287,15 +287,15 @@ const Header = () => {
           </div>
           <hr className="line w-0.5 h-5 bg-gray-200" />
           <div className="login-btn px-4 hover:bg-gray-50 p-2.5 rounded-lg">
-            <button>Login</button>
+            <Link href="/account">Login</Link>
           </div>
           <div className="compare-btn">
-            <button className=" bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600">
+            <button className="redButton">
               Start Compare
             </button>
           </div>
         </div>
-        <button className="z-0 2lg:hidden ">
+        <button className="z-0 lg:hidden ">
           <Image
             src="/images/nav-menu.png"
             alt="nav-menu icon"

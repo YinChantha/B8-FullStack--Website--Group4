@@ -5,7 +5,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <div className="footer px-28 ">
-      <div className="foot-sect1 flex 2lg:flex-row justify-between items-start  py-16 md:flex-col">
+      <div className="foot-sect1 flex flex-row justify-between items-start  py-16 ">
         <p className="font-semibold text-gray-900 text-xl flex-1">
           Unlock Your Financial Potential with Proadvisor!
           <br />
@@ -14,7 +14,7 @@ const Footer = () => {
             rates and financial information.
           </span>
         </p>
-        <div className="foot-sect1-btn flex 2lg:flex-row gap-x-3 w-96 justify-end text-base md:flex-col pt-8 gap-y-3">
+        <div className="foot-sect1-btn flex flex-row gap-x-3 w-96 justify-end text-base">
           <button className=" text-gray-700 font-semibold rounded-lg px-5 py-3 border-gray-300 border-2 hover:bg-gray-50">
             Learn more
           </button>
@@ -23,8 +23,8 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <hr className="bg-gray-300 h-0.5" />
-      <div className="foot-sect2 flex 2lg:flex-row justify-between pt-8 md:flex-col">
+      <hr className="border-b-1 border-gray-100" />
+      <div className="foot-sect2 flex flex-row justify-between pt-8">
         <div className="company-logo-text w-80">
           <img
             src="/images/brand-logo.png"
@@ -37,13 +37,13 @@ const Footer = () => {
             empower individuals in making informed financial decisions.
           </p>
         </div>
-        <div className="flex 2lg:flex-row justify-around gap-28 md:flex-col gap-y-8">
-          <div className="flex 2lg:flex-row gap-28 2lg:mt-0 md:mt-12">
-            <div className="foot-comparisons flex 2lg:flex-col  md:flex-col ">
+        <div className="flex flex-row justify-around gap-28 ">
+          <div className="flex flex-row gap-28 mt-0">
+            <div className="foot-comparisons flex flex-col ">
               <p className="text-gray-400 font-semibold text-sm pb-4">
                 Comparisons
               </p>
-              <div className="text-gray-500 font-semibold text-base flex 2lg:flex-col md:flex-col">
+              <div className="text-gray-500 font-semibold text-base flex flex-col ">
                 <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                   Loans
                 </Link>
@@ -72,7 +72,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex 2lg:flex-row 2lg:gap-28 md:gap-x-36">
+          <div className="flex flex-row gap-28 ">
             <div className="foot-resources flex flex-col">
               <p className="text-gray-400 font-semibold text-sm pb-4">
                 Resources
@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="bg-gray-300 h-0.5 mt-24" />
+      <hr className="border-b-1 border-gray-100" />
       <div className="foot-sect3 mt-4 flex flex-row justify-between items-center mb-12">
         <div className="all-right">
           <p className="text-gray-400 font-normal text-base">
