@@ -196,7 +196,8 @@ const Header = () => {
                   />
                   <div className="resource-dropdown p-9 flex flex-row mt-10 absolute z-10 bg-white rounded-lg drop-shadow-md">
                     <div className="resource-content relative w-80">
-                      <div className="finan-article bg-blue-300 ">
+                      <div className="finan-article bg-blue-300 cursor-pointer">
+                        <Link href='/resources/financialArticles'>
                         <Image
                           src="/images/finance-article.png"
                           alt="finance article icon"
@@ -212,6 +213,7 @@ const Header = () => {
                             decision.
                           </span>
                         </p>
+                        </Link>
                       </div>
                       <div className="guide-tutorial relative mt-24 bg-slate-400">
                         <Image

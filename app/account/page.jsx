@@ -1,16 +1,11 @@
-<<<<<<< HEAD:app/pages/account/page.jsx
-import React, { useState } from "react";
-=======
 "use client";
 
-import React from "react";
->>>>>>> 9df08a5d03cb97279aba673b341ea3acb8431111:app/account/page.jsx
 import { FcGoogle } from "react-icons/fc";
+import { useState } from "react";
 import Link from "next/link";
 
 const Account = () => {
-
-  const [openNav, setOpenNav] = useState(true)
+  const [openNav, setOpenNav] = useState(true);
   return (
     <>
       {/* login container */}
@@ -52,12 +47,14 @@ const Account = () => {
               </div>
 
               <div className="text-red-600">
-                <Link href='/account/forgotpassword/userdetials'>Forgot password</Link>
+                <Link href="/account/forgotpassword/userdetials">
+                  Forgot password
+                </Link>
               </div>
             </div>
 
-            <div className="flex justify-center bg-red-500 p-2 rounded-lg mt-5 hover:bg-red-400 text-white">
-              <Link href='' >Sign up</Link>
+            <div className="signup-btn">
+              <Link href="">Sign in</Link>
             </div>
             <div className="flex flex-row justify-center gap-2 items-center rounded-lg p-2 border-2 border-gray-100 mt-3 hover:border-red-500">
               <FcGoogle className="w-[25px] h-auto" />
@@ -66,7 +63,10 @@ const Account = () => {
 
             <div className="flex justify-center gap-2 mt-5 text-gray-600 cursor-pointer">
               <p>Don't have an account?</p>
-              <Link href="/account/signup/usersignupdetials" className="text-red-600">
+              <Link
+                href="/account/signup/usersignupdetials"
+                className="text-red-600"
+              >
                 Sign up
               </Link>
             </div>
