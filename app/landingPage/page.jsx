@@ -508,7 +508,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="sect6-div2 flex flex-row justify-around gap-8 px-8 ">
-          <button className="promo1 flex flex-col basis-full">
+          <div className="promo1 flex flex-col basis-full">
             <Image
               src="/images/seagame-banner.png"
               alt="seagame-banner"
@@ -535,8 +535,8 @@ const LandingPage = () => {
                 2023 ចំនួន 2 សន្លឹក។
               </p>
             </div>
-          </button>
-          <button className="promo2 flex flex-col basis-full">
+          </div>
+          <div className="promo2 flex flex-col basis-full">
             <Image
               src="/images/foodorder-banner.png"
               alt="foodorder-banner"
@@ -563,8 +563,8 @@ const LandingPage = () => {
                 ទូទាំងប្រទេសកម្ពុជា។
               </p>
             </div>
-          </button>
-          <button className="promo3 flex flex-col basis-full">
+          </div>
+          <div className="promo3 flex flex-col basis-full">
             <Image
               src="/images/savingAcc-banner.png"
               alt="savingAcc-banner"
@@ -591,7 +591,7 @@ const LandingPage = () => {
                 ឡើងទៅ ដើម្បីមានឱកាសក្លាយជាអ្នកឈ្នះនាខែបន្ទាប់។
               </p>
             </div>
-          </button>
+          </div>
         </div>
       </section>
     </div>
