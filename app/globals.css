@@ -28,6 +28,7 @@
   @apply text-gray-900 font-semibold text-2xl mb-5;
 }
 .promotionContent {
+
   @apply text-gray-600 text-base font-normal;
 }
 .react-tel-input .form-control {
