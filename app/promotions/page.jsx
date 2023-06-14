@@ -141,6 +141,7 @@ const data1 = [
   },
 ];
 
+
 const Promotions = () => {
   return (
     <div className="w-full">
