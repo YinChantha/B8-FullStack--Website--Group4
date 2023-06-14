@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 const Header = () => {
   const [isOpenCompare, setIsOpenCompare] = useState(false);
   const [isOpenResources, setIsOpenResources] = useState(false);
+  const [openNavbar, setOpenNavbar] = useState(true)
+
 
   const router = useRouter();
   const { asPath } = router;
@@ -21,6 +23,10 @@ const Header = () => {
   const handleToggleResources = () => {
     setIsOpenResources(!isOpenResources);
   };
+
+  const handleOpenNavbar = () => {
+    setOpenNavbar(!openNavbar)
+  }
   return (
     <header className="header h-45 text-gray-500 font-semibold text-base z-10 border-b-1 border-gray-100">
       <div className="nav-container flex justify-between flex-row px-28 py-5">

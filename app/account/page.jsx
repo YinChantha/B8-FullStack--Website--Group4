@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
 import { FcGoogle } from "react-icons/fc";
+import { useState } from "react";
 import Link from "next/link";
 
 const Account = () => {
+  const [openNav, setOpenNav] = useState(true);
   return (
     <>
       {/* login container */}
@@ -46,12 +47,14 @@ const Account = () => {
               </div>
 
               <div className="text-red-600">
-                <Link href='/account/forgotpassword/userdetials'>Forgot password</Link>
+                <Link href="/account/forgotpassword/userdetials">
+                  Forgot password
+                </Link>
               </div>
             </div>
 
             <div className="signup-btn">
-              <Link href='' >Sign in</Link>
+              <Link href="">Sign in</Link>
             </div>
             <div className="flex flex-row justify-center gap-2 items-center rounded-lg p-2 border-2 border-gray-100 mt-3 hover:border-red-500">
               <FcGoogle className="w-[25px] h-auto" />
@@ -60,7 +63,10 @@ const Account = () => {
 
             <div className="flex justify-center gap-2 mt-5 text-gray-600 cursor-pointer">
               <p>Don't have an account?</p>
-              <Link href="/account/signup/usersignupdetials" className="text-red-600">
+              <Link
+                href="/account/signup/usersignupdetials"
+                className="text-red-600"
+              >
                 Sign up
               </Link>
             </div>
