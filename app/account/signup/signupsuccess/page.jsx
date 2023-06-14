@@ -25,6 +25,7 @@ export default function Successfully() {
           <Link
             href="/account/"
             className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500"
+            as={`/account/`}
           >
             <BiArrowBack color="gray-900" size={20} />
             <p className="text-gray-900 hover:text-gray-500">Back to log in</p>

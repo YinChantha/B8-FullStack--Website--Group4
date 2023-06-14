@@ -82,7 +82,7 @@ export default function UserSigupDetials() {
             </div>
           </div>
 
-          <Link href="/account/signup/checkinbox" className="signup-btn">
+          <Link href="/account/signup/checkinbox" className="signup-btn" as={"/account/signup/checkinbox"} >
             Continue
           </Link>
           <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">

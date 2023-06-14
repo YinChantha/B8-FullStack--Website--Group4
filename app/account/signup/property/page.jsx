@@ -67,12 +67,12 @@ export default function Property() {
             />
           </div>
 
-          <Link href="/account/signup/" className="signup-btn">
+          <Link href="/account/signup/" className="signup-btn" as={"/account/signup"} >
             Continue
           </Link>
           <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
             <p className="text-gray-500">Already have an account?</p>
-            <Link href="/account/" className="text-red-700 cursor-pointer">
+            <Link href="/account/" className="text-red-700 cursor-pointer" as={"/account/"} >
               Sign in
             </Link>
           </div>

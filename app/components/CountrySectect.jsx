@@ -48,9 +48,10 @@ export default function CountrySelect({data, selected, setSelected}) {
                   Nothing found.
                 </div>
               ) : (
-                filterCountry.map((country) => (
+                filterCountry.map((country, index) => (
                   <Combobox.Option
-                    key={country.id}
+                    // key={country.id}
+                    key={index}
                     className={({ active }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
                         active ? 'bg-red-500 text-white' : 'text-gray-900'

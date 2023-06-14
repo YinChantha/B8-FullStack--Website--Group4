@@ -40,6 +40,7 @@ export default function UserDetials() {
             <Link
               href="/account/"
               className="text-gray-900 hover:text-gray-500 cursor-pointer"
+              as={`/account/`}
             >
               Back to log in
             </Link>
