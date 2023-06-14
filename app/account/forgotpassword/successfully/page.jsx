@@ -26,7 +26,10 @@ export default function Successfully() {
           <div className="flex flex-col gap-4 ml-10 mt-14">
             {/* user details */}
             <div className="flex gap-3 cursor-pointer">
-              <Link href="/account/forgotpassword/userdetials" className="flex gap-3">
+              <Link
+                href="/account/forgotpassword/userdetials"
+                className="flex gap-3"
+              >
                 <div className="flex w-10 h-10 border-2 rounded-lg border-gray-300">
                   <FiUser className="my-auto mx-auto text-gray-500 hover:text-gray-700" />
                 </div>
@@ -43,7 +46,10 @@ export default function Successfully() {
 
             {/* check email  */}
             <div className="flex gap-3 cursor-pointer">
-              <Link href="/account/forgotpassword/checkemail" className="flex gap-3">
+              <Link
+                href="/account/forgotpassword/checkemail"
+                className="flex gap-3"
+              >
                 <div className="flex w-10 h-10 border-2 rounded-lg border-gray-300">
                   <HiOutlineMail className="my-auto mx-auto text-gray-500 hover:text-gray-700" />
                 </div>
@@ -56,7 +62,7 @@ export default function Successfully() {
                   </p>
                 </div>
               </Link>
-            </div> 
+            </div>
 
             {/* choose a password  */}
             <div className="flex gap-3">
@@ -122,17 +128,20 @@ export default function Successfully() {
               <p className="text-gray-600">
                 Your password has been successfully reset.
               </p>
-              <p className='text-gray-600'>Click below to log in magically.</p>
+              <p className="text-gray-600">Click below to log in magically.</p>
             </div>
             <div
               href="pages/account/forgotpassword/detials"
               className="flex justify-center p-2 rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400 cursor-pointer"
             >
-              Reset 
+              Reset
             </div>
             <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
               <BiArrowBack color="gray-900" size={20} />
-              <Link href='/account' className="text-gray-900 hover:text-gray-500 cursor-pointer">
+              <Link
+                href="/account"
+                className="text-gray-900 hover:text-gray-500 cursor-pointer"
+              >
                 Back to log in
               </Link>
             </div>
