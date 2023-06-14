@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 @layer base {
   html {
     font-family: "Inter", sans-serif;
@@ -18,20 +17,19 @@
 }
 
 .redButton {
-  @apply bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600
+  @apply bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600;
 }
 
 /* promotion box style */
 .bankName {
-  @apply text-red-600 text-sm font-semibold mb-2
+  @apply text-red-600 text-sm font-semibold mb-2;
 }
 .promotionName {
-  @apply text-gray-900 font-semibold text-2xl mb-5
+  @apply text-gray-900 font-semibold text-2xl mb-5;
 }
 .promotionContent {
-  @apply text-gray-600 text-base font-normal
-=======
+  @apply text-gray-600 text-base font-normal;
+}
 .react-tel-input .form-control {
-    @apply !w-full py-5 !border-2 !border-gray-100 !rounded-lg !text-base;
->>>>>>> 9df08a5d03cb97279aba673b341ea3acb8431111
+  @apply !w-full py-5 !border-2 !border-gray-100 !rounded-lg !text-base;
 }
