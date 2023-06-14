@@ -9,10 +9,11 @@ const Footer = () => {
         <p className="font-semibold text-gray-900 text-xl flex-1">
           Unlock Your Financial Potential with Proadvisor!
           <br />
-          <span className="font-normal text-gray-500 text-base">
+          {/* klg nis dak span tver ey k ? */}
+          {/* <span className="font-normal text-gray-500 text-base"> */}
             The trusted provider over 150+ company in Cambodia, of accurate
             rates and financial information.
-          </span>
+          {/* </span> */}
         </p>
         <div className="foot-sect1-btn flex flex-row gap-x-3 w-96 justify-end text-base">
           <button className=" text-gray-700 font-semibold rounded-lg px-5 py-3 border-gray-300 border-2 hover:bg-gray-50">

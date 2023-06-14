@@ -11,9 +11,6 @@ const Header = () => {
   const [isOpenResources, setIsOpenResources] = useState(false);
   const [openNavbar, setOpenNavbar] = useState(true)
 
-  const router = useRouter();
-  const { asPath } = router;
-  console.log(asPath);
 
   const router = useRouter();
   const { asPath } = router;
