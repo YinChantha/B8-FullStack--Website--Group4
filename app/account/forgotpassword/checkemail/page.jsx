@@ -143,7 +143,10 @@ export default function CheckEmail() {
             </div>
             <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
               <BiArrowBack color="gray-900" size={20} />
-              <Link href='/account' className="text-gray-900 hover:text-gray-500">
+              <Link
+                href="/account"
+                className="text-gray-900 hover:text-gray-500"
+              >
                 Back to log in
               </Link>
             </div>
