@@ -1,12 +1,18 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isOpenCompare, setIsOpenCompare] = useState(false);
   const [isOpenResources, setIsOpenResources] = useState(false);
+
+  const router = useRouter();
+  const { asPath } = router;
+  console.log(asPath);
 
   const handleToggleCompare = () => {
     setIsOpenCompare(!isOpenCompare);
@@ -285,6 +291,7 @@ const Header = () => {
               <p>English</p>
             </button>
           </div>
+
           <hr className="line w-0.5 h-5 bg-gray-200" />
           <div className="login-btn px-4 hover:bg-gray-50 p-2.5 rounded-lg">
             <Link href="/account">Login</Link>

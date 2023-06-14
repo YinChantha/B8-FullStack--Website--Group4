@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -21,20 +21,20 @@ export default function ForgotPassword() {
   const pages = [
     {
       id: 1,
-      name: <UserDetials />
+      name: <UserDetials />,
       // url: 'https://images.unsplash.com/photo-1680399524821-d4e6b225b0ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
     },
     {
       id: 2,
-      name: <CheckEmail />
-    }
-  ]
+      name: <CheckEmail />,
+    },
+  ];
 
-  const [pageIndex, setPageIndex] = useState(0)
+  const [pageIndex, setPageIndex] = useState(0);
 
   const goToPage = (pageIndex) => {
-    setPageIndex(pageIndex)
-  }
+    setPageIndex(pageIndex);
+  };
 
   return (
     <>
@@ -126,16 +126,15 @@ export default function ForgotPassword() {
 
         {/* Right side */}
         <div className="flex md:w-3/5 m-auto mt-20 justify-center items-center">
-          <UserDetials className={`${open} ? 'hidden' `}/>
+          <UserDetials className={`${open} ? 'hidden' `} />
           {/* <CheckEmail /> */}
           {/* <SetNewPassword /> */}
           {/* <Successfully /> */}
-          
+
           {/* {pages.map((page) => (
             <div key={page.id} id={page.id} name={page.name} />
           ))} */}
 
-          
           {/* <div key={pageIndex} onClick={() => goToPage(pageIndex)} className='w-full h-auto'>
             {pages.map((page, pageIndex) => (
               <div className='text-2xl cursor-pointer'>

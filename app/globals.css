@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 @layer base {
   html {
     font-family: "Inter", sans-serif;
@@ -29,4 +30,8 @@
 }
 .promotionContent {
   @apply text-gray-600 text-base font-normal
+=======
+.react-tel-input .form-control {
+    @apply !w-full py-5 !border-2 !border-gray-100 !rounded-lg !text-base;
+>>>>>>> 9df08a5d03cb97279aba673b341ea3acb8431111
 }
