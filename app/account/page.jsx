@@ -1,10 +1,16 @@
+<<<<<<< HEAD:app/pages/account/page.jsx
+import React, { useState } from "react";
+=======
 "use client";
 
 import React from "react";
+>>>>>>> 9df08a5d03cb97279aba673b341ea3acb8431111:app/account/page.jsx
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 
 const Account = () => {
+
+  const [openNav, setOpenNav] = useState(true)
   return (
     <>
       {/* login container */}
