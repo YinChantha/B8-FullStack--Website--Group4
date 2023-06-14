@@ -11,8 +11,8 @@ const LandingPage = () => {
   return (
     <div className="landing-page">
       <section className="sect1 border-b-1 border-gray-100 pb-24 ">
-        <div className="landing-sect1 flex flex-col justify-center items-center px-52 pt-24 border-b-1 border-gray-100">
-          <div className="flex flex-row justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl shrink-0">
+        <div className="landing-sect1 flex flex-col justify-center items-center px-52 pt-24 ">
+          <button className="flex flex-row justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl shrink-0">
             <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl shrink-0">
               New feature
             </p>
@@ -28,7 +28,7 @@ const LandingPage = () => {
                 className="shrink-0 w-auto h-auto"
               />
             </div>
-          </div>
+          </button>
           <p className="text-center text-gray-900 font-semibold text-4xl mt-5">
             Unlock Your Financial Potential with ProAdvisor's Innovative
             Solutions
@@ -54,6 +54,7 @@ const LandingPage = () => {
             className="pt-16 w-auto h-auto"
           />
         </div>
+        {/* <hr className="border-b-1 border-gray-100 px-28" /> */}
         <div className="list-banks flex flex-col justify-center items-center mt-24 px-28">
           <p className="font-normal text-gray-600 text-center">
             The trusted provider over 150+ companies from Cambodia, of accuracy
@@ -149,7 +150,7 @@ const LandingPage = () => {
                   Compare different loan options to make an informed decision.
                 </p>
               </div>
-              <div className="flex flex-row gap-x-2">
+              <button className="flex flex-row gap-x-2">
                 <p className="text-red-600 font-semibold text-base">
                   Learn more
                 </p>
@@ -160,7 +161,7 @@ const LandingPage = () => {
                   height={20}
                   className="w-auto h-auto"
                 />
-              </div>
+              </button>
             </div>
             <div className=" div2 flex flex-col justify-center items-center gap-y-5 ">
               <div className="bg-red-100 rounded-4xl w-12 h-12  border-8 border-primary-25 flex justify-center items-center">
@@ -182,7 +183,7 @@ const LandingPage = () => {
                   option for you.
                 </p>
               </div>
-              <div className="flex flex-row gap-x-2">
+              <button className="flex flex-row gap-x-2">
                 <p className="text-red-600 font-semibold text-base">
                   Learn more
                 </p>
@@ -193,7 +194,7 @@ const LandingPage = () => {
                   height={20}
                   className="w-auto h-auto"
                 />
-              </div>
+              </button>
             </div>
             <div className="div3 flex flex-col justify-center items-center gap-y-5 ">
               <div className="bg-red-100 rounded-4xl w-12 h-12  border-8 border-primary-25 flex justify-center items-center">
@@ -214,7 +215,7 @@ const LandingPage = () => {
                   Maximize your savings with fixed deposit account comparison.
                 </p>
               </div>
-              <div className="flex flex-row gap-x-2">
+              <button className="flex flex-row gap-x-2">
                 <p className="text-red-600 font-semibold text-base">
                   Learn more
                 </p>
@@ -225,7 +226,7 @@ const LandingPage = () => {
                   height={20}
                   className="w-auto h-auto"
                 />
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -501,13 +502,13 @@ const LandingPage = () => {
             </p>
           </div>
           <div className="flex flex-col flex-grow-0 flex-shrink-0 items-center">
-            <button className="text-white font-semibold text-base py-3 px-5 bg-red-500 rounded-lg ">
+            <button className="text-white font-semibold text-base py-3 px-5 bg-red-500 rounded-lg hover:bg-red-600">
               View more
             </button>
           </div>
         </div>
         <div className="sect6-div2 flex flex-row justify-around gap-8 px-8 ">
-          <div className="promo1 flex flex-col basis-full">
+          <button className="promo1 flex flex-col basis-full">
             <Image
               src="/images/seagame-banner.png"
               alt="seagame-banner"
@@ -534,8 +535,8 @@ const LandingPage = () => {
                 2023 ចំនួន 2 សន្លឹក។
               </p>
             </div>
-          </div>
-          <div className="promo2 flex flex-col basis-full">
+          </button>
+          <button className="promo2 flex flex-col basis-full">
             <Image
               src="/images/foodorder-banner.png"
               alt="foodorder-banner"
@@ -562,8 +563,8 @@ const LandingPage = () => {
                 ទូទាំងប្រទេសកម្ពុជា។
               </p>
             </div>
-          </div>
-          <div className="promo3 flex flex-col basis-full">
+          </button>
+          <button className="promo3 flex flex-col basis-full">
             <Image
               src="/images/savingAcc-banner.png"
               alt="savingAcc-banner"
@@ -590,7 +591,7 @@ const LandingPage = () => {
                 ឡើងទៅ ដើម្បីមានឱកាសក្លាយជាអ្នកឈ្នះនាខែបន្ទាប់។
               </p>
             </div>
-          </div>
+          </button>
         </div>
       </section>
     </div>

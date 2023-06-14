@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="border-b-1 border-gray-100" />
+      <hr className="border-b-1 border-gray-100 mt-24" />
       <div className="foot-sect3 mt-4 flex flex-row justify-between items-center mb-12">
         <div className="all-right">
           <p className="text-gray-400 font-normal text-base">

@@ -15,15 +15,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const router = usePathname();
   console.log("router", router);
-  const pathToHideNav = ["/account", "/account/forgotpassword"]
-
+  const pathToHideNav = ["/account", "/account/forgotpassword"];
 
   return (
     <html lang="en" className="box-border">
-      <body className="flex flex-col min-h-screen"> 
-        { (router === "/" || router === "/promotions" || router === "/account") &&  <Header className="" />}
+      <body className="flex flex-col min-h-screen">
+        {(router === "/" ||
+          router === "/promotions" ||
+          router === "/landingPage") && <Header className="" />}
         <main className="flex-1">{children}</main>
-        { (router === "/" || router === "/promotions") &&  <Footer className="" />}
+        {(router === "/" ||
+          router === "/promotions" ||
+          router === "/landingPage") && <Footer className="" />}
       </body>
     </html>
   );
