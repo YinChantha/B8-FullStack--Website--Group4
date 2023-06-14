@@ -11,7 +11,6 @@ export default function Successfully() {
           <div className="flex w-10 h-10 border-2 rounded-lg border-gray-300 ">
             <IoIosCheckmarkCircleOutline className="my-auto mx-auto" />
           </div>
-
           <div className="flex flex-col items-center justify-center mt-8">
             <h2 className="text-2xl font-semibold text-gray-800">
               Successfully

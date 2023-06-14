@@ -47,7 +47,6 @@ export default function SetNewPassword() {
             <IoIosCheckmarkCircleOutline />
             <p>Must be at least 8 characters</p>
           </div>
-
           <div className="flex p-2 justify-center rounded-lg bg-red-500 w-full mt-5 text-white hover:bg-red-400 cursor-pointer">
             Reset password
           </div>
@@ -59,6 +58,7 @@ export default function SetNewPassword() {
             >
               Back to log in
             </Link>
+
           </div>
         </div>
       </div>
