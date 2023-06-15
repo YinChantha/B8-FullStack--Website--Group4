@@ -1,4 +1,4 @@
-export const AllPostItems = [
+const AllPosts = [
   {
     id: 1,
     src: "/images/post5.png",
@@ -154,3 +154,5 @@ export const AllPostItems = [
     },
   },
 ];
+
+export default AllPosts;
