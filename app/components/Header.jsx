@@ -216,21 +216,23 @@ const Header = () => {
                         </Link>
                       </div>
                       <div className="guide-tutorial relative mt-24 bg-slate-400">
-                        <Image
-                          src="/images/guide-tutorial.png"
-                          alt=" guide tutorial icon"
-                          width={20}
-                          height={20}
-                          className="absolute left-0"
-                        />
-                        <p className="text-gray-900 font-semibold absolute left-8">
-                          Guides and Tutorials
-                          <br />
-                          <span className="font-normal text-gray-500">
-                            Explore a wide range of savings accounts & find the
-                            best option for you.
-                          </span>
-                        </p>
+                        <Link href='/resources/guidesTutorials'>
+                          <Image
+                            src="/images/guide-tutorial.png"
+                            alt=" guide tutorial icon"
+                            width={20}
+                            height={20}
+                            className="absolute left-0"
+                          />
+                          <p className="text-gray-900 font-semibold absolute left-8">
+                            Guides and Tutorials
+                            <br />
+                            <span className="font-normal text-gray-500">
+                              Explore a wide range of savings accounts & find the
+                              best option for you.
+                            </span>
+                          </p>
+                        </Link>
                       </div>
                     </div>
                     <div className="video-resource flex flex-col ml-5 bg-gray-100 w-72 p-2 rounded-lg">
