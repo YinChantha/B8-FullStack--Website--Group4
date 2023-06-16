@@ -196,7 +196,8 @@ const Header = () => {
                   />
                   <div className="resource-dropdown p-9 flex flex-row mt-10 absolute z-10 bg-white rounded-lg drop-shadow-md">
                     <div className="resource-content relative w-80">
-                      <div className="finan-article bg-blue-300 ">
+                      <div className="finan-article bg-blue-300 cursor-pointer">
+                        <Link href='/resources/financialArticles'>
                         <Image
                           src="/images/finance-article.png"
                           alt="finance article icon"
@@ -212,23 +213,26 @@ const Header = () => {
                             decision.
                           </span>
                         </p>
+                        </Link>
                       </div>
                       <div className="guide-tutorial relative mt-24 bg-slate-400">
-                        <Image
-                          src="/images/guide-tutorial.png"
-                          alt=" guide tutorial icon"
-                          width={20}
-                          height={20}
-                          className="absolute left-0"
-                        />
-                        <p className="text-gray-900 font-semibold absolute left-8">
-                          Guides and Tutorials
-                          <br />
-                          <span className="font-normal text-gray-500">
-                            Explore a wide range of savings accounts & find the
-                            best option for you.
-                          </span>
-                        </p>
+                        <Link href='/resources/guidesTutorials'>
+                          <Image
+                            src="/images/guide-tutorial.png"
+                            alt=" guide tutorial icon"
+                            width={20}
+                            height={20}
+                            className="absolute left-0"
+                          />
+                          <p className="text-gray-900 font-semibold absolute left-8">
+                            Guides and Tutorials
+                            <br />
+                            <span className="font-normal text-gray-500">
+                              Explore a wide range of savings accounts & find the
+                              best option for you.
+                            </span>
+                          </p>
+                        </Link>
                       </div>
                     </div>
                     <div className="video-resource flex flex-col ml-5 bg-gray-100 w-72 p-2 rounded-lg">

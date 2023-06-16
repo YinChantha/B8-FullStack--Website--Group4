@@ -1,22 +1,16 @@
-<<<<<<< HEAD
-import React from "react";
-
-const FinancialArticles = () => {
-  return <div>FinancialArticles home page</div>;
-=======
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { GoSearch } from "react-icons/go";
-import { PostItems } from "./PostItems";
 import { FiArrowUpRight } from "react-icons/fi";
-import { AllPostItems } from "./AllPostsItems";
 import { RiSendPlaneLine } from "react-icons/ri";
+import posts from "./Posts";
+import AllPosts from "./AllPosts";
 
-const FinancialArticles = () => {
+const GuidesAndTutorials = () => {
   const [showAnswer1, setShowAnswer1] = useState(false);
   const [showAnswer2, setShowAnswer2] = useState(false);
   const [showAnswer3, setShowAnswer3] = useState(false);
@@ -24,7 +18,7 @@ const FinancialArticles = () => {
   const [showAnswer5, setShowAnswer5] = useState(false);
   return (
     <>
-      <div className="max-w-screen mx-auto px-5 py-10 md:mx-20">
+      <div className="max-w-screen mx-auto px-5 py-10 md:mx-10">
         <div className="flex flex-col items-center justify-center gap-4 mt-10">
           <p className="bankName">Our financial articles</p>
           <h1 className="text-[40px] font-bold text-center">
@@ -45,41 +39,41 @@ const FinancialArticles = () => {
         <div className="flex flex-col w-full h-full mt-20 mb-5">
           <h1 className="promotionName">Recent blog posts</h1>
           <div className="flex w-full h-full flex-col md:flex-row mt-5">
-            {PostItems[0] && (
+            {posts[0] && (
               <div
-                key={PostItems.id}
+                key={posts.id}
                 className="flex md:w-1/2 items-center justify-center lg:mb-0 md:mb-0 sm:mb-5"
               >
                 <div className="flex flex-col w-full h-full mx-auto sm:gap-2">
                   <img
-                    src={PostItems[0].src}
+                    src={posts[0].src}
                     className="lg:w-full lg:h-full md:w-full md:h-full object-cover rounded-lg"
                   />
-                  <p className="bankName">{PostItems[0].date}</p>
+                  <p className="bankName">{posts[0].date}</p>
                   <div className="flex flex-row items-center justify-between -mt-2">
-                    <h1 className="promotionName">{PostItems[0].title}</h1>
+                    <h1 className="promotionName">{posts[0].title}</h1>
                     <div>
                       <FiArrowUpRight className="w-[25px] h-[25px] text-gray-800" />
                     </div>
                   </div>
                   <p className="post-description -mt-4">
-                    {PostItems[0].description}
+                    {posts[0].description}
                   </p>
                   <div className="flex flex-row gap-2 items-center">
                     <img
-                      src={PostItems[0].publicer.src}
+                      src={posts[0].publicer.src}
                       className="w-[40px] h-[40px] rounded-full"
                     />
                     <div className="flex flex-col">
-                      <p className="p-name">{PostItems[0].publicer.name}</p>
-                      <p className="p-date">{PostItems[0].publicer.date}</p>
+                      <p className="p-name">{posts[0].publicer.name}</p>
+                      <p className="p-date">{posts[0].publicer.date}</p>
                     </div>
                   </div>
                 </div>
               </div>
             )}
             <div className="flex flex-col md:w-1/2 md:ml-6 gap-5">
-              {PostItems.slice(1, 3).map((item) => (
+              {posts.slice(1, 3).map((item) => (
                 <div
                   key={item.id}
                   className="flex flex-row lg:flex-row md:flex-row sm:flex-col gap-4"
@@ -101,12 +95,12 @@ const FinancialArticles = () => {
                     <p className="post-description -mt-4">{item.description}</p>
                     <div className="flex flex-row gap-2 items-center">
                       <img
-                        src={item.publicer.src}
+                        src={posts[0].publicer.src}
                         className="w-[40px] h-[40px] rounded-full"
                       />
                       <div className="flex flex-col">
-                        <p className="p-name">{item.publicer.name}</p>
-                        <p className="p-date">{item.publicer.date}</p>
+                        <p className="p-name">{posts[0].publicer.name}</p>
+                        <p className="p-date">{posts[0].publicer.date}</p>
                       </div>
                     </div>
                   </div>
@@ -115,10 +109,10 @@ const FinancialArticles = () => {
             </div>
           </div>
 
-          <h1 className="promotionName mt-20 ">All blogs posts</h1>
+          <h1 className="promotionName mt-20">All blogs posts</h1>
           <div className="flex justify-center mt-5">
-            <div className="post-card">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex flex-col gap-1 bg-gray-100 rounded-lg">
                 <div className="flex flex-col mx-8 my-8">
                   <div className="flex w-[50px] h-[50px] border-2 border-gray-300 rounded-lg bg-white">
                     <RiSendPlaneLine className="mx-auto my-auto w-[25px] h-[25px] text-gray-500" />
@@ -141,8 +135,12 @@ const FinancialArticles = () => {
                   </div>
                 </div>
               </div>
-              {AllPostItems.map((post) => (
-                <Link href={`/resources/financialArticles/${post.id}`} key={post.id} className="flex flex-col gap-0">
+              {AllPosts.map((post) => (
+                <Link
+                  href={`/resources/guidesTutorials/${post.id}`}
+                  key={post.id}
+                  className="flex flex-col gap-0"
+                >
                   <div className="flex ">
                     <img
                       src={post.src}
@@ -388,7 +386,6 @@ const FinancialArticles = () => {
       </div>
     </>
   );
->>>>>>> c719f98a356e088d1a408ad7eb025ccd3de597df
 };
 
-export default FinancialArticles;
+export default GuidesAndTutorials;
