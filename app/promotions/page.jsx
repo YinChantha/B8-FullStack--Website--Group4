@@ -1,6 +1,7 @@
 import React from "react";
 import { IoLogoNpm } from "react-icons/io";
 import Image from "next/image";
+import Link from "next/link";
 
 const data = [
   {
@@ -141,7 +142,6 @@ const data1 = [
   },
 ];
 
-
 const Promotions = () => {
   return (
     <div className="w-full">
@@ -156,7 +156,7 @@ const Promotions = () => {
           expert <br></br> guidance to empower you in making informed financial
           decisions.
         </p>
-        <div className="flex justify-center gap-3">
+        <div className="flex justify-center items-center gap-3">
           <input
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/12 p-2"
@@ -196,7 +196,7 @@ const Promotions = () => {
               <p className="promotionName">{item.title}</p>
               <p className="promotionContent mb-5">{item.article}</p>
 
-              <a href="#" className="inline-flex items-center gap-2 bankName">
+              <a href="/landingPage" className="inline-flex items-center gap-2 bankName">
                 Read more
                 <svg
                   width="20"

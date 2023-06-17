@@ -2,33 +2,61 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+const promoData = [
+  {
+    img: "/images/seagame-banner.png",
+    bankName: "ABA Bank",
+    promoName: "Cambodia Sea Games",
+    promoContent:
+      "សូមអបអរសាទរអ្នកឈ្នះទាំង 50 រូប! លោកអ្នកបានឈ្នះសំបុត្រចូលរួមពិធីបើកព្រឹត្តិការណ៍ស៊ីហ្គេម និងអាស៊ានប៉ារ៉ាហ្គេម ឆ្នាំ2023 ចំនួន 2 សន្លឹក។",
+  },
+  {
+    img: "/images/foodorder-banner.png",
+    bankName: "Vattanac Bank",
+    promoName: "Food Order Up to 5$",
+    promoContent:
+      "កាន់តែងាយស្រួល និងរហ័សជាមួយ KHQR របស់ធនាគារ វឌ្ឍនៈ!អតិថិជនអាចផ្ញើ ឬទទួលប្រាក់ពីធនាគារដែលជាសមាជិកបាគងនៅទូទាំងប្រទេសកម្ពុជា។",
+  },
+  {
+    img: "/images/savingAcc-banner.png",
+    bankName: "Wing Bank",
+    promoName: "Open Saving Account",
+    promoContent:
+      "ប្រូម៉ូសិននៅតែបន្ត ហើយអ្នកឈ្នះបន្ទាប់អាចជារូបអ្នក ដូច្នេះសូមបន្តរក្សាសមតុល្យទឹកប្រាក់ក្នុងគណនី វីងរបស់អ្នកចាប់ពី 100 ដុល្លារឡើងទៅ ដើម្បីមានឱកាសក្លាយជាអ្នកឈ្នះនាខែបន្ទាប់។",
+  },
+];
+
 const LandingPage = () => {
   const [showAnswer1, setShowAnswer1] = useState(false);
   const [showAnswer2, setShowAnswer2] = useState(false);
   const [showAnswer3, setShowAnswer3] = useState(false);
   const [showAnswer4, setShowAnswer4] = useState(false);
   const [showAnswer5, setShowAnswer5] = useState(false);
+
   return (
     <div className="landing-page">
       <section className="sect1 border-b-1 border-gray-100 pb-24 ">
-        <div className="landing-sect1 flex flex-col justify-center items-center px-52 pt-24 ">
-          <button className="flex flex-row justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl shrink-0">
-            <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl shrink-0">
-              New feature
-            </p>
-            <div className="flex flex-row gap-1 shrink-0">
-              <p className="text-red-700 shrink-0">
-                Let’s try our ChatGPT Integration
+        <div className="landing-sect1 px-52 pt-24 ">
+          <div className="flex justify-center items-center">
+            <button className="flex flex-row justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl max-w-full max-h-full">
+              <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl shrink-0">
+                New feature
               </p>
-              <Image
-                src="/images/arrow-right.png"
-                alt="arrow-right icon"
-                width={15}
-                height={15}
-                className="shrink-0 w-auto h-auto"
-              />
-            </div>
-          </button>
+              <div className="flex flex-row gap-1 shrink-0">
+                <p className="text-red-700">
+                  Let’s try our ChatGPT Integration
+                </p>
+                <Image
+                  src="/images/arrow-right.png"
+                  alt="arrow-right icon"
+                  width={15}
+                  height={15}
+                  className="
+                w-auto h-auto"
+                />
+              </div>
+            </button>
+          </div>
           <p className="text-center text-gray-900 font-semibold text-4xl mt-5">
             Unlock Your Financial Potential with ProAdvisor's Innovative
             Solutions
@@ -38,11 +66,11 @@ const LandingPage = () => {
             and expert guidance to empower you in making informed financial
             decisions.
           </p>
-          <div className="btn flex flex-row justify-center items-center font-semibold text-lg pt-12 gap-x-3.5">
-            <button className="learn-more text-gray-700 rounded-lg px-5 py-3 border-gray-300 border-2 hover:bg-gray-50">
+          <div className="btn flex flex-row justify-center items-center font-semibold text-lg mt-12 gap-x-3.5">
+            <button className="learn-more-btn text-gray-700 rounded-lg px-5 py-3 border-gray-300 border-2 hover:bg-gray-50">
               Learn more
             </button>
-            <button className="get-started text-white bg-red-500 rounded-lg px-5 py-3 hover:bg-red-600">
+            <button className="get-started-btn text-white bg-red-500 rounded-lg px-5 py-3 hover:bg-red-600">
               Get started
             </button>
           </div>
@@ -51,7 +79,7 @@ const LandingPage = () => {
             alt="laptop-frame"
             width={796}
             height={464}
-            className="pt-16 w-auto h-auto"
+            className="pt-16 w-auto h-auto mx-auto"
           />
         </div>
         {/* <hr className="border-b-1 border-gray-100 px-28" /> */}
@@ -508,90 +536,32 @@ const LandingPage = () => {
           </div>
         </div>
         <div className="sect6-div2 flex flex-row justify-around gap-8 px-8 ">
-          <div className="promo1 flex flex-col basis-full">
-            <Image
-              src="/images/seagame-banner.png"
-              alt="seagame-banner"
-              width={384}
-              height={240}
-              className="w-auto h-auto mb-6"
-            />
-            <div className="flex flex-col">
-              <p className="bankName">ABA Bank</p>
-              <div className="flex flex-row items-start justify-between">
-                <p className="promotionName">Cambodia Sea Games</p>
-                <button>
-                  <Image
-                    src="/images/go-icon.png"
-                    alt="go icon"
-                    width={24}
-                    height={24}
-                  />
-                </button>
+          {promoData.map((data, index) => (
+            <div key={index} className="promo1 flex flex-col basis-full">
+              <Image
+                src={data.img}
+                alt="seagame-banner"
+                width={384}
+                height={240}
+                className="w-auto h-auto mb-6"
+              />
+              <div className="flex flex-col">
+                <p className="bankName">{data.bankName}</p>
+                <div className="flex flex-row items-start justify-between">
+                  <p className="promotionName">{data.promoName}</p>
+                  <button>
+                    <Image
+                      src="/images/go-icon.png"
+                      alt="go icon"
+                      width={24}
+                      height={24}
+                    />
+                  </button>
+                </div>
+                <p className="promotionContent">{data.promoContent}</p>
               </div>
-              <p className="promotionContent">
-                សូមអបអរសាទរអ្នកឈ្នះទាំង 50 រូប! លោកអ្នកបានឈ្នះសំបុត្រ
-                ចូលរួមពិធីបើកព្រឹត្តិការណ៍ស៊ីហ្គេម និងអាស៊ានប៉ារ៉ាហ្គេម ឆ្នាំ
-                2023 ចំនួន 2 សន្លឹក។
-              </p>
             </div>
-          </div>
-          <div className="promo2 flex flex-col basis-full">
-            <Image
-              src="/images/foodorder-banner.png"
-              alt="foodorder-banner"
-              width={384}
-              height={240}
-              className="w-auto h-auto mb-6"
-            />
-            <div className="flex flex-col">
-              <p className="bankName">Vattanac Bank</p>
-              <div className="flex flex-row items-start justify-between">
-                <p className="promotionName">Food Order Up to 5$</p>
-                <button>
-                  <Image
-                    src="/images/go-icon.png"
-                    alt="go icon"
-                    width={24}
-                    height={24}
-                  />
-                </button>
-              </div>
-              <p className="promotionContent">
-                កាន់តែងាយស្រួល និងរហ័សជាមួយ KHQR របស់ធនាគារ វឌ្ឍនៈ!
-                អតិថិជនអាចផ្ញើ ឬទទួលប្រាក់ពីធនាគារដែលជាសមាជិកបាគងនៅ
-                ទូទាំងប្រទេសកម្ពុជា។
-              </p>
-            </div>
-          </div>
-          <div className="promo3 flex flex-col basis-full">
-            <Image
-              src="/images/savingAcc-banner.png"
-              alt="savingAcc-banner"
-              width={384}
-              height={240}
-              className="w-auto h-auto mb-6"
-            />
-            <div className="flex flex-col">
-              <p className="bankName">Wing Bank</p>
-              <div className="flex flex-row items-start justify-between">
-                <p className="promotionName">Open Saving Account</p>
-                <button>
-                  <Image
-                    src="/images/go-icon.png"
-                    alt="go icon"
-                    width={24}
-                    height={24}
-                  />
-                </button>
-              </div>
-              <p className="promotionContent">
-                ប្រូម៉ូសិននៅតែបន្ត ហើយអ្នកឈ្នះបន្ទាប់អាចជារូបអ្នក ដូច្នេះសូមបន្ត
-                រក្សាសមតុល្យទឹកប្រាក់ក្នុងគណនី វីងរបស់អ្នកចាប់ពី 100 ដុល្លារ
-                ឡើងទៅ ដើម្បីមានឱកាសក្លាយជាអ្នកឈ្នះនាខែបន្ទាប់។
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>

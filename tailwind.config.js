@@ -1,4 +1,6 @@
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports = withMT({
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,9 +15,10 @@ module.exports = {
       },
       screens: {
         // laptop size
-        "lg": "1440px",
+        // "laptop": "1440px",
+        laptop: "1024px",
         // phone size
-        "sm": "375px",
+        phone: "375px",
       },
       borderWidth: {
         0.5: "0.5px",
@@ -37,7 +40,7 @@ module.exports = {
         68: "272px",
         97: "390px",
         98: "472px",
-        
+
         43: "768px",
       },
       maxWidth: {
@@ -59,4 +62,4 @@ module.exports = {
   },
 
   plugins: [],
-};
+});
