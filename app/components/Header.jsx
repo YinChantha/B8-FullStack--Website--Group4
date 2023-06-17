@@ -9,8 +9,7 @@ import { useRouter } from "next/navigation";
 const Header = () => {
   const [isOpenCompare, setIsOpenCompare] = useState(false);
   const [isOpenResources, setIsOpenResources] = useState(false);
-  const [openNavbar, setOpenNavbar] = useState(true)
-
+  const [openNavbar, setOpenNavbar] = useState(true);
 
   const router = useRouter();
   const { asPath } = router;
@@ -25,8 +24,8 @@ const Header = () => {
   };
 
   const handleOpenNavbar = () => {
-    setOpenNavbar(!openNavbar)
-  }
+    setOpenNavbar(!openNavbar);
+  };
   return (
     <header className="header h-45 text-gray-500 font-semibold text-base z-10 border-b-1 border-gray-100">
       <div className="nav-container flex justify-between flex-row px-28 py-5">
@@ -197,26 +196,26 @@ const Header = () => {
                   <div className="resource-dropdown p-9 flex flex-row mt-10 absolute z-10 bg-white rounded-lg drop-shadow-md">
                     <div className="resource-content relative w-80">
                       <div className="finan-article bg-blue-300 cursor-pointer">
-                        <Link href='/resources/financialArticles'>
-                        <Image
-                          src="/images/finance-article.png"
-                          alt="finance article icon"
-                          width={20}
-                          height={20}
-                          className="absolute top-1 left-0"
-                        />
-                        <p className="text-gray-900 font-semibold absolute left-8">
-                          Financial Articles
-                          <br />
-                          <span className="font-normal text-gray-500">
-                            Compare different loan options to make an informed
-                            decision.
-                          </span>
-                        </p>
+                        <Link href="/resources/financialArticles">
+                          <Image
+                            src="/images/finance-article.png"
+                            alt="finance article icon"
+                            width={20}
+                            height={20}
+                            className="absolute top-1 left-0"
+                          />
+                          <p className="text-gray-900 font-semibold absolute left-8">
+                            Financial Articles
+                            <br />
+                            <span className="font-normal text-gray-500">
+                              Compare different loan options to make an informed
+                              decision.
+                            </span>
+                          </p>
                         </Link>
                       </div>
                       <div className="guide-tutorial relative mt-24 bg-slate-400">
-                        <Link href='/resources/guidesTutorials'>
+                        <Link href="/resources/guidesTutorials">
                           <Image
                             src="/images/guide-tutorial.png"
                             alt=" guide tutorial icon"
@@ -228,8 +227,8 @@ const Header = () => {
                             Guides and Tutorials
                             <br />
                             <span className="font-normal text-gray-500">
-                              Explore a wide range of savings accounts & find the
-                              best option for you.
+                              Explore a wide range of savings accounts & find
+                              the best option for you.
                             </span>
                           </p>
                         </Link>
@@ -307,9 +306,7 @@ const Header = () => {
             <Link href="/account">Login</Link>
           </div>
           <div className="compare-btn">
-            <button className="redButton">
-              Start Compare
-            </button>
+            <button className="redButton">Start Compare</button>
           </div>
         </div>
         <button className="z-0 lg:hidden ">
