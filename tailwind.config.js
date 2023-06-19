@@ -11,12 +11,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      screens: {
-        // laptop size
-        "lg": "1440px",
-        // phone size
-        "sm": "375px",
-      },
+      // screens: {
+      //   // laptop size
+      //   // "lg": "1440px",
+      //   // phone size
+      //   // "sm": "375px",
+      // },
       borderWidth: {
         0.5: "0.5px",
         1: "1px",
