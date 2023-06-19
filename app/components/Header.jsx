@@ -348,7 +348,7 @@ function NavListMenu() {
 
 function NavList() {
   return (
-    <List className="mt-4 mb-6 p-0 md:mt-0 md:mb-0 md:flex-row md:p-1">
+    <List className="mt-4 mb-6 ">
       <Typography
         as="a"
         href="#"
@@ -372,6 +372,33 @@ function NavList() {
           Promotions
         </ListItem>
       </Typography>
+      <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
+        <div className="flex flex-col gap-3">
+          <a href="" className="text-gray-400 font-normal">
+            About us
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Support
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Careers
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Legal
+          </a>
+        </div>
+        <div className="flex flex-col gap-3">
+          <a href="" className="text-gray-400 font-normal">
+            Contact
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Sitemap
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Cookie settings
+          </a>
+        </div>
+      </div>
     </List>
   );
 }
@@ -387,7 +414,7 @@ const Header = () => {
   }, []);
 
   return (
-    <Navbar className="max-w-screen-xl px-4 py-2 rounded-none">
+    <Navbar className="w-full px-4 py-2 rounded-none">
       <div className="flex items-center justify-between">
         <div className="flex">
           <Typography
@@ -439,15 +466,14 @@ const Header = () => {
           </button>
         </div>
         <IconButton
-          variant="text"
           color="blue-gray"
-          className="md:hidden"
+          className="md:hidden flex items-center justify-center"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
-            <XMarkIcon className="h-6 w-6 text-red-500" strokeWidth={2} />
+            <XMarkIcon className="h-6 w-6 text-gray-700" strokeWidth={2} />
           ) : (
-            <Bars3Icon className="h-6 w-6 text-red-500" strokeWidth={2} />
+            <Bars3Icon className="h-6 w-6 text-gray-700" strokeWidth={2} />
           )}
         </IconButton>
       </div>
