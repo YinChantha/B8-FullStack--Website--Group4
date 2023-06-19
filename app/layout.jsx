@@ -23,11 +23,13 @@ export default function RootLayout({ children }) {
         {(router === "/" ||
           router === "/promotions" ||
           router === "/landingPage" ||
-          router === "/account") && <Header className="" />}
+          router === "/account" ||
+          router === "/aboutus") && <Header className="" />}
         <main className="flex-1">{children}</main>
         {(router === "/" ||
           router === "/promotions" ||
-          router === "/landingPage") && <Footer className="" />}
+          router === "/landingPage" ||
+          router === "/aboutus") && <Footer className="" />}
       </body>
     </html>
   );
