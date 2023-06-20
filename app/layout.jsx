@@ -22,15 +22,18 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className="box-border">
-      <body className="flex flex-col min-h-screen">
-        {(router === "/" ||
+      {/* <body className="flex flex-col min-h-screen"></body> */}
+      <body className="">
+        {/* <Header className="" /> */}
+        {/* {(router === "/" ||
           router === "/promotions" ||
-          router === "/landingPage" ||
-          router === "/account") && <Header className="" />}
+          router === "/landingPage" || 
+          router === "/account") && <Header className="" />} */}
         <main className="flex-1">{children}</main>
-        {(router === "/" ||
+        {/* {(router === "/" ||
           router === "/promotions" ||
-          router === "/landingPage") && <Footer className="" />}
+          router === "/landingPage") && <Footer className="" />} */}
+        <Footer className="" />
       </body>
     </html>
   );

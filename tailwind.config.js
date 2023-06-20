@@ -29,6 +29,7 @@ module.exports = withMT({
         4.5: "18px",
         100: "117.5px",
         17: "70px",
+        101: "130.5px",
       },
       gap: {
         41: "167px",
@@ -45,9 +46,14 @@ module.exports = withMT({
       },
       maxWidth: {
         42: "720px",
+        45: "796px",
+      },
+      minWidth: {
+        97: "343px",
       },
       spacing: {
         38: "152px",
+        98: "950px",
       },
       borderRadius: {
         "4xl": "28px",
@@ -55,11 +61,10 @@ module.exports = withMT({
       colors: {
         "primary-25": "#FFF8F8",
       },
+      fontfamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
-    fontfamily: {
-      inter: ["Inter", "sans-serif"],
-    },
-  },
-
-  plugins: [],
+    plugins: [],
+  }
 });

@@ -20,103 +20,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 
-import {
-  CubeTransparentIcon,
-  UserCircleIcon,
-  CodeBracketSquareIcon,
-  Square3Stack3DIcon,
-  ChevronDownIcon,
-  Cog6ToothIcon,
-  InboxArrowDownIcon,
-  LifebuoyIcon,
-  PowerIcon,
-  RocketLaunchIcon,
-  Bars2Icon,
-} from "@heroicons/react/24/outline";
-
-// profile menu component
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    icon: InboxArrowDownIcon,
-  },
-  {
-    label: "Help",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Sign Out",
-    icon: PowerIcon,
-  },
-];
-
-function ProfileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const closeMenu = () => setIsMenuOpen(false);
-
-  return (
-    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
-      <MenuHandler>
-        <Button
-          variant="text"
-          color="blue-gray"
-          className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
-        >
-          <Avatar
-            variant="circular"
-            size="sm"
-            alt="candice wu"
-            className="border border-blue-500 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-          />
-          <ChevronDownIcon
-            strokeWidth={2.5}
-            className={`h-3 w-3 transition-transform ${
-              isMenuOpen ? "rotate-180" : ""
-            }`}
-          />
-        </Button>
-      </MenuHandler>
-      <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
-          const isLastItem = key === profileMenuItems.length - 1;
-          return (
-            <MenuItem
-              key={label}
-              onClick={closeMenu}
-              className={`flex items-center gap-2 rounded ${
-                isLastItem
-                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
-                  : ""
-              }`}
-            >
-              {React.createElement(icon, {
-                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
-                strokeWidth: 2,
-              })}
-              <Typography
-                as="span"
-                variant="small"
-                className="font-normal"
-                color={isLastItem ? "red" : "inherit"}
-              >
-                {label}
-              </Typography>
-            </MenuItem>
-          );
-        })}
-      </MenuList>
-    </Menu>
-  );
-}
+import { ChevronDownIcon, Bars2Icon } from "@heroicons/react/24/outline";
 
 const navListMenuItems = [
   {
@@ -138,20 +42,15 @@ const navListMenuItems = [
 ];
 const navListMenuItems1 = [
   {
-    icon_img1: "/images/compare-loans.png",
-    title1: "Compare Loans",
+    icon_img1: "/images/resources/finance-article.png",
+    title1: "Financial Articles",
     content1: "Compare different loan options to make an informed decision.",
   },
   {
-    icon_img1: "/images/compare-save-acc.png",
-    title1: "Compare Saving Accounts",
+    icon_img1: "/images/resources/guide-tutorial.png",
+    title1: "Guides and Tutorials",
     content1:
-      "Explore a wide range of savings accounts & find the best option for you.",
-  },
-  {
-    icon_img1: "/images/compare-fixed-dep.png",
-    title1: "Compare Fixed Deposit Accounts",
-    content1: "Maximize your savings with fixed deposit account comparison.",
+      " Explore a wide range of savings accounts & find the best option for you.",
   },
 ];
 
@@ -168,27 +67,38 @@ function NavListMenu() {
     onMouseLeave: () => setIsMenuOpen1(false),
   };
 
-  const renderItems = navListMenuItems.map(({ title, content }) => (
+  const comparisons = navListMenuItems.map(({ title, content, icon_img }) => (
     <a href="#" key={title}>
       <MenuItem>
-        <Typography variant="h6" color="blue-gray" className="mb-1">
-          {title}
-        </Typography>
-        <Typography variant="small" color="gray" className="font-normal">
-          {content}
-        </Typography>
+        <div className="flex flex-start items-start gap-4">
+          <Image src={icon_img} alt="logo" width={22} height={22} />
+          <div>
+            <Typography variant="h6" color="blue-gray" className="mb-1">
+              {title}
+            </Typography>
+            <Typography variant="small" color="gray" className="font-normal">
+              {content}
+            </Typography>
+          </div>
+        </div>
       </MenuItem>
     </a>
   ));
-  const renderItems1 = navListMenuItems1.map(({ title1, content1 }) => (
+  const resources = navListMenuItems1.map(({ title1, content1, icon_img1 }) => (
     <a href="#" key={title1}>
       <MenuItem>
-        <Typography variant="h6" color="blue-gray" className="mb-1">
-          {title1}
-        </Typography>
-        <Typography variant="small" color="gray" className="font-normal">
-          {content1}
-        </Typography>
+        <div className="flex flex-start items-start gap-4">
+          <Image src={icon_img1} alt="logo" width={22} height={22} />
+          <div>
+            <Typography variant="h6" color="blue-gray" className="mb-1">
+              {title1}
+            </Typography>
+
+            <Typography variant="small" color="gray" className="font-normal">
+              {content1}
+            </Typography>
+          </div>
+        </div>
       </MenuItem>
     </a>
   ));
@@ -202,7 +112,6 @@ function NavListMenu() {
               {...triggers}
               className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
             >
-              {/* <Square3Stack3DIcon className="h-[18px] w-[18px]" /> */}
               Comparisons{" "}
               <ChevronDownIcon
                 strokeWidth={2}
@@ -216,19 +125,46 @@ function NavListMenu() {
 
         <MenuList
           {...triggers}
-          className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
+          className="hidden w-[45rem] grid-cols-7 gap-3 overflow-visible lg:grid"
         >
-          <Card
-            color="blue"
-            shadow={false}
-            variant="gradient"
-            className="col-span-3 grid h-full w-full place-items-center rounded-md"
-          >
-            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-          </Card>
           <ul className="col-span-4 flex w-full flex-col gap-1">
-            {renderItems}
+            {comparisons}
           </ul>
+          <div className="col-span-3 grid h-full w-full rounded-md p-3 gap-3">
+            <Image
+              src="/images/compareloans/compare-pic.png"
+              alt="compare-pic"
+              width={1000}
+              height={400}
+            />
+            <div className="flex justify-start items-center gap-2">
+              <svg
+                className=""
+                width="8"
+                height="8"
+                viewBox="0 0 8 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="4" cy="4" r="4" fill="#12B76A" />
+              </svg>
+              <h1 className="text-gray-900 text-base font-semibold">
+                {" "}
+                We’ve just released an update!
+              </h1>
+            </div>
+            <p className="font-normal text-gray-500 text-sm">
+              Check out the all new features view. Pages now load faster.{" "}
+            </p>
+            <div className="flex gap-3 mt-2">
+              <a href="/#" className="dismiss-btn pr-2">
+                Dismiss
+              </a>
+              <a href="/#" className="changelog-btn text-red-600">
+                Changelog
+              </a>
+            </div>
+          </div>
         </MenuList>
       </Menu>
       <Menu open={isMenuOpen1} handler={setIsMenuOpen1}>
@@ -252,28 +188,68 @@ function NavListMenu() {
 
         <MenuList
           {...triggers1}
-          className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"
+          className="hidden w-[45rem] grid-cols-7 gap-3 overflow-visible lg:grid"
         >
-          <Card
-            color="blue"
-            shadow={false}
-            variant="gradient"
-            className="col-span-3 grid h-full w-full place-items-center rounded-md"
-          >
-            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-          </Card>
-          <ul className="col-span-4 flex w-full flex-col gap-1">
-            {renderItems1}
-          </ul>
+          <ul className="col-span-4 flex w-full flex-col gap-1">{resources}</ul>
+          <div className="col-span-3 grid h-full w-full rounded-md p-3 gap-3">
+            <Image
+              src="/images/resources/vdo-player.png"
+              alt="compare-pic"
+              width={1000}
+              height={400}
+            />
+            <div className="flex justify-start items-center gap-2">
+              <h1 className="text-gray-900 text-base font-semibold">
+                {" "}
+                We’ve just released an update!
+              </h1>
+            </div>
+            <p className="font-normal text-gray-500 text-sm">
+              Check out the all new features view. Pages now load faster.{" "}
+            </p>
+            <div className="flex gap-3 mt-2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_561_84561)">
+                  <path
+                    d="M9.99999 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6024 1.66675 9.99999 1.66675C5.39762 1.66675 1.66666 5.39771 1.66666 10.0001C1.66666 14.6025 5.39762 18.3334 9.99999 18.3334Z"
+                    stroke="#E40109"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.33332 6.66675L13.3333 10.0001L8.33332 13.3334V6.66675Z"
+                    stroke="#E40109"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_561_84561">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <a href="/#" className="changelog-btn text-red-600">
+                Watch video
+              </a>
+            </div>
+          </div>
         </MenuList>
       </Menu>
+      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
+        {comparisons}
+      </ul>
 
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-        {renderItems}
-      </ul>
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-        {renderItems1}
-      </ul>
+      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">{resources}</ul>
     </React.Fragment>
   );
 }
@@ -287,6 +263,10 @@ function NavList() {
         </Link>
       </li>
       <NavListMenu />
+      {/* <li>{comparisons}</li>
+      <li>{resources}</li> */}
+      
+
       <li>
         <Link href="/promotions" className="hover:bg-gray-50 p-2.5 rounded-lg">
           Promotion
@@ -297,8 +277,6 @@ function NavList() {
 }
 
 const Header = () => {
-  // const [isOpenCompare, setIsOpenCompare] = useState(false);
-  // const [isOpenResources, setIsOpenResources] = useState(false);
   const [isNavOpen, setIsNavOpen] = React.useState(false);
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
@@ -318,28 +296,11 @@ const Header = () => {
           width={147}
           height={32}
         />
-        {/* <Typography
-          as="a"
-          href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
-        >
-          Material Tailwind
-        </Typography> */}
         <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <NavList />
         </div>
-        <IconButton
-          size="sm"
-          color="blue-gray"
-          variant="text"
-          onClick={toggleIsNavOpen}
-          className="ml-auto mr-2 lg:hidden"
-        >
-          <Bars2Icon className="h-6 w-6" />
-        </IconButton>
-        {/* <ProfileMenu /> */}
-        {/* <div className=" hidden -translate-x-2/4 -translate-y-2/4 lg:block   "> */}
-          <div className="flex items-center  lg:ml-auto gap-1 rounded-full py-0.5 pr-2 pl-0.5">
+        <div className="absolute md:top-2/4 md:me-auto sm:left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+          <div className="flex items-center  lg:ml-auto gap-1 rounded-full py-0.5 pr-2 pl-0.5 ">
             <button className="flex flex-row justify-center items-center hover:bg-gray-50 p-2.5 rounded-lg">
               <Image
                 src="/images/language.png"
@@ -359,7 +320,16 @@ const Header = () => {
             </Link>
             <button className="redButton">Start Compare</button>
           </div>
-        {/* </div> */}
+        </div>
+        <IconButton
+          size="sm"
+          color="blue-gray"
+          variant="text"
+          onClick={toggleIsNavOpen}
+          className="ml-auto mr-2 lg:hidden"
+        >
+          <Bars2Icon className="h-6 w-6" />
+        </IconButton>
       </div>
       <Collapse open={isNavOpen} className="overflow-scroll">
         <NavList />
