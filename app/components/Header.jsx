@@ -97,7 +97,7 @@ function NavListMenu() {
 
   return (
     <React.Fragment>
-      <div className="flex flex-row max-[960px]:flex-col">
+      <div className="flex flex-row max-md:flex-col">
         {/* Comparisons */}
         <Menu
           open={isMenuOpen}
@@ -348,30 +348,34 @@ function NavListMenu() {
 
 function NavList() {
   return (
-    <List className="mt-4 mb-6 ">
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-normal text-gray-600"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4 ">Home</ListItem>
-      </Typography>
-      <div>
-        <NavListMenu />
+    <List>
+      <div className="flex md:flex-row flex-col">
+        <Typography
+          as="a"
+          href="#"
+          variant="small"
+          color="blue-gray"
+          className="font-normal text-gray-600"
+        >
+          <ListItem className="flex items-center gap-2 py-2 pr-4 ">
+            Home
+          </ListItem>
+        </Typography>
+        <div>
+          <NavListMenu />
+        </div>
+        <Typography
+          as="a"
+          href="#"
+          variant="small"
+          color="blue-gray"
+          className="font-normal text-gray-600"
+        >
+          <ListItem className="flex items-center gap-2 py-2 pr-4">
+            Promotions
+          </ListItem>
+        </Typography>
       </div>
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-normal text-gray-600"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">
-          Promotions
-        </ListItem>
-      </Typography>
       <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
         <div className="flex flex-col gap-3">
           <a href="" className="text-gray-400 font-normal">
@@ -421,7 +425,7 @@ const Header = () => {
             as="a"
             href="#"
             variant="h6"
-            className="mr-4 cursor-pointer py-1.5 md:ml-2 text-red-700"
+            className="mr-4 cursor-pointer py-1.5 flex justify-center items-center"
           >
             <Image
               src="/images/logo/brand-logo.png"
