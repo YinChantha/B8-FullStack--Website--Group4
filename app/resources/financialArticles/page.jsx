@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-
-const FinancialArticles = () => {
-  return <div>FinancialArticles home page</div>;
-=======
 "use client"
 
 import React from "react";
@@ -388,7 +382,6 @@ const FinancialArticles = () => {
       </div>
     </>
   );
->>>>>>> c719f98a356e088d1a408ad7eb025ccd3de597df
 };
 
 export default FinancialArticles;
