@@ -11,8 +11,8 @@ const Footer = () => {
           <br />
           {/* klg nis dak span tver ey k ? */}
           {/* <span className="font-normal text-gray-500 text-base"> */}
-            The trusted provider over 150+ company in Cambodia, of accurate
-            rates and financial information.
+          The trusted provider over 150+ company in Cambodia, of accurate rates
+          and financial information.
           {/* </span> */}
         </p>
         <div className="foot-sect1-btn flex flex-row gap-x-3 w-96 justify-end text-base">
@@ -61,13 +61,16 @@ const Footer = () => {
                 Company
               </p>
               <div className="text-gray-500 font-semibold text-base flex flex-col">
-                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                <Link
+                  href="/aboutus"
+                  className="hover:bg-gray-50 hover:text-gray-600"
+                >
                   About us
                 </Link>
                 <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                   Media kit
                 </Link>
-                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                <Link href="/contact" className="hover:bg-gray-50 hover:text-gray-600">
                   Contact
                 </Link>
               </div>
@@ -91,7 +94,7 @@ const Footer = () => {
                 <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                   Help centre
                 </Link>
-                <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+                <Link href="/FAQs" className="hover:bg-gray-50 hover:text-gray-600">
                   Support
                 </Link>
               </div>
@@ -123,7 +126,7 @@ const Footer = () => {
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Terms
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/legal" className="hover:bg-gray-50 hover:text-gray-600">
                 Privacy
               </Link>
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
