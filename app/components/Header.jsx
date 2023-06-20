@@ -3,100 +3,92 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-
 import {
   Navbar,
   Collapse,
   Typography,
   Button,
+  IconButton,
+  List,
+  ListItem,
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
-  Avatar,
-  Card,
-  IconButton,
 } from "@material-tailwind/react";
+import {
+  ChevronDownIcon,
+  Bars3Icon,
+  XMarkIcon,
+  FlagIcon,
+  GiftIcon,
+} from "@heroicons/react/24/outline";
 
-import { ChevronDownIcon, Bars2Icon } from "@heroicons/react/24/outline";
-
-const navListMenuItems = [
+const Comparisons = [
   {
-    icon_img: "/images/compare-loans.png",
+    src: "/images/comparisons/compare-loans.png",
     title: "Compare Loans",
-    content: "Compare different loan options to make an informed decision.",
+    description: "Compare different loan options to make an informed decision.",
   },
   {
-    icon_img: "/images/compare-save-acc.png",
+    src: "/images/comparisons/compare-save-acc.png",
     title: "Compare Saving Accounts",
-    content:
+    description:
       "Explore a wide range of savings accounts & find the best option for you.",
   },
   {
-    icon_img: "/images/compare-fixed-dep.png",
+    src: "/images/comparisons/compare-fixed-dep.png",
     title: "Compare Fixed Deposit Accounts",
-    content: "Maximize your savings with fixed deposit account comparison.",
+    description: "Maximize your savings with fixed deposit account comparison.",
   },
 ];
-const navListMenuItems1 = [
+const Resources = [
   {
-    icon_img1: "/images/resources/finance-article.png",
-    title1: "Financial Articles",
-    content1: "Compare different loan options to make an informed decision.",
+    src: "/images/resources/finance-article.png",
+    title: "Financial Articles",
+    description: "Compare different loan options to make an informed decision.",
   },
   {
-    icon_img1: "/images/resources/guide-tutorial.png",
-    title1: "Guides and Tutorials",
-    content1:
-      " Explore a wide range of savings accounts & find the best option for you.",
+    src: "/images/resources/guide-tutorial.png",
+    title: "Guides and Tutorials",
+    description:
+      "Explore a wide range of savings accounts & find the best option for you.",
   },
 ];
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [isMenuOpen1, setIsMenuOpen1] = React.useState(false);
+  const [isMobileMenuOpen1, setIsMobileMenuOpen1] = React.useState(false);
 
-  const triggers = {
-    onMouseEnter: () => setIsMenuOpen(true),
-    onMouseLeave: () => setIsMenuOpen(false),
-  };
-  const triggers1 = {
-    onMouseEnter: () => setIsMenuOpen1(true),
-    onMouseLeave: () => setIsMenuOpen1(false),
-  };
-
-  const comparisons = navListMenuItems.map(({ title, content, icon_img }) => (
-    <a href="#" key={title}>
-      <MenuItem>
-        <div className="flex flex-start items-start gap-4">
-          <Image src={icon_img} alt="logo" width={22} height={22} />
-          <div>
-            <Typography variant="h6" color="blue-gray" className="mb-1">
+  const renderItems = Comparisons.map(({ src, title, description }, key) => (
+    <a href="#" key={key}>
+      <MenuItem className="p-4">
+        <div className="flex items-start">
+          <Image alt="icons" src={src} width={24} height={24} />
+          <div className="text-left ml-2">
+            {/* modify vea dak <a> or <Link /> based on you */}
+            <h1 className="text-left text-gray-900 font-semibold text-lg">
               {title}
-            </Typography>
-            <Typography variant="small" color="gray" className="font-normal">
-              {content}
-            </Typography>
+            </h1>
+            <p className="text-left text-gray-600 text-base ">{description}</p>
           </div>
         </div>
       </MenuItem>
     </a>
   ));
-  const resources = navListMenuItems1.map(({ title1, content1, icon_img1 }) => (
-    <a href="#" key={title1}>
-      <MenuItem>
-        <div className="flex flex-start items-start gap-4">
-          <Image src={icon_img1} alt="logo" width={22} height={22} />
-          <div>
-            <Typography variant="h6" color="blue-gray" className="mb-1">
-              {title1}
-            </Typography>
-
-            <Typography variant="small" color="gray" className="font-normal">
-              {content1}
-            </Typography>
+  const renderItems1 = Resources.map(({ src, title, description }, key) => (
+    <a href="#" key={key}>
+      <MenuItem className="p-4">
+        <div className="flex items-start">
+          <Image alt="icons" src={src} width={24} height={24} className="w-auto h-auto"/>
+          <div className="text-left ml-2">
+            {/* modify vea dak <a> or <Link /> based on you */}
+            <h1 className="text-left text-gray-900 font-semibold text-lg">
+              {title}
+            </h1>
+            <p className="text-left text-gray-600 text-base ">{description}</p>
           </div>
         </div>
       </MenuItem>
@@ -105,234 +97,419 @@ function NavListMenu() {
 
   return (
     <React.Fragment>
-      <Menu open={isMenuOpen} handler={setIsMenuOpen}>
-        <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal">
-            <MenuItem
-              {...triggers}
-              className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
-            >
-              Comparisons{" "}
-              <ChevronDownIcon
-                strokeWidth={2}
-                className={`h-3 w-3 transition-transform ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`}
-              />
-            </MenuItem>
-          </Typography>
-        </MenuHandler>
-
-        <MenuList
-          {...triggers}
-          className="hidden w-[45rem] grid-cols-7 gap-3 overflow-visible lg:grid"
+      <div className="flex flex-row max-[960px]:flex-col">
+        {/* Comparisons */}
+        <Menu
+          open={isMenuOpen}
+          handler={setIsMenuOpen}
+          offset={{ mainAxis: 20 }}
+          placement="bottom"
+          allowHover={true}
         >
-          <ul className="col-span-4 flex w-full flex-col gap-1">
-            {comparisons}
-          </ul>
-          <div className="col-span-3 grid h-full w-full rounded-md p-3 gap-3">
-            <Image
-              src="/images/compareloans/compare-pic.png"
-              alt="compare-pic"
-              width={1000}
-              height={400}
-            />
-            <div className="flex justify-start items-center gap-2">
-              <svg
-                className=""
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          <MenuHandler className="text-gray-600">
+            <Typography as="div" variant="small" className="font-normal">
+              <ListItem
+                className="flex items-center gap-2 py-2 pr-4"
+                selected={isMenuOpen || isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen((cur) => !cur)}
               >
-                <circle cx="4" cy="4" r="4" fill="#12B76A" />
-              </svg>
-              <h1 className="text-gray-900 text-base font-semibold">
-                {" "}
-                We’ve just released an update!
-              </h1>
-            </div>
-            <p className="font-normal text-gray-500 text-sm">
-              Check out the all new features view. Pages now load faster.{" "}
-            </p>
-            <div className="flex gap-3 mt-2">
-              <a href="/#" className="dismiss-btn pr-2">
-                Dismiss
-              </a>
-              <a href="/#" className="changelog-btn text-red-600">
-                Changelog
-              </a>
-            </div>
-          </div>
-        </MenuList>
-      </Menu>
-      <Menu open={isMenuOpen1} handler={setIsMenuOpen1}>
-        <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal">
-            <MenuItem
-              {...triggers1}
-              className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full"
-            >
-              {/* <Square3Stack3DIcon className="h-[18px] w-[18px]" /> */}
-              Recourse{" "}
-              <ChevronDownIcon
-                strokeWidth={2}
-                className={`h-3 w-3 transition-transform ${
-                  isMenuOpen1 ? "rotate-180" : ""
-                }`}
-              />
-            </MenuItem>
-          </Typography>
-        </MenuHandler>
+                Comparisons
+                <ChevronDownIcon
+                  className={`hidden h-3 w-3 transition-transform md:block ${
+                    isMenuOpen ? "rotate-180" : ""
+                  }`}
+                />
+                <ChevronDownIcon
+                  strokeWidth={2.5}
+                  className={`block h-3 w-3 transition-transform md:hidden ${
+                    isMobileMenuOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </ListItem>
+            </Typography>
+          </MenuHandler>
 
-        <MenuList
-          {...triggers1}
-          className="hidden w-[45rem] grid-cols-7 gap-3 overflow-visible lg:grid"
+          <MenuList className="hidden gap-3 w-[45rem] rounded-sm md:block p-2">
+            <div className="flex">
+              <div className="flex flex-start justify-start">
+                <ul>{renderItems}</ul>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div>
+                  <Image
+                    src="/images/comparisons/compare-pic.png"
+                    alt="compare"
+                    width={400}
+                    height={50}
+                    className=""
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="4" cy="4" r="4" fill="#12B76A" />
+                  </svg>
+                  <h1 className="text-left text-gray-900 font-semibold text-lg">
+                    We've just released an update!
+                  </h1>
+                </div>
+                <p className="text-left text-gray-600 text-base">
+                  Check out the all new features view. Pages now load faster.
+                </p>
+                <div className="flex gap-2">
+                  <a href="" className="text-gray-600 font-semibold">
+                    Dismiss
+                  </a>
+                  <a href="" className="text-red-600 font-semibold">
+                    Changing
+                  </a>
+                </div>
+              </div>
+            </div>
+          </MenuList>
+        </Menu>
+        {/* Promotion */}
+        <Menu
+          open={isMenuOpen1}
+          handler={setIsMenuOpen1}
+          offset={{ mainAxis: 20 }}
+          placement="bottom"
+          allowHover={true}
         >
-          <ul className="col-span-4 flex w-full flex-col gap-1">{resources}</ul>
-          <div className="col-span-3 grid h-full w-full rounded-md p-3 gap-3">
-            <Image
-              src="/images/resources/vdo-player.png"
-              alt="compare-pic"
-              width={1000}
-              height={400}
-            />
-            <div className="flex justify-start items-center gap-2">
-              <h1 className="text-gray-900 text-base font-semibold">
-                {" "}
-                We’ve just released an update!
-              </h1>
-            </div>
-            <p className="font-normal text-gray-500 text-sm">
-              Check out the all new features view. Pages now load faster.{" "}
-            </p>
-            <div className="flex gap-3 mt-2">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+          <MenuHandler className="text-gray-600">
+            <Typography as="div" variant="small" className="font-normal">
+              <ListItem
+                className="flex items-center gap-2 py-2 pr-4"
+                selected={isMenuOpen1 || isMobileMenuOpen1}
+                onClick={() => setIsMobileMenuOpen1((cur) => !cur)}
               >
-                <g clip-path="url(#clip0_561_84561)">
-                  <path
-                    d="M9.99999 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6024 1.66675 9.99999 1.66675C5.39762 1.66675 1.66666 5.39771 1.66666 10.0001C1.66666 14.6025 5.39762 18.3334 9.99999 18.3334Z"
-                    stroke="#E40109"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M8.33332 6.66675L13.3333 10.0001L8.33332 13.3334V6.66675Z"
-                    stroke="#E40109"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_561_84561">
-                    <rect width="20" height="20" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
+                Resources
+                <ChevronDownIcon
+                  className={`hidden h-3 w-3 transition-transform md:block ${
+                    isMenuOpen1 ? "rotate-180" : ""
+                  }`}
+                />
+                <ChevronDownIcon
+                  strokeWidth={2.5}
+                  className={`block h-3 w-3 transition-transform md:hidden ${
+                    isMobileMenuOpen1 ? "rotate-180" : ""
+                  }`}
+                />
+              </ListItem>
+            </Typography>
+          </MenuHandler>
 
-              <a href="/#" className="changelog-btn text-red-600">
-                Watch video
-              </a>
+          <MenuList className="hidden gap-3 w-[45rem] rounded-sm md:block p-2">
+            <div className="flex">
+              <div className="flex flex-start justify-start">
+                <ul>{renderItems1}</ul>
+              </div>
+              <div className="flex flex-col gap-3 p-2">
+                <div>
+                  <Image
+                    src="/images/resources/vdo-player.png"
+                    alt="compare"
+                    width={400}
+                    height={50}
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <h1 className="text-left text-gray-900 font-semibold text-lg">
+                    We've just released an update!
+                  </h1>
+                </div>
+                <p className="text-left text-gray-600 text-base">
+                  Check out the all new features view. Pages now load faster.
+                </p>
+                <div className="flex gap-2">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.99999 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6024 1.66675 9.99999 1.66675C5.39762 1.66675 1.66666 5.39771 1.66666 10.0001C1.66666 14.6025 5.39762 18.3334 9.99999 18.3334Z"
+                      stroke="#E40109"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.33332 6.66675L13.3333 10.0001L8.33332 13.3334V6.66675Z"
+                      stroke="#E40109"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <a href="" className="text-red-600 font-semibold">
+                    Watch video
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </MenuList>
-      </Menu>
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-        {comparisons}
-      </ul>
+          </MenuList>
+        </Menu>
+      </div>
+      {/* mobile responsive from Comparisions */}
+      <div className="block md:hidden">
+        <Collapse open={isMobileMenuOpen} className="flex flex-col gap-3">
+          {renderItems}
+          <Image
+            src="/images/comparisons/compare-pic.png"
+            alt="compare"
+            width={600}
+            height={40}
+          />
 
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">{resources}</ul>
+          <div className="flex items-center gap-2">
+            <svg
+              width="8"
+              height="8"
+              viewBox="0 0 8 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="4" cy="4" r="4" fill="#12B76A" />
+            </svg>
+            <h1 className="text-left text-gray-900 font-semibold text-lg">
+              We've just released an update!
+            </h1>
+          </div>
+          <p className="text-left text-gray-600 text-base">
+            Check out the all new features view. Pages now load faster.
+          </p>
+          <div className="flex gap-2">
+            <a href="" className="text-gray-600 font-semibold">
+              Dismiss
+            </a>
+            <a href="" className="text-red-600 font-semibold">
+              Changing
+            </a>
+          </div>
+        </Collapse>
+      </div>
+      {/* mobile responsive from Resources */}
+      <div className="block md:hidden">
+        <Collapse open={isMobileMenuOpen1} className="flex flex-col gap-3">
+          {renderItems1}
+          <Image
+            src="/images/resources/vdo-player.png"
+            alt="compare"
+            width={600}
+            height={40}
+          />
+          <div className="flex items-center gap-2">
+            <h1 className="text-left text-gray-900 font-semibold text-lg">
+              We've just released an update!
+            </h1>
+          </div>
+          <p className="text-left text-gray-600 text-base">
+            Check out the all new features view. Pages now load faster.
+          </p>
+          <div className="flex gap-2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.99999 18.3334C14.6024 18.3334 18.3333 14.6025 18.3333 10.0001C18.3333 5.39771 14.6024 1.66675 9.99999 1.66675C5.39762 1.66675 1.66666 5.39771 1.66666 10.0001C1.66666 14.6025 5.39762 18.3334 9.99999 18.3334Z"
+                stroke="#E40109"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M8.33332 6.66675L13.3333 10.0001L8.33332 13.3334V6.66675Z"
+                stroke="#E40109"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <a href="" className="text-red-600 font-semibold">
+              Watch video
+            </a>
+          </div>
+        </Collapse>
+      </div>
     </React.Fragment>
   );
 }
 
 function NavList() {
   return (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-      <li>
-        <Link href="/landingPage" className="hover:bg-gray-50 p-2.5 rounded-lg">
-          Home
-        </Link>
-      </li>
-      <NavListMenu />
-      {/* <li>{comparisons}</li>
-      <li>{resources}</li> */}
-      
-
-      <li>
-        <Link href="/promotions" className="hover:bg-gray-50 p-2.5 rounded-lg">
-          Promotion
-        </Link>
-      </li>
-    </ul>
+    // <List className="mt-4 mb-6 "></List>
+    <List className="mt-4 mb-6 flex">
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        color="blue-gray"
+        className="font-normal text-gray-600"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4 ">Home</ListItem>
+      </Typography>
+      <div>
+        <NavListMenu />
+      </div>
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        color="blue-gray"
+        className="font-normal text-gray-600"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">
+          Promotions
+        </ListItem>
+      </Typography>
+      <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
+        <div className="flex flex-col gap-3">
+          <a href="" className="text-gray-400 font-normal">
+            About us
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Support
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Careers
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Legal
+          </a>
+        </div>
+        <div className="flex flex-col gap-3">
+          <a href="" className="text-gray-400 font-normal">
+            Contact
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Sitemap
+          </a>
+          <a href="" className="text-gray-400 font-normal">
+            Cookie settings
+          </a>
+        </div>
+      </div>
+    </List>
   );
 }
 
 const Header = () => {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
-  const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
+  const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false)
+      () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl p-2  lg:pl-6">
-      <div className="relative mx-auto flex items-center text-blue-gray-900">
-        <Image
-          src="/images/brand-logo.png"
-          alt="logo"
-          width={147}
-          height={32}
-        />
-        <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
-          <NavList />
-        </div>
-        <div className="absolute md:top-2/4 md:me-auto sm:left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
-          <div className="flex items-center  lg:ml-auto gap-1 rounded-full py-0.5 pr-2 pl-0.5 ">
-            <button className="flex flex-row justify-center items-center hover:bg-gray-50 p-2.5 rounded-lg">
-              <Image
-                src="/images/language.png"
-                alt="language-logo"
-                width="18"
-                height="18"
-                className="pr-0.5"
-              />
-              <p>English</p>
-            </button>
-            <hr className="line w-0.5 h-5 bg-gray-200" />
-            <Link
-              href="/account"
-              className="login-btn px-4 hover:bg-gray-50 p-2.5 rounded-lg"
-            >
-              Login
-            </Link>
-            <button className="redButton">Start Compare</button>
+    <Navbar className="w-full px-4 py-2 rounded-none bg-yellow-100">
+      <div className="flex items-center justify-between">
+        <div className="flex">
+          <Typography
+            as="a"
+            href="#"
+            variant="h6"
+            className="mr-4 cursor-pointer py-1.5 md:ml-2 text-red-700"
+          >
+            <Image
+              src="/images/logo/brand-logo.png"
+              alt="Logo"
+              width={120}
+              height={40}
+            />
+          </Typography>
+
+          <div className="hidden md:block text-red-600">
+            <NavList />
           </div>
         </div>
+        <div className="hidden gap-4 md:flex">
+          <div className="inline-flex gap-2 items-center">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.3333 9.99984C18.3333 14.6022 14.6024 18.3332 9.99999 18.3332M18.3333 9.99984C18.3333 5.39746 14.6024 1.6665 9.99999 1.6665M18.3333 9.99984H1.66666M9.99999 18.3332C5.39762 18.3332 1.66666 14.6022 1.66666 9.99984M9.99999 18.3332C12.0844 16.0512 13.269 13.0898 13.3333 9.99984C13.269 6.90987 12.0844 3.94846 9.99999 1.6665M9.99999 18.3332C7.91559 16.0512 6.73103 13.0898 6.66666 9.99984C6.73103 6.90987 7.91559 3.94846 9.99999 1.6665M1.66666 9.99984C1.66666 5.39746 5.39762 1.6665 9.99999 1.6665"
+                stroke="#667085"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <a href="" className="text-gray-600">
+              English
+            </a>
+          </div>
+          <div className="flex gap-2 items-center">
+            <a href="" className="text-gray-600">
+              Login
+            </a>
+          </div>
+          <button className="get-started text-white bg-red-500 rounded-lg px-5 py-3 hover:bg-red-600">
+            Get started
+          </button>
+        </div>
         <IconButton
-          size="sm"
           color="blue-gray"
-          variant="text"
-          onClick={toggleIsNavOpen}
-          className="ml-auto mr-2 lg:hidden"
+          className="md:hidden flex items-center justify-center"
+          onClick={() => setOpenNav(!openNav)}
         >
-          <Bars2Icon className="h-6 w-6" />
+          {openNav ? (
+            <XMarkIcon className="h-6 w-6 text-gray-700" strokeWidth={2} />
+          ) : (
+            <Bars3Icon className="h-6 w-6 text-gray-700" strokeWidth={2} />
+          )}
         </IconButton>
       </div>
-      <Collapse open={isNavOpen} className="overflow-scroll">
+      <Collapse open={openNav}>
         <NavList />
+        <div className="flex flex-col w-full flex-nowrap items-center gap-2 md:hidden">
+          <div className="inline-flex gap-2 items-center border border-gray-400 py-2 w-full justify-center rounded-lg">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.3333 9.99984C18.3333 14.6022 14.6024 18.3332 9.99999 18.3332M18.3333 9.99984C18.3333 5.39746 14.6024 1.6665 9.99999 1.6665M18.3333 9.99984H1.66666M9.99999 18.3332C5.39762 18.3332 1.66666 14.6022 1.66666 9.99984M9.99999 18.3332C12.0844 16.0512 13.269 13.0898 13.3333 9.99984C13.269 6.90987 12.0844 3.94846 9.99999 1.6665M9.99999 18.3332C7.91559 16.0512 6.73103 13.0898 6.66666 9.99984C6.73103 6.90987 7.91559 3.94846 9.99999 1.6665M1.66666 9.99984C1.66666 5.39746 5.39762 1.6665 9.99999 1.6665"
+                stroke="#667085"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <a href="" className="text-gray-600">
+              English
+            </a>
+          </div>
+
+          <button className="text-white bg-red-500 rounded-lg w-full px-5 py-3">
+            Get started
+          </button>
+          <button className="bg-red-100 text-red-600 rounded-lg w-full px-5 py-3 font-semibold">
+            Log In
+          </button>
+        </div>
       </Collapse>
     </Navbar>
   );

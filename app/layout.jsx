@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 // @material-tailwind/react
 import { ThemeProvider } from "@material-tailwind/react";
+import Faq from "./components/Faq";
 
 export const metadata = {
   title: "Proadvisor",
@@ -25,15 +26,16 @@ export default function RootLayout({ children }) {
       {/* <body className="flex flex-col min-h-screen"></body> */}
       <body className="">
         {/* <Header className="" /> */}
-        {/* {(router === "/" ||
+        {(router === "/" ||
           router === "/promotions" ||
           router === "/landingPage" || 
-          router === "/account") && <Header className="" />} */}
+          router === "/account") && <Header className="" />}
+        {/* <Faq /> */}
         <main className="flex-1">{children}</main>
-        {/* {(router === "/" ||
+        {(router === "/" ||
           router === "/promotions" ||
-          router === "/landingPage") && <Footer className="" />} */}
-        <Footer className="" />
+          router === "/landingPage") && <Footer className="" />}
+        {/* <Footer className="" /> */}
       </body>
     </html>
   );

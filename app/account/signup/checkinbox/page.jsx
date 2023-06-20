@@ -29,7 +29,7 @@ export default function CheckInbox() {
           </Link>
           <div className="flex flex-row items-center gap-2 mt-8 hover:text-gray-500">
             <p className="text-gray-500">Don't receive the email?</p>
-            <Link href="" className="text-red-700 cursor-pointer" >
+            <Link href="" className="text-red-700 cursor-pointer">
               Click to resent
             </Link>
           </div>
