@@ -24,12 +24,18 @@ export default function RootLayout({ children }) {
           router === "/promotions" ||
           router === "/landingPage" ||
           router === "/account" ||
-          router === "/aboutus") && <Header className="" />}
+          router === "/aboutus" || 
+          router === "/contact" ||
+          router === "/legal" ||
+          router === "/FAQs") && <Header className="" />}
         <main className="flex-1">{children}</main>
         {(router === "/" ||
           router === "/promotions" ||
           router === "/landingPage" ||
-          router === "/aboutus") && <Footer className="" />}
+          router === "/aboutus" ||
+          router === "/contact" || 
+          router === "/legal" ||
+          router === "/FAQs") && <Footer className="" />}
       </body>
     </html>
   );
