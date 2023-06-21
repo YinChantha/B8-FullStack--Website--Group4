@@ -63,10 +63,10 @@ const LandingPage = () => {
             decisions.
           </p>
           <div className="btn flex flex-col-reverse gap-y-3 sm:flex-col-reverse md:flex-row justify-center items-center font-semibold text-base sm:text-base md:text-lg mt-8 sm:mt-8 md:mt-12 md:gap-x-3.5">
-            <button className="learn-more-btn text-gray-700 rounded-lg px-[182px] sm:px-[182px] py-3 sm:py-3 md:px-5 md:py-3 border-gray-300 border-2 hover:bg-gray-50">
+            <button className="learn-more-btn text-gray-700 rounded-lg px-[180px] sm:px-[180px] py-3 sm:py-3 md:px-5 md:py-3 border-gray-300 border-2 hover:bg-gray-50">
               Learn more
             </button>
-            <button className="get-started-btn text-white bg-red-500 rounded-lg px-[182px] sm:px-[182px] py-3 sm:py-3 md:px-5 md:py-3 hover:bg-red-600">
+            <button className="get-started-btn text-white bg-red-500 rounded-lg px-[180px] sm:px-[180px] py-3 sm:py-3 md:px-5 md:py-3 hover:bg-red-600">
               Get started
             </button>
           </div>
@@ -586,7 +586,7 @@ const LandingPage = () => {
           ))}
         </div>
         <div className="flex justify-center items-center sm:block md:hidden">
-          <button className="text-white font-semibold text-base py-3 px-[185px] sm:px-[185px] md:px-5 bg-red-500 rounded-lg hover:bg-red-600">
+          <button className="text-white font-semibold text-base py-3 px-[180px] sm:px-[180px] md:px-5 bg-red-500 rounded-lg hover:bg-red-600">
             View more
           </button>
         </div>

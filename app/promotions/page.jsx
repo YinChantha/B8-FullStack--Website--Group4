@@ -195,7 +195,6 @@ const Promotions = () => {
               <p className="bankName">{item.name}</p>
               <p className="promotionName">{item.title}</p>
               <p className="promotionContent mb-5">{item.article}</p>
-
               <a href="/landingPage" className="inline-flex items-center gap-2 bankName">
                 Read more
                 <svg

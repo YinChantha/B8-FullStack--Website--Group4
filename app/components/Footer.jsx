@@ -28,10 +28,10 @@ const Footer = () => {
       <div className="foot-sect2 flex flex-col mt-12 gap-y-12 sm:flex sm:flex-col sm:my-12 sm:gap-y-12 md:my-16 md:flex md:flex-row md:gap-x-8 ">
         <div className="company-logo-text gap-y-6 sm:gap-y-6 md:gap-y-8 md:flex-1">
           <img
-            src="/images/brand-logo.png"
+            src="/images/logo/brand-logo.png"
             alt="proadvisor logo"
-            width={150}
-            height={50}
+            width={147}
+            height={32}
           />
           <p className="font-normal text-gray-500 mt-8">
             Proadvisor is a trusted financial advisory platform designed to
