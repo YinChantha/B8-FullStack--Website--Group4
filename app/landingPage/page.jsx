@@ -537,7 +537,7 @@ const LandingPage = () => {
           </button>
         </div>
       </section>
-      <section className="sect6 flex flex-col gap-16 py-16 px-4 sm:px-4 md:px-28">
+      <section className="sect6 flex flex-col justify-center items-center gap-16 py-16 px-4 sm:px-4 md:px-28">
         <div className="sect6-div1 flex flex-col sm:flex-col sm:items-start md:flex  md:flex-row md:justify-between md:items-start pt-2.5 gap-x-[400px]">
           <div className="">
             <p className="text-red-600 text-sm sm:text-sm md:text-base font-semibold mb-2 sm:mb-2 md:mb-3">
