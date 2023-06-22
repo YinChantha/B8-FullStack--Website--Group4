@@ -121,7 +121,7 @@ const Footer = () => {
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Terms
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/legal" className="hover:bg-gray-50 hover:text-gray-600">
                 Privacy
               </Link>
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
