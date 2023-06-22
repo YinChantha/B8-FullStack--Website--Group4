@@ -358,12 +358,12 @@ function NavListMenu() {
 
 function NavList() {
   const router = useRouter();
-  const handlePromo = () => { 
+  const handlePromo = () => {
     router.push("/promotions");
-  }
-  const handleCompare = () => { 
+  };
+  const handleCompare = () => {
     router.push("/landingPage");
-  }
+  };
 
   return (
     <div>
@@ -398,12 +398,11 @@ function NavList() {
           >
             Promotions
           </div>
-          {/* <p>Promorion</p> */}
         </Typography>
       </div>
       <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
         <div className="flex flex-col gap-3">
-          <Link href="" className="text-gray-400 font-normal">
+          <Link href="/aboutus" className="text-gray-400 font-normal">
             About us
           </Link>
           <Link href="" className="text-gray-400 font-normal">
@@ -441,7 +440,6 @@ const Header = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
-
 
   return (
     <div className="z-[999999] fixed top-0 px-4 sm:px-4 md:px-28 py-2 rounded-none bg-white border-b-1 border-gray-100">
@@ -513,6 +511,7 @@ const Header = () => {
           )}
         </IconButton> */}
         <IconButton
+          variant="text"
           color="blue-gray"
           className="md:hidden flex items-center justify-center"
           onClick={() => setOpenNav(!openNav)}
