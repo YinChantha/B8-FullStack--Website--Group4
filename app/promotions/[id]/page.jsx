@@ -29,7 +29,7 @@ export default function ProductDetails() {
             className="mt-5 rounded-sm"
             src={product.img}
             alt=""
-            width={1200}
+            width={1500}
             height={100}
           />
         </div>

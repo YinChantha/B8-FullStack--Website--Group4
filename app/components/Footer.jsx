@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
           {/* </div> */}
           <div className="foot-legal flex flex-col">
-            <p className="text-gray-400 font-semibold text-sm pb-4">Social</p>
+            <p className="text-gray-400 font-semibold text-sm pb-4">Legal</p>
             <div className="text-gray-500 font-semibold text-base flex flex-col">
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Terms

@@ -15,22 +15,23 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const router = usePathname();
-  console.log("router", router);
+  // console.log("router", router);
   // const pathToHideNav = ["/account", "/account/forgotpassword"];
 
   return (
     <html lang="en" className="box-border">
       <body className="flex flex-col min-h-screen">
-        {(router === "/" ||
-          router === "/promotions" || 
+        (router === "/" ||
+          router === "/promotions" ||
           router === "/landingPage" ||
           router === "/account" ||
           router === "/aboutus" ||
           router === "/contact" ||
           router === "/legal" ||
-          router === "/FAQs") && <Header className="" />}
+          router === "/FAQs") && <Header className="" />
         <main className="flex-1">{children}</main>
         {(router === "/" ||
+          router.push === "/promotions/[id]" ||
           router === "/promotions" ||
           router === "/landingPage" ||
           router === "/aboutus" ||
