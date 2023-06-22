@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-import React from "react";
-
-const FinancialArticles = () => {
-  return <div>FinancialArticles home page</div>;
-=======
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -142,7 +136,11 @@ const FinancialArticles = () => {
                 </div>
               </div>
               {AllPostItems.map((post) => (
-                <Link href={`/resources/financialArticles/${post.id}`} key={post.id} className="flex flex-col gap-0">
+                <Link
+                  href={`/resources/financialArticles/${post.id}`}
+                  key={post.id}
+                  className="flex flex-col gap-0"
+                >
                   <div className="flex ">
                     <img
                       src={post.src}
@@ -388,7 +386,6 @@ const FinancialArticles = () => {
       </div>
     </>
   );
->>>>>>> c719f98a356e088d1a408ad7eb025ccd3de597df
 };
 
 export default FinancialArticles;
