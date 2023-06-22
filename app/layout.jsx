@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className="box-border">
       {/* <body className="flex flex-col min-h-screen"></body> */}
       <body className="">
-        <Header className="" />
-        {/* {(router === "/" ||
+        {/* <Header className="" /> */}
+        {(router === "/" ||
           router === "/promotions" ||
           router === "/landingPage" || 
-          router === "/account") && <Header className="" />} */}
+          router === "/account") && <Header className="" />}
         {/* <Faq /> */}
         <main className="flex-1">{children}</main>
         {(router === "/" ||

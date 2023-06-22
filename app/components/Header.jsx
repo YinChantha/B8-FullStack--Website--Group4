@@ -23,6 +23,7 @@ import {
   FlagIcon,
   GiftIcon,
 } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
 
 const Comparisons = [
   {
@@ -66,10 +67,11 @@ function NavListMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [isMenuOpen1, setIsMenuOpen1] = React.useState(false);
   const [isMobileMenuOpen1, setIsMobileMenuOpen1] = React.useState(false);
+
   const renderItems = Comparisons.map(
     ({ src, title, description, path }, key) => (
       // <Link href={path} className="flex items-start "></Link>
-      <Link href={path} className="">
+      <Link href={path} key={key} className="">
         <MenuItem className="p-4 ">
           <div className="flex items-start">
             <Image alt="icons" src={src} width={24} height={24} />
@@ -355,8 +357,16 @@ function NavListMenu() {
 }
 
 function NavList() {
+  const router = useRouter();
+  const handlePromo = () => { 
+    router.push("/promotions");
+  }
+  const handleCompare = () => { 
+    router.push("/landingPage");
+  }
+
   return (
-    <List>
+    <div>
       <div className="flex md:flex-row flex-col gap-x-4">
         <Typography
           as="a"
@@ -365,12 +375,12 @@ function NavList() {
           color="blue-gray"
           className="font-normal text-gray-600"
         >
-          <Link
-            href="/landingPage"
+          <div
+            onClick={handleCompare}
             className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 px-4 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
           >
             Home
-          </Link>
+          </div>
         </Typography>
         <div>
           <NavListMenu />
@@ -382,12 +392,13 @@ function NavList() {
           color="blue-gray"
           className="font-normal text-gray-600"
         >
-          <Link
-            href="/promotions"
+          <div
+            onClick={handlePromo}
             className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 px-4 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
           >
             Promotions
-          </Link>
+          </div>
+          {/* <p>Promorion</p> */}
         </Typography>
       </div>
       <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
@@ -417,7 +428,7 @@ function NavList() {
           </Link>
         </div>
       </div>
-    </List>
+    </div>
   );
 }
 
@@ -430,6 +441,7 @@ const Header = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
 
   return (
     <div className="z-[999999] fixed top-0 px-4 sm:px-4 md:px-28 py-2 rounded-none bg-white border-b-1 border-gray-100">
@@ -541,7 +553,8 @@ const Header = () => {
           </button>
           <Link
             href="/account"
-            className="bg-red-100 text-red-600 rounded-lg w-full px-5 py-3 font-semibold">
+            className="bg-red-100 text-red-600 rounded-lg w-full px-5 py-3 font-semibold"
+          >
             Log in
           </Link>
         </div>
