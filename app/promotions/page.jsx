@@ -170,22 +170,13 @@ const Promotions = () => {
           expert <br></br> guidance to empower you in making informed financial
           decisions.
         </p>
-        <div className="flex flex-col md:flex-row justify-center gap-2">
-          <div>
-            <input
-              type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2"
-              placeholder="Enter your email"
-            />
-            <p className="promotionContent mt-3">
-              We care about your data in our{" "}
-              <a className="underline">privacy policy.</a>
-            </p>
-          </div>
-
-          <button className="bg-red-500 text-white w-full md:w-28 h-10 rounded-lg hover:bg-red-600">
-            Subscribe
-          </button>
+        <div className="flex justify-center gap-3">
+          <input
+            type="text"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/12 p-2"
+            placeholder="Enter your email"
+          />
+          <button className="redButton">Subscribe</button>
         </div>
       </div>
       <div className="py-16 ">
@@ -219,8 +210,7 @@ const Promotions = () => {
               <p className="bankName">{item.name}</p>
               <p className="promotionName">{item.title}</p>
               <p className="promotionContent mb-5">{item.article}</p>
-              <div className="mt-auto">
-                <a href="#" className="inline-flex items-center gap-2 bankName">
+              <div className="mt-auto">                <a href="/landingPage" className="inline-flex items-center gap-2 bankName">
                   Read more
                   <svg
                     width="20"
