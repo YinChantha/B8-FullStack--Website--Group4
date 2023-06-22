@@ -10,6 +10,15 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { AllPostItems } from "./AllPostsItems";
 import { RiSendPlaneLine } from "react-icons/ri";
 
+export const getStatus = async () => {
+  const res = await fetch("");
+  const data = await res.json();
+
+  return {
+    props: { posts: data },
+  };
+};
+
 const FinancialArticles = () => {
   const [showAnswer1, setShowAnswer1] = useState(false);
   const [showAnswer2, setShowAnswer2] = useState(false);
@@ -108,11 +117,10 @@ const FinancialArticles = () => {
               ))}
             </div>
           </div>
-
           <h1 className="promotionName mt-20 ">All blogs posts</h1>
           <div className="flex justify-center mt-5">
             <div className="post-card">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex w-full bg-gray-200 border-2 border-gray-300 rounded-lg">
                 <div className="flex flex-col mx-8 my-8">
                   <div className="flex w-[50px] h-[50px] border-2 border-gray-300 rounded-lg bg-white">
                     <RiSendPlaneLine className="mx-auto my-auto w-[25px] h-[25px] text-gray-500" />
