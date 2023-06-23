@@ -1,6 +1,15 @@
+"use client";
+
 import React from "react";
+import Image from "next/image";
+import { useState } from "react";
 
 const Faq = () => {
+  const [showAnswer1, setShowAnswer1] = useState(false);
+  const [showAnswer2, setShowAnswer2] = useState(false);
+  const [showAnswer3, setShowAnswer3] = useState(false);
+  const [showAnswer4, setShowAnswer4] = useState(false);
+  const [showAnswer5, setShowAnswer5] = useState(false);
   return (
     <section className="sect5 flex flex-col justify-center items-center py-16 sm:py-16 md:py-24 gap-y-12 sm:gap-y-12 md:gap-y-16 px-4 sm:px-4 md:px-28">
       <div className="sect5-div1 text-center">
