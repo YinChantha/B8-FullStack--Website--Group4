@@ -70,45 +70,48 @@ function NavListMenu() {
 
   const renderItems = Comparisons.map(
     ({ src, title, description, path }, key) => (
-      // <Link href={path} className="flex items-start "></Link>
-      <Link href={path} key={key} className="">
-        <MenuItem className="p-4 ">
+      <a href={path} key={key}>
+        <MenuItem className="p-4">
           <div className="flex items-start">
             <Image alt="icons" src={src} width={24} height={24} />
             <div className="text-left ml-2">
-              <h1 className="blockTitle">{title}</h1>
-              <p className="blockContent text-left ">{description}</p>
+              {/* modify vea dak <a> or <Link /> based on you */}
+              <h1 className="text-left text-gray-900 font-semibold text-lg">
+                {title}
+              </h1>
+              <p className="text-left text-gray-600 text-base ">
+                {description}
+              </p>
             </div>
           </div>
         </MenuItem>
-      </Link>
+      </a>
     )
   );
   const renderItems1 = Resources.map(
     ({ src, title, description, path }, key) => (
-      <Link href={path} className="">
+      <a href={path} key={key}>
         <MenuItem className="p-4">
           <div className="flex items-start">
-            <Image
-              alt="icons"
-              src={src}
-              width={24}
-              height={24}
-              className="w-auto h-auto"
-            />
+            <Image alt="icons" src={src} width={24} height={24} />
             <div className="text-left ml-2">
-              <h1 className="blockTitle">{title}</h1>
-              <p className="blockContent text-left">{description}</p>
+              {/* modify vea dak <a> or <Link /> based on you */}
+              <h1 className="text-left text-gray-900 font-semibold text-lg">
+                {title}
+              </h1>
+              <p className="text-left text-gray-600 text-base ">
+                {description}
+              </p>
             </div>
           </div>
         </MenuItem>
-      </Link>
+      </a>
     )
   );
 
   return (
     <React.Fragment>
-      <div className="flex flex-row max-md:flex-col gap-x-5">
+      <div className="flex flex-row max-md:flex-col">
         {/* Comparisons */}
         <Menu
           open={isMenuOpen}
@@ -117,8 +120,8 @@ function NavListMenu() {
           placement="bottom"
           allowHover={true}
         >
-          <MenuHandler className="text-gray-600">
-            <Typography as="div" variant="small" className="">
+          <MenuHandler>
+            <Typography as="div" variant="small">
               <ListItem
                 className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 pr-4 hover:text-gray-600 hover:bg-gray-50"
                 selected={isMenuOpen || isMobileMenuOpen}
@@ -126,22 +129,23 @@ function NavListMenu() {
               >
                 Comparisons
                 <ChevronDownIcon
-                  className={`hidden h-5 w-5 transition-transform md:block ${
+                  className={`hidden h-3 w-3 transition-transform md:block ${
                     isMenuOpen ? "rotate-180" : ""
                   }`}
                 />
                 <ChevronDownIcon
                   strokeWidth={2.5}
-                  className={`block h-5 w-5 transition-transform md:hidden ${
+                  className={`block h-3 w-3 transition-transform md:hidden ${
                     isMobileMenuOpen ? "rotate-180" : ""
                   }`}
                 />
               </ListItem>
             </Typography>
           </MenuHandler>
-          <MenuList className="hidden gap-3 w-[45rem] md:block p-3 drop-shadow-lg rounded-lg">
+
+          <MenuList className="hidden gap-3 w-[45rem] rounded-sm md:block p-2">
             <div className="flex">
-              <div className="flex flex-start justify-start mr-2">
+              <div className="flex flex-start justify-start">
                 <ul>{renderItems}</ul>
               </div>
               <div className="flex flex-col gap-3">
@@ -151,7 +155,6 @@ function NavListMenu() {
                     alt="compare"
                     width={400}
                     height={50}
-                    className=""
                   />
                 </div>
                 <div className="flex items-center gap-2">
@@ -164,20 +167,20 @@ function NavListMenu() {
                   >
                     <circle cx="4" cy="4" r="4" fill="#12B76A" />
                   </svg>
-                  <h1 className="text-left text-gray-900 font-semibold text-base">
+                  <h1 className="text-left text-gray-900 font-semibold text-lg">
                     We've just released an update!
                   </h1>
                 </div>
-                <p className="text-left text-gray-500 text-sm font-normal">
+                <p className="text-left text-gray-600 text-base">
                   Check out the all new features view. Pages now load faster.
                 </p>
                 <div className="flex gap-2">
-                  <Link href="" className="text-gray-600 font-semibold text-sm">
+                  <a href="" className="text-gray-600 font-semibold">
                     Dismiss
-                  </Link>
-                  <Link href="" className="text-red-600 font-semibold text-sm">
+                  </a>
+                  <a href="" className="text-red-600 font-semibold">
                     Changing
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -191,8 +194,8 @@ function NavListMenu() {
           placement="bottom"
           allowHover={true}
         >
-          <MenuHandler className="text-gray-600">
-            <Typography as="div" variant="small" className="">
+          <MenuHandler>
+            <Typography as="div" variant="small">
               <ListItem
                 className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 pr-4 hover:text-gray-600 hover:bg-gray-50"
                 selected={isMenuOpen1 || isMobileMenuOpen1}
@@ -200,7 +203,7 @@ function NavListMenu() {
               >
                 Resources
                 <ChevronDownIcon
-                  className={`hidden h-5 w-5 transition-transform md:block ${
+                  className={`hidden h-3 w-3 transition-transform md:block ${
                     isMenuOpen1 ? "rotate-180" : ""
                   }`}
                 />
@@ -213,7 +216,8 @@ function NavListMenu() {
               </ListItem>
             </Typography>
           </MenuHandler>
-          <MenuList className="hidden gap-3 w-[45rem] md:block p-2 drop-shadow-lg rounded-lg">
+
+          <MenuList className="hidden gap-3 w-[45rem] rounded-sm md:block p-2">
             <div className="flex">
               <div className="flex flex-start justify-start">
                 <ul>{renderItems1}</ul>
@@ -228,11 +232,11 @@ function NavListMenu() {
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-left text-gray-900 font-semibold text-base">
+                  <h1 className="text-left text-gray-900 font-semibold text-lg">
                     We've just released an update!
                   </h1>
                 </div>
-                <p className="text-left text-gray-500 text-sm font-normal">
+                <p className="text-left text-gray-600 text-base">
                   Check out the all new features view. Pages now load faster.
                 </p>
                 <div className="flex gap-2">
@@ -258,9 +262,9 @@ function NavListMenu() {
                       stroke-linejoin="round"
                     />
                   </svg>
-                  <Link href="" className="text-red-600 font-semibold">
+                  <a href="" className="text-red-600 font-semibold">
                     Watch video
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -288,20 +292,20 @@ function NavListMenu() {
             >
               <circle cx="4" cy="4" r="4" fill="#12B76A" />
             </svg>
-            <h1 className="text-left text-gray-900 font-semibold text-base">
+            <h1 className="text-left text-gray-900 font-semibold text-lg">
               We've just released an update!
             </h1>
           </div>
-          <p className="text-lef text-gray-500 font-normal text-sm">
+          <p className="text-left text-gray-600 text-base">
             Check out the all new features view. Pages now load faster.
           </p>
           <div className="flex gap-2">
-            <Link href="" className="text-gray-600 font-semibold">
+            <a href="" className="text-gray-600 font-semibold">
               Dismiss
-            </Link>
-            <Link href="" className="text-red-600 font-semibold">
+            </a>
+            <a href="" className="text-red-600 font-semibold">
               Changing
-            </Link>
+            </a>
           </div>
         </Collapse>
       </div>
@@ -320,7 +324,7 @@ function NavListMenu() {
               We've just released an update!
             </h1>
           </div>
-          <p className="text-left text-gray-500 text-sm font-normal">
+          <p className="text-left text-gray-600 text-base">
             Check out the all new features view. Pages now load faster.
           </p>
           <div className="flex gap-2">
@@ -346,9 +350,9 @@ function NavListMenu() {
                 stroke-linejoin="round"
               />
             </svg>
-            <Link href="" className="text-red-600 font-normal text-sm">
+            <a href="" className="text-red-600 font-semibold">
               Watch video
-            </Link>
+            </a>
           </div>
         </Collapse>
       </div>
@@ -364,70 +368,62 @@ function NavList() {
   const handleCompare = () => {
     router.push("/landingPage");
   };
-
   return (
-    <div>
-      <div className="flex md:flex-row flex-col gap-x-4">
-        <Typography
-          as="a"
-          href="#"
-          variant="small"
-          color="blue-gray"
-          className="font-normal text-gray-600"
+    <List>
+      <div className="flex md:flex-row flex-col md:pt-0 pt-16">
+        <ListItem
+          onClick={handleCompare}
+         
+          className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2   hover:text-gray-600 hover:bg-gray-50"
         >
-          <div
-            onClick={handleCompare}
-            className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 px-4 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
-          >
-            Home
-          </div>
-        </Typography>
+          Home
+        </ListItem>
         <div>
           <NavListMenu />
         </div>
-        <Typography
+        {/* <Typography
           as="a"
           href="#"
           variant="small"
           color="blue-gray"
           className="font-normal text-gray-600"
+        > */}
+        <ListItem
+          onClick={handlePromo}
+          className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 pr-4 hover:text-gray-600 hover:bg-gray-50"
         >
-          <div
-            onClick={handlePromo}
-            className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 px-4 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
-          >
-            Promotions
-          </div>
-        </Typography>
+          Promotions
+        </ListItem>
+        {/* </Typography> */}
       </div>
       <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
         <div className="flex flex-col gap-3">
-          <Link href="/aboutus" className="text-gray-400 font-normal">
+          <a href="" className="text-gray-400 font-normal">
             About us
-          </Link>
-          <Link href="" className="text-gray-400 font-normal">
+          </a>
+          <a href="" className="text-gray-400 font-normal">
             Support
-          </Link>
-          <Link href="" className="text-gray-400 font-normal">
+          </a>
+          <a href="" className="text-gray-400 font-normal">
             Careers
-          </Link>
-          <Link href="" className="text-gray-400 font-normal">
+          </a>
+          <a href="" className="text-gray-400 font-normal">
             Legal
-          </Link>
+          </a>
         </div>
         <div className="flex flex-col gap-3">
-          <Link href="" className="text-gray-400 font-normal">
+          <a href="" className="text-gray-400 font-normal">
             Contact
-          </Link>
-          <Link href="" className="text-gray-400 font-normal">
+          </a>
+          <a href="" className="text-gray-400 font-normal">
             Sitemap
-          </Link>
-          <Link href="" className="text-gray-400 font-normal">
+          </a>
+          <a href="" className="text-gray-400 font-normal">
             Cookie settings
-          </Link>
+          </a>
         </div>
       </div>
-    </div>
+    </List>
   );
 }
 
@@ -442,20 +438,20 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="z-[999999] fixed top-0 px-4 sm:px-4 md:px-28 py-2 rounded-none bg-white border-b-1 border-gray-100">
-      <div className="flex items-center justify-between gap-[150px] ">
-        <div className="flex gap-x-10">
+    <div>
+      <div className="top-0 fixed w-full z-[9999] flex bg-white items-center justify-between md:justify-around border py-3">
+        <div className="flex">
           <Typography
             as="a"
             href="#"
             variant="h6"
-            className="mr-4 cursor-pointer py-1.5 flex justify-center items-center"
+            className="cursor-pointer flex justify-center items-center ml-2 md:ml-0"
           >
             <Image
               src="/images/logo/brand-logo.png"
               alt="Logo"
-              width={147}
-              height={32}
+              width={120}
+              height={40}
             />
           </Typography>
 
@@ -463,8 +459,8 @@ const Header = () => {
             <NavList />
           </div>
         </div>
-        <div className="hidden gap-4 md:flex justify-center items-center flex-1">
-          <div className="inline-flex gap-2 items-center hover:bg-gray-50 p-2.5 ​ text-gray-50 rounded-lg">
+        <div className="hidden gap-4 md:flex">
+          <div className="inline-flex gap-2 items-center hover:bg-gray-50 p-2.5 text-gray-50 rounded-lg">
             <svg
               width="20"
               height="20"
@@ -473,43 +469,30 @@ const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M18.3334 9.99984C18.3334 14.6022 14.6025 18.3332 10.0001 18.3332M18.3334 9.99984C18.3334 5.39746 14.6025 1.6665 10.0001 1.6665M18.3334 9.99984H1.66675M10.0001 18.3332C5.39771 18.3332 1.66675 14.6022 1.66675 9.99984M10.0001 18.3332C12.0845 16.0512 13.269 13.0898 13.3334 9.99984C13.269 6.90987 12.0845 3.94846 10.0001 1.6665M10.0001 18.3332C7.91568 16.0512 6.73112 13.0898 6.66675 9.99984C6.73112 6.90987 7.91568 3.94846 10.0001 1.6665M1.66675 9.99984C1.66675 5.39746 5.39771 1.6665 10.0001 1.6665"
+                d="M18.3333 9.99984C18.3333 14.6022 14.6024 18.3332 9.99999 18.3332M18.3333 9.99984C18.3333 5.39746 14.6024 1.6665 9.99999 1.6665M18.3333 9.99984H1.66666M9.99999 18.3332C5.39762 18.3332 1.66666 14.6022 1.66666 9.99984M9.99999 18.3332C12.0844 16.0512 13.269 13.0898 13.3333 9.99984C13.269 6.90987 12.0844 3.94846 9.99999 1.6665M9.99999 18.3332C7.91559 16.0512 6.73103 13.0898 6.66666 9.99984C6.73103 6.90987 7.91559 3.94846 9.99999 1.6665M1.66666 9.99984C1.66666 5.39746 5.39762 1.6665 9.99999 1.6665"
                 stroke="#667085"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
             </svg>
-            <Link
+            <a
               href=""
               className="text-gray-500 font-semibold text-base hover:text-gray-600"
             >
               English
-            </Link>
+            </a>
           </div>
-
-          <hr className="line w-0.5 h-5 bg-gray-200" />
-          <Link
-            href="/account"
-            className="flex gap-2 items-center px-4 hover:bg-gray-50 p-2.5 rounded-lg text-gray-500 font-semibold text-base hover:text-gray-600"
-          >
-            Login
-          </Link>
-          <button className="redButton text-white text-base font-semibold bg-red-500 rounded-lg px-5 py-3 hover:bg-red-600 flex-1">
-            Start Compare
-          </button>
+          <div className="flex gap-2 items-center">
+            <a
+              href="/account"
+              className="flex gap-2 items-center px-4 hover:bg-gray-50 p-2.5 rounded-lg text-gray-500 font-semibold text-base hover:text-gray-600"
+            >
+              Login
+            </a>
+          </div>
+          <button className="redButton">Get started</button>
         </div>
-        {/* <IconButton
-          color="blue-gray"
-          className="md:hidden flex items-center justify-center"
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ? (
-            <XMarkIcon className="h-6 w-6 text-gray-700" strokeWidth={2} />
-          ) : (
-            <Bars3Icon className="h-6 w-6 text-gray-700" strokeWidth={2} />
-          )}
-        </IconButton> */}
         <IconButton
           variant="text"
           color="blue-gray"
@@ -517,7 +500,7 @@ const Header = () => {
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
-            <XMarkIcon className="h-6 w-6 text-gray-700" />
+            <XMarkIcon className="h-6 w-6 text-gray-700" strokeWidth={2} />
           ) : (
             <Bars3Icon className="h-6 w-6 text-gray-700" strokeWidth={2} />
           )}
@@ -542,20 +525,17 @@ const Header = () => {
                 stroke-linejoin="round"
               />
             </svg>
-            <Link href="" className="text-gray-600">
-              English
-            </Link>
+            <a href="" className="text-gray-600">
+              Englishz
+            </a>
           </div>
 
           <button className="text-white bg-red-500 rounded-lg w-full px-5 py-3">
             Get started
           </button>
-          <Link
-            href="/account"
-            className="bg-red-100 text-red-600 rounded-lg w-full px-5 py-3 font-semibold"
-          >
-            Log in
-          </Link>
+          <button className="bg-red-100 text-red-600 rounded-lg w-full px-5 py-3 font-semibold">
+            Log In
+          </button>
         </div>
       </Collapse>
     </div>

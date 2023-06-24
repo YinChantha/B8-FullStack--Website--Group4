@@ -34,7 +34,7 @@ const LandingPage = () => {
   const [showAnswer5, setShowAnswer5] = useState(false);
 
   return (
-    <div className="landing-page">
+    <div>
       <section className="sect1 py-24  px-4 sm:px-4 md:px-28 ">
         <div className="sect1-div1 flex flex-col justify-center items-center">
           <button className="flex justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl ">
@@ -84,7 +84,7 @@ const LandingPage = () => {
             The trusted provider over 150+ companies from Cambodia, of accuracy
             rates and financial information
           </p>
-          <div className="bank flex flex-col gap-y-8 sm:gap-y-8 sm:flex-col md:flex-row justify-center items-center pt-8 gap-x-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-12 gap-y-4 mt-5">
             <Image
               src="/images/vattanac-bank.png"
               alt="vattanac-bank logo"
@@ -515,7 +515,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-        <div className="sect6-div3 px-5 sm:px-5 md:px-80 py-8 flex flex-col justify-center items-center gap-y-6 sm:gap-y-6 md:gap-y-8 bg-gray-50 rounded-2xl">
+        <div className="md:w-10/12 p-5 w-full flex flex-col justify-center items-center gap-y-6 sm:gap-y-6 md:gap-y-8 bg-gray-50 rounded-2xl">
           <Image
             src="/images/avatar-group.png"
             alt="avatar group"
