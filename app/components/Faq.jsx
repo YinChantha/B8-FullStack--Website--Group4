@@ -196,7 +196,8 @@ const Faq = () => {
           </div>
         </div>
       </div>
-      <div className="sect6-div3 px-5 sm:px-5 md:px-80 py-8 flex flex-col justify-center items-center gap-y-6 sm:gap-y-6 md:gap-y-8 bg-gray-50 rounded-2xl">
+      {/* <div className="sect6-div3 px-5 sm:px-5 md:px-80 py-8 flex flex-col justify-center items-center gap-y-6 sm:gap-y-6 md:gap-y-8 bg-gray-50 rounded-2xl"></div> */}
+      <div className="md:w-10/12 p-5 w-full flex flex-col justify-center items-center gap-y-6 sm:gap-y-6 md:gap-y-8 bg-gray-50 rounded-2xl">
         <Image
           src="/images/avatar-group.png"
           alt="avatar group"

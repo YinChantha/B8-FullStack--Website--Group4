@@ -57,17 +57,19 @@ const CompareSavingAcc = () => {
           <div className="flex flex-col gap-8">
             <hr className="border-b-1 border-gray-100" />
             <div className="flex flex-col gap-4">
-              <h1 className="text-red-600 font-semibold text-base">Table of contents</h1>
+              <h1 className="text-red-600 font-semibold text-base">
+                Table of contents
+              </h1>
               <div className="flex flex-col gap-3">
-              <p className={`${tableContent}`}>
-                Best savings accounts and rates
-              </p>
-              <p className={`${tableContent}`}>
-                How to choose a savings account
-              </p>
-              <p className={`${tableContent}`}>
-                What to know about savings accounts
-              </p>
+                <p className={`${tableContent}`}>
+                  Best savings accounts and rates
+                </p>
+                <p className={`${tableContent}`}>
+                  How to choose a savings account
+                </p>
+                <p className={`${tableContent}`}>
+                  What to know about savings accounts
+                </p>
               </div>
             </div>
             <hr className="border-b-1 border-gray-100" />
@@ -382,8 +384,21 @@ const CompareSavingAcc = () => {
           <div>
             {/* best saving accounts info */}
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              voluptatibus illo soluta eius reiciendis, perspiciatis similique
+              <h1 className="text-gray-900 font-semibold text-3xl">
+                Best savings accounts and rates in June 2023
+              </h1>
+              <p>
+                Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
+                suspendisse morbi eleifend faucibus eget vestibulum felis.
+                Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam.
+                Mauris posuere vulputate arcu amet, vitae nisi, tellus
+                tincidunt. At feugiat sapien varius id. <br /> Eget quis mi enim, leo
+                lacinia pharetra, semper. Eget in volutpat mollis at volutpat
+                lectus velit, sed auctor. Porttitor fames arcu quis fusce augue
+                enim. Quis at habitant diam at. Suscipit tristique risus, at
+                donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet
+                sodales id est ac volutpat.
+              </p>
             </div>
             {/* how to choose a savings account */}
             <div>

@@ -21,20 +21,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="box-border">
       <body className="flex flex-col min-h-screen">
-        (router === "/" || router === "/promotions" || router === "/landingPage"
+        {/* (router === "/" || router === "/promotions" || router === "/landingPage"
         || router === "/account" || router === "/aboutus" || router ===
-        "/contact" || router === "/legal" || router === "/FAQs") &&{" "}
+        "/contact" || router === "/legal" || router === "/FAQs") &&{" "} */}
         <Header className="" />
         <main className="flex-1">{children}</main>
-        {(router === "/" ||
+        {/* {(router === "/" ||
           router === "/promotions/[id]" ||
-          // router.push === "/promotions/[id]" ||
           router === "/promotions" ||
           router === "/landingPage" ||
           router === "/aboutus" ||
           router === "/contact" ||
           router === "/legal" ||
-          router === "/FAQs") && <Footer className="" />}
+          router === "/FAQs") && <Footer className="" />} */}
+        <Footer className="" />
       </body>
     </html>
   );
