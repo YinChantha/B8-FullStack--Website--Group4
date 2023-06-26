@@ -3,6 +3,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { usePathname } from "next/navigation";
+// import { useRouter } from "next/router";
 import "./globals.css";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -14,7 +15,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const router = usePathname();
-  console.log("router", router);
+  // console.log("router", router);
   // const pathToHideNav = ["/account", "/account/forgotpassword"];
 
   return (
@@ -29,13 +30,15 @@ export default function RootLayout({ children }) {
           router === "/legal" ||
           router === "/FAQs") && <Header className="" />}
         <main className="flex-1">{children}</main>
-        {(router === "/" ||
+        {/* {(router === "/" ||
+          router === "/promotions/[id]" ||
           router === "/promotions" ||
           router === "/landingPage" ||
           router === "/aboutus" ||
           router === "/contact" ||
           router === "/legal" ||
-          router === "/FAQs") && <Footer className="" />}
+          router === "/FAQs") && <Footer className="" />} */}
+        <Footer className="" />
       </body>
     </html>
   );

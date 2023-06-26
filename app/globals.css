@@ -17,63 +17,22 @@
 }
 
 .redButton {
-  @apply bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600;
-}
-.input-btn {
-  @apply text-gray-500 rounded-lg border-gray-200 border-2 p-2;
+  @apply bg-red-500 text-white px-4 py-2.5 rounded-lg hover:bg-red-600
 }
 
 /* promotion box style */
 .bankName {
-  @apply text-red-600 text-sm font-semibold mb-2;
+  @apply text-red-600 text-sm font-semibold mb-2
 }
 .promotionName {
-  @apply text-gray-900 font-semibold text-2xl mb-5;
+  @apply text-gray-900 font-semibold text-2xl mb-5
 }
 .promotionContent {
-  @apply text-gray-600 text-base font-normal;
+  @apply text-gray-600 text-base font-normal
 }
 .react-tel-input .form-control {
-  @apply !w-full py-5 !border-2 !border-gray-100 !rounded-lg !text-base;
+    @apply !w-full py-5 !border-2 !border-gray-100 !rounded-lg !text-base;
 }
-
-.signup-btn {
-  @apply flex p-2 rounded-lg items-center justify-center bg-red-500 w-full mt-5 text-white hover:bg-red-400 cursor-pointer;
-}
-.right-container {
-  @apply flex md:w-3/5 mx-auto mt-20 justify-center;
-}
-.box-icon {
-  @apply flex w-10 h-10 border-2 rounded-lg border-gray-300;
-}
-.brand-container {
-  @apply absolute flex flex-row justify-between items-center mx-8 bottom-5 left-0 right-0;
-}
-
-.input {
-  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/12 p-2;
-}
-
-@media (max-width: 640px) {
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-}
-.title-icon {
-  @apply flex flex-row items-center justify-between;
-}
-.p-name {
-  @apply text-[13px] text-gray-800 font-semibold;
-}
-.p-date {
-  @apply text-[12px] text-gray-500 mt-[-3px];
-}
-.post-description {
-  @apply text-[15px] text-gray-600;
-}
-.post-card {
-  @apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2;
-}
-.text-location {
-  @apply text-[13px] text-gray-600;
+.input{
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/12 p-2
 }
