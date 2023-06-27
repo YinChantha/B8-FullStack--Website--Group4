@@ -137,7 +137,7 @@ const GuidesAndTutorials = () => {
               </div>
               {AllPosts.map((post) => (
                 <Link
-                  href={`/resources/guidesTutorials/${post.id}`}
+                  href={`/resources/guidesTutorials/allpostTutor/${post.id}`}
                   key={post.id}
                   className="flex flex-col gap-0"
                 >
