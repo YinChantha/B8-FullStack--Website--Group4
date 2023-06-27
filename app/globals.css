@@ -36,3 +36,16 @@
 .input{
   @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/12 p-2
 }
+
+/* company overview */
+.companyName {
+  @apply text-gray-800 text-[20px] font-semibold
+}
+
+/* below bankinfo at CompareSaveAcc page*/
+.bodyText {
+  @apply text-[#667085] text-lg
+}
+.titleText {
+  @apply text-[#101828] font-semibold text-2xl
+}

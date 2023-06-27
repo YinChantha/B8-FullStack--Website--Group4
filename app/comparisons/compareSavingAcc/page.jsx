@@ -1,6 +1,8 @@
 import BankList from "@/app/components/BankList";
 import Faq from "@/app/components/Faq";
 import Link from "next/link";
+import BankInfo from "./BankInfo";
+import data from "./data";
 // import * as Scroll from "react-scroll";
 // import { Link as ScrollLink } from "react-scroll";
 import React from "react";
@@ -9,8 +11,8 @@ const CompareSavingAcc = () => {
   const tableContent = "text-gray-500 font-semibold text-base";
   //  const Link = ScrollLink.Link;
   return (
-    <div className="">
-      <div className="sect1 py-24  px-4 sm:px-4 md:px-28">
+    <div className="pt-36">
+      <div className="sect1 pb-24  px-4 sm:px-4 md:px-28">
         <div className="saveSect1 flex flex-col justify-center items-center">
           <p className="text-red-600 font-semibold text-sm sm:text-sm md:text-base">
             Compare Your Saving Accounts
@@ -53,8 +55,8 @@ const CompareSavingAcc = () => {
           <div></div> */}
         </div>
         {/* table of content and best savings... */}
-        <div className="flex py-16 gap-8">
-          <div className="flex flex-col gap-8">
+        <div className="flex py-16 gap-8 ">
+          <div className="flex flex-col gap-8 max-w-[264px]">
             <hr className="border-b-1 border-gray-100" />
             <div className="flex flex-col gap-4">
               <h1 className="text-red-600 font-semibold text-base">
@@ -387,29 +389,53 @@ const CompareSavingAcc = () => {
               <h1 className="text-gray-900 font-semibold text-3xl">
                 Best savings accounts and rates in June 2023
               </h1>
-              <p>
+              <p className="mt-6">
                 Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
                 suspendisse morbi eleifend faucibus eget vestibulum felis.
                 Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam.
                 Mauris posuere vulputate arcu amet, vitae nisi, tellus
-                tincidunt. At feugiat sapien varius id. <br /> Eget quis mi enim, leo
-                lacinia pharetra, semper. Eget in volutpat mollis at volutpat
-                lectus velit, sed auctor. Porttitor fames arcu quis fusce augue
-                enim. Quis at habitant diam at. Suscipit tristique risus, at
-                donec. In turpis vel et quam imperdiet. Ipsum molestie aliquet
-                sodales id est ac volutpat.
+                tincidunt. At feugiat sapien varius id.
               </p>
+              <p className="mt-5 mb-12">
+                Eget quis mi enim, leo lacinia pharetra, semper. Eget in
+                volutpat mollis at volutpat lectus velit, sed auctor. Porttitor
+                fames arcu quis fusce augue enim. Quis at habitant diam at.
+                Suscipit tristique risus, at donec. In turpis vel et quam
+                imperdiet. Ipsum molestie aliquet sodales id est ac volutpat.
+              </p>
+              {/* chipmong bank */}
+              <div className="flex flex-col gap-6">
+                <BankInfo />
+                <BankInfo />
+                <BankInfo />
+              </div>
+              {/* more text below bank info */}
+              {/* use style "bodyText" in body */}
+              <div className="bodyText mt-6 flex flex-col gap-6 ">
+                <p className="">{data.textBelowOverview.text1}</p>
+                <p className="">{data.textBelowOverview.text2}</p>
+                <p className="">{data.textBelowOverview.text3}</p>
+              </div>
+              <div className="mt-12">
+                <h1 className="titleText">Software and tools</h1>
+                <p className="bodyText mt-4 ">{data.softwareTools}</p>
+              </div>
+              <div>
+                <h1 className="titleText mt-12">Other resources</h1>
+                <p>{}</p>
+              </div>
             </div>
+
             {/* how to choose a savings account */}
-            <div>
+            {/* <div>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Consectetur nemo amet quibusdam fugiat veniam illo asperiores nam!
-            </div>
+            </div> */}
             {/* what to know about savings accounts */}
-            <div id="bestSaving">
+            {/* <div id="bestSaving">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum,
               eveniet! Sed, reiciendis ad architecto odit, numquam dicta quod
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
