@@ -49,7 +49,8 @@ const FinancialArticles = () => {
           <h1 className="promotionName">Recent blog posts</h1>
           <div className="flex w-full h-full flex-col md:flex-row mt-5">
             {PostItems[0] && (
-              <div
+              <Link
+                href={`/resources/financialArticles/popPost/1`}
                 key={PostItems.id}
                 className="flex md:w-1/2 items-center justify-center lg:mb-0 md:mb-0 sm:mb-5"
               >
@@ -79,11 +80,12 @@ const FinancialArticles = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             )}
             <div className="flex flex-col md:w-1/2 md:ml-6 gap-5">
               {PostItems.slice(1, 3).map((item) => (
-                <div
+                <Link
+                  href={`/resources/financialArticles/popPost/${item.id}`}
                   key={item.id}
                   className="flex flex-row lg:flex-row md:flex-row sm:flex-col gap-4"
                 >
@@ -113,7 +115,7 @@ const FinancialArticles = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -145,7 +147,7 @@ const FinancialArticles = () => {
               </div>
               {AllPostItems.map((post) => (
                 <Link
-                  href={`/resources/financialArticles/${post.id}`}
+                  href={`/resources/financialArticles/allPost/${post.id}`}
                   key={post.id}
                   className="flex flex-col gap-0"
                 >
