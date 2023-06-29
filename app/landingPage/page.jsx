@@ -285,7 +285,7 @@ const LandingPage = () => {
           </p>
         </div>
         <Image
-          src="/images/map-dot.png"
+          src="/images/Map-dot.png"
           alt="map dot"
           width={1205}
           height={591}
