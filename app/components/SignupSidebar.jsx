@@ -48,7 +48,7 @@ export default function SignupSidebar() {
   ];
   return (
     <>
-      <div className="relative w-3/5 hidden md:block bg-gray-100 ">
+      <div className="relative w-3/5 hidden md:block bg-gray-100">
         <div className="w-full h-auto">
           <div className="flex flex-row gap-2 mt-8 ml-10">
             <img

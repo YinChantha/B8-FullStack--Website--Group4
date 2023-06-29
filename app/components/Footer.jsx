@@ -59,13 +59,19 @@ const Footer = () => {
           <div className="foot-company flex flex-col">
             <p className="text-gray-400 font-semibold text-sm pb-4">Company</p>
             <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/aboutus" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link
+                href="/aboutus"
+                className="hover:bg-gray-50 hover:text-gray-600"
+              >
                 About us
               </Link>
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Media kit
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link
+                href="/contact"
+                className="hover:bg-gray-50 hover:text-gray-600"
+              >
                 Contact
               </Link>
             </div>
@@ -89,7 +95,10 @@ const Footer = () => {
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Help centre
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link
+                href="/FAQs"
+                className="hover:bg-gray-50 hover:text-gray-600"
+              >
                 Support
               </Link>
             </div>
@@ -121,7 +130,10 @@ const Footer = () => {
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Terms
               </Link>
-              <Link href="/legal" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link
+                href="/legal"
+                className="hover:bg-gray-50 hover:text-gray-600"
+              >
                 Privacy
               </Link>
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">

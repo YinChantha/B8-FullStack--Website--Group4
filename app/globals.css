@@ -36,3 +36,6 @@
 .input{
   @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/12 p-2
 }
+.smallBack {
+  @apply bg-[#344054] rounded-full px-2 text-white text-[12px]
+}
