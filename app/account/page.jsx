@@ -1,5 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
+import { BiArrowBack } from "react-icons/bi";
 
 const Account = () => {
   return (
@@ -45,7 +46,7 @@ const Account = () => {
               <div className="text-red-600">
                 <Link
                   href="/account/forgotpassword/userdetials"
-                  as="go to forgotpassword"
+                  // as="go to forgotpassword"
                 >
                   Forgot password
                 </Link>
@@ -65,12 +66,22 @@ const Account = () => {
               <Link
                 href="/account/signup/usersignupdetials"
                 className="text-red-600"
-                as="go to signup"
+                // as="go to signup"
               >
                 Sign up
               </Link>
             </div>
           </form>
+          <div className="flex flex-row items-center justify-center gap-2 mt-8 hover:text-gray-500">
+            <BiArrowBack color="gray-900" size={20} />
+            <Link
+              href="/account/"
+              className="text-gray-900 hover:text-gray-500 cursor-pointer"
+              as="/"
+            >
+              Back to home
+            </Link>
+          </div>
         </div>
 
         {/* right side */}
@@ -99,9 +110,6 @@ const Account = () => {
           </div>
         </div>
       </div>
-      {/* <div className="flex h-full mb-5 ml-10">
-      <p className=" text-gray-500 sm:text-center">© Proadvisor 2023</p>
-    </div> */}
     </>
   );
 };

@@ -15,8 +15,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const router = usePathname();
-  // console.log("router", router);
-  // const pathToHideNav = ["/account", "/account/forgotpassword"];
+  const pathToHideNav = ["/", "promotions", "landingPage", "contact", "legal", "FAQs"];
 
   return (
     <html lang="en" className="box-border">
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
         {(router === "/" ||
           router === "/promotions" ||
           router === "/landingPage" ||
-          // router === "/account" ||
           router === "/aboutus" ||
           router === "/contact" ||
           router === "/legal" ||
@@ -38,7 +36,6 @@ export default function RootLayout({ children }) {
           router === "/contact" ||
           router === "/legal" ||
           router === "/FAQs") && <Footer className="" />}
-        {/* <Footer className="" /> */}
       </body>
     </html>
   );

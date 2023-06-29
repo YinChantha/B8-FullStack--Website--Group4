@@ -52,7 +52,7 @@ export default function SignupSidebar() {
         <div className="w-full h-auto">
           <div className="flex flex-row gap-2 mt-8 ml-10">
             <img
-              src="/images/logo.png"
+              src="/images/logo/logo.png"
               alt="logo"
               className="w-[30px] object-contain"
             />
