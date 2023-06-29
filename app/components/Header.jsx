@@ -373,7 +373,6 @@ function NavList() {
       <div className="flex md:flex-row flex-col md:pt-0 pt-16">
         <ListItem
           onClick={handleCompare}
-         
           className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2   hover:text-gray-600 hover:bg-gray-50"
         >
           Home
@@ -439,7 +438,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="top-0 fixed w-full z-[9999] flex bg-white items-center justify-between md:justify-around border py-3">
+      <div className="top-0 fixed w-full mb-20 z-[9999] flex bg-white items-center justify-between md:justify-around border py-3">
         <div className="flex">
           <Typography
             as="a"
@@ -491,7 +490,7 @@ const Header = () => {
               Login
             </a>
           </div>
-          <button className="redButton">Get started</button>
+          <button className="redButton truncate">Get started</button>
         </div>
         <IconButton
           variant="text"

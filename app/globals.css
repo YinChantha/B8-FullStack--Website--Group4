@@ -39,3 +39,16 @@
 .smallBack {
   @apply bg-[#344054] rounded-full px-2 text-white text-[12px]
 }
+
+/* company overview */
+.companyName {
+  @apply text-gray-800 text-[20px] font-semibold
+}
+
+/* below bankinfo at CompareSaveAcc page*/
+.bodyText {
+  @apply text-[#667085] text-lg
+}
+.titleText {
+  @apply text-[#101828] font-semibold text-2xl
+}

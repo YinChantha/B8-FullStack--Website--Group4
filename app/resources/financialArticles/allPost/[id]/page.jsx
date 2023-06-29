@@ -57,8 +57,8 @@ const PostDetails = ({ params }) => {
 
   return (
     <>
-      <div className="w-full h-auto mt-20 mb-20">
-        <div className="flex flex-col mx-5 md:mx-10 lg:mx-20">
+      <div className="w-full h-auto pt-20 mb-20">
+        <div className="flex flex-col py-10 mx-5 md:mx-10 lg:mx-20">
           <div className="w-full h-auto flex flex-col gap-2">
             <div className="flex flex-row items-center gap-2">
               <div className="smallBack">Financial articles</div>

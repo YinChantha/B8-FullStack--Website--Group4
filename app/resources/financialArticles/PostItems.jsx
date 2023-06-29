@@ -24,7 +24,7 @@ export const PostItems = [
     description:
       "How do you create compelling presentations that wow your colleagues and impress your managers?",
     publicer: {
-      src: "/images/user.png",
+      src: "/images/user1.png",
       name: "Phonix Baker",
       date: "19 Jan 2022",
     },

@@ -1,19 +1,15 @@
-"use client";
-
 import { FcGoogle } from "react-icons/fc";
-import { useState } from "react";
 import Link from "next/link";
 
 const Account = () => {
-  const [openNav, setOpenNav] = useState(true);
   return (
     <>
       {/* login container */}
-      <div className="w-full h-screen flex items-center my-5">
+      <div className="w-full flex items-center my-5">
         {/* left side */}
         <div className="md:w-1/2 max-w-[400px] items-center justify-center m-auto">
           <div className="flex flex-col items-center">
-            <img src="/images/logo.png" alt="logo" className="w-[50px]" />
+            <img src="/images/logo/logo.png" alt="logo" className="w-[50px]" />
             <h1 className="text-2xl font-semibold text-gray-800 mt-5">
               Log in to your account
             </h1>
@@ -47,7 +43,10 @@ const Account = () => {
               </div>
 
               <div className="text-red-600">
-                <Link href="/account/forgotpassword/userdetials">
+                <Link
+                  href="/account/forgotpassword/userdetials"
+                  as="go to forgotpassword"
+                >
                   Forgot password
                 </Link>
               </div>
@@ -66,24 +65,23 @@ const Account = () => {
               <Link
                 href="/account/signup/usersignupdetials"
                 className="text-red-600"
+                as="go to signup"
               >
                 Sign up
               </Link>
             </div>
-            {/* <p className=" text-gray-500 lg:block hidden text-center mt-28">© Proadvisor 2023</p> */}
           </form>
-          {/* <p className='flex text-gray-400  ml-[-40px] '>Proadvisor 2023</p> */}
         </div>
 
         {/* right side */}
-        <div className="relative w-1/2 h-full mr-5 hidden md:inline">
+        <div className="relative w-1/2 h-auto mr-5 hidden md:inline items-center justify-center">
           <img
             src="/images/girl.png"
             alt="girl"
-            className="object-cover w-full h-full rounded-3xl"
+            className="object-cover w-full h-screen rounded-3xl"
           />
           <div className="absolute flex flex-col bg-white/50 bottom-0">
-            <div className="mx-4">
+            <div className="px-4">
               <h1 className="text-2xl font-semibold text-white mt-5">
                 "Proadvisor empowerd me to make informed financial decision, and
                 unlock new possibilies."

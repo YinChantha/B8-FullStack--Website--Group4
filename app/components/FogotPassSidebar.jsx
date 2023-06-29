@@ -11,8 +11,7 @@ export default function ForgotPassSidebar() {
 
   const handleClick = (index) => {
     setActivateButtonIndex(index);
-  }
-
+  };
 
   const buttons = [
     {
@@ -23,19 +22,19 @@ export default function ForgotPassSidebar() {
     },
     {
       label: "Check your inbox",
-      icon: <HiOutlineMail/>,
+      icon: <HiOutlineMail />,
       description: "Please check your email to get reset link.",
       link: "/account/forgotpassword/checkemail",
     },
     {
       label: "Choose a password",
-      icon: <BsKeyboard/>,
+      icon: <BsKeyboard />,
       description: "Please choose a secure password.",
       link: "/account/forgotpassword/setnewpassword",
     },
     {
       label: "Successfully",
-      icon: <IoIosCheckmarkCircleOutline/>,
+      icon: <IoIosCheckmarkCircleOutline />,
       description: "Go back to log in into your account.",
       link: "/account/forgotpassword/successfully",
     },
@@ -46,7 +45,7 @@ export default function ForgotPassSidebar() {
         <div className="w-full h-auto">
           <div className="flex flex-row gap-2 mt-8 ml-10">
             <img
-              src="/images/logo.png"
+              src="/images/logo/logo.png"
               alt="logo"
               className="w-[30px] object-contain"
             />
@@ -54,19 +53,42 @@ export default function ForgotPassSidebar() {
           </div>
           <div className="flex flex-col gap-4 ml-10 mt-14">
             {buttons.map((button, index) => (
-              <Link href={button.link} className="flex gap-3 cursor-pointer" key={index} onClick={() => handleClick(index)} >
+              <Link
+                href={button.link}
+                className="flex gap-3 cursor-pointer"
+                key={index}
+                onClick={() => handleClick(index)}
+              >
                 <div className="box-icon">
-                    <div className={`mx-auto  my-auto ${activateButtonIndex === index ? "text-gray-700" : "text-gray-500"}`}>
-                        {button.icon}
-                    </div>
+                  <div
+                    className={`mx-auto  my-auto ${
+                      activateButtonIndex === index
+                        ? "text-gray-700"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {button.icon}
+                  </div>
                 </div>
                 <div className="flex flex-col">
-                    <h2 className={`text-[15px] font-semibold ${activateButtonIndex === index ? "text-gray-700" : "text-gray-500"}`}>
-                        {button.label}
-                    </h2>
-                    <p className={`text-[12px] font-normal  ${activateButtonIndex === index ? "text-gray-700" : "text-gray-500"}`}>
-                        {button.description}
-                    </p>
+                  <h2
+                    className={`text-[15px] font-semibold ${
+                      activateButtonIndex === index
+                        ? "text-gray-700"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {button.label}
+                  </h2>
+                  <p
+                    className={`text-[12px] font-normal  ${
+                      activateButtonIndex === index
+                        ? "text-gray-700"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    {button.description}
+                  </p>
                 </div>
               </Link>
             ))}
@@ -74,11 +96,11 @@ export default function ForgotPassSidebar() {
         </div>
         <div className="brand-container">
           <div className="text-gray-500 truncate">© Proadvisor 2023</div>
-            <div className="flex flex-rown gap-2 truncate">
-              <HiOutlineMail size={25} color="gray" />
-              <p className="text-gray-500">Help@proadvisor.com</p>
-            </div>
+          <div className="flex flex-rown gap-2 truncate">
+            <HiOutlineMail size={25} color="gray" />
+            <p className="text-gray-500">Help@proadvisor.com</p>
           </div>
+        </div>
       </div>
     </>
   );

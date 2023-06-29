@@ -200,7 +200,7 @@ const Faq = () => {
       <div className="md:w-10/12 p-5 w-full flex flex-col justify-center items-center gap-y-6 sm:gap-y-6 md:gap-y-8 bg-gray-50 rounded-2xl">
         <Image
           src="/images/avatar-group.png"
-          alt="avatar group"
+          alt="avatar-group"
           width={120}
           height={56}
           className="w-auto h-auto"
