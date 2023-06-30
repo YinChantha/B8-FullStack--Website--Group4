@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Faq from "../components/Faq";
 
@@ -28,7 +28,6 @@ const promoData = [
 ];
 
 const LandingPage = () => {
-
   return (
     <div>
       <section className="sect1 py-24  px-4 sm:px-4 md:px-28 ">
