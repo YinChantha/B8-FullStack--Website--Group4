@@ -8,7 +8,7 @@ export default function ProductDetails() {
   const product = data.find((item) => item.id === Number(id));
 
   return (
-    <div>
+    <div className="p-8">
       <div className="mt-20 w-10/12 mx-auto">
         <div className="flex items-center gap-2 ">
           <button className="text-gray-100 bg-gray-700 rounded-lg p-1">
@@ -363,7 +363,6 @@ export default function ProductDetails() {
 
 export async function getServerSideProps(query) {
   const { id } = query;
-  // console.log("id is here: ", id);
   return {
     props: {
       product,

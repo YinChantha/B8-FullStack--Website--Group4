@@ -371,30 +371,30 @@ function NavList() {
   return (
     <List>
       <div className="flex md:flex-row flex-col md:pt-0 pt-16">
-        <ListItem
-          onClick={handleCompare}
-         
-          className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2   hover:text-gray-600 hover:bg-gray-50"
-        >
-          Home
-        </ListItem>
-        <div>
-          <NavListMenu />
-        </div>
-        {/* <Typography
+        <Typography
           as="a"
           href="#"
           variant="small"
           color="blue-gray"
-          className="font-normal text-gray-600"
-        > */}
-        <ListItem
+          className="flex justify-center items-center text-gray-500 font-semibold text-base w- hover:text-gray-600 hover:bg-gray-50 rounded-lg"
+          onClick={handleCompare}
+        >
+          Home
+        </Typography>
+        <NavListMenu />
+
+        <Typography
+          as="a"
+          href="#"
+          variant="small"
+          color="blue-gray"
+          className="flex justify-center items-center text-gray-500 font-semibold text-base gap-2 w-28 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
           onClick={handlePromo}
-          className="flex items-center text-gray-500 font-semibold text-base gap-2 py-2 pr-4 hover:text-gray-600 hover:bg-gray-50"
         >
           Promotions
-        </ListItem>
-        {/* </Typography> */}
+        </Typography>
+        {/* Promotions */}
+        {/* </ListItem> */}
       </div>
       <div className="flex w-full rounded-sm border border-gray-200 md:hidden gap-20 py-3 px-3">
         <div className="flex flex-col gap-3">
@@ -439,8 +439,8 @@ const Header = () => {
 
   return (
     <div>
-      <div className="top-0 fixed w-full z-[9999] flex bg-white items-center justify-between md:justify-around border py-3">
-        <div className="flex">
+      <div className="top-0 fixed w-full z-[9999] flex bg-white items-center justify-between md:justify-around border py-2">
+        <div className="flex gap-2">
           <Typography
             as="a"
             href="#"
