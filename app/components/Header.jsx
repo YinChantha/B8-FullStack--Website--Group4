@@ -361,22 +361,35 @@ function NavListMenu() {
 }
 
 function NavList() {
+  const [openNav, setOpenNav] = React.useState(false);
+
   const router = useRouter();
   const handlePromo = () => {
     router.push("/promotions");
+    setOpenNav(!openNav);
   };
   const handleCompare = () => {
     router.push("/landingPage");
+    setOpenNav(!openNav);
   };
   return (
     <List>
       <div className="flex md:flex-row flex-col md:pt-0 pt-16">
+        {/* <Typography
+          as="a"
+          href="#"
+          variant="small"
+          color="blue-gray"
+          // className="flex justify-center items-center text-gray-500 font-semibold text-base gap-2 w-28 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
+          className="flex md:justify-center justify-start items-center text-gray-500 font-semibold text-base w-24 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
+          onClick={handleCompare}
+        > */}
         <Typography
           as="a"
           href="#"
           variant="small"
           color="blue-gray"
-          className="flex justify-center items-center text-gray-500 font-semibold text-base w- hover:text-gray-600 hover:bg-gray-50 rounded-lg"
+          className="flex md:justify-center items-center md:ml-0 ml-3 text-gray-500 font-semibold text-base gap-2 w-24 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
           onClick={handleCompare}
         >
           Home
@@ -491,7 +504,7 @@ const Header = () => {
               Login
             </a>
           </div>
-          <button className="redButton">Get started</button>
+          <button className="redButton truncate">Get started</button>
         </div>
         <IconButton
           variant="text"

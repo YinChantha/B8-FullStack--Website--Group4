@@ -8,7 +8,7 @@ import Navbarsetting from "../../components/Navbarsetting";
 
 const Settings = () => {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState(null);
+  // const [active, setActive] = useState(null);
   const [settingactive, setSettingactive] = useState(null);
   const router = useRouter();
 
@@ -24,17 +24,17 @@ const Settings = () => {
     setSettingactive(item);
   };
 
-  const MydetailPage = () => {
-    router.push("/settings/home/mydetails");
-  };
+  // const MydetailPage = () => {
+  //   router.push("/settings/home/mydetails");
+  // };
 
   const Homepage = () => {
     router.push("/");
   };
 
-  const handleActive = (item) => {
-    setActive(item);
-  };
+  // const handleActive = (item) => {
+  //   setActive(item);
+  // };
 
   const handleSetting = () => {
     setOpen(!false);
