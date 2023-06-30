@@ -63,3 +63,13 @@
 .submitBtn {
   @apply text-[#344054] font-semibold text-base py-3 rounded-lg border-[1px] border-[#D0D5DD] shadow-sm bg-white
 }
+
+/*bank info form*/
+.offerDetail {
+  @apply text-[#344054] text-xl font-semibold
+}
+.offerTitle {
+  @apply text-[#667085] text-sm font-normal
+}
+
+/*estimate saving account*/

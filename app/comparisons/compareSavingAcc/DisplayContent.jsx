@@ -1,5 +1,7 @@
 import React from "react";
 import BankInfo from "./BankInfo";
+import FeatureOfferBank from "./FeatureOfferBank";
+import EstimateSaving from "./EstimateSaving";
 
 const currencyRiel = (
   <svg
@@ -100,15 +102,19 @@ const DisplayContent = () => {
               name="interest-rate"
               className="selectStyle"
             >
+              <option value="rateAER">Company Provider</option>
               <option value="rateAER">Interest Rate (AER)</option>
-              <option value="yearly">Yearly</option>
+              <option value="yearly">Term</option>
             </select>
           </div>
         </div>
         {/* display bank info */}
-        <div>
-          <BankInfo />  
+        <div className="mt-6">
+          <FeatureOfferBank />
+          <FeatureOfferBank />
+          <FeatureOfferBank />
         </div>
+        <EstimateSaving />
       </div>
     </div>
   );

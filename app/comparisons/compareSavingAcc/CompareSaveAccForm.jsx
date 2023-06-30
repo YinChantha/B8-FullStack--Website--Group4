@@ -70,6 +70,7 @@ const CompareSaveAccForm = () => {
             placeholder="Enter your regular deposit"
           />
           <select id="period" name="period" className="selectStyle">
+            <option value="monthly">weekly</option>
             <option value="monthly">Monthly</option>
             <option value="yearly">Yearly</option>
           </select>
@@ -85,7 +86,10 @@ const CompareSaveAccForm = () => {
 
           <select id="value" name="value" className="selectStyle ">
             <option value="monthly">After 1 year</option>
-            <option value="yearly">After 1 month</option>
+            <option value="yearly">After 2 years</option>
+            <option value="yearly">After 3 years</option>
+            <option value="yearly">After 4 years</option>
+            <option value="yearly">After 5 years</option>
           </select>
         </div>
         {/* filter account type */}
@@ -102,8 +106,9 @@ const CompareSaveAccForm = () => {
             name="filterAcctype"
             className="selectStyle"
           >
+            <option value="monthly">Money Market</option>
             <option value="monthly">Saving & MMAs</option>
-            <option value="yearly">After 1 month</option>
+            <option value="yearly">CDs</option>
           </select>
         </div>
         {/* update result */}
