@@ -60,7 +60,7 @@ const FAQs = () => {
 
         <div className="w-full mt-20 bg-gray-100 mb-20 py-20">
           <div className="flex flex-col lg:mx-20 md:mx-10 sm:p-0">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-center">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:first-letter items-center">
               {questions.map((ques, index) => (
                 <div
                   key={index}
