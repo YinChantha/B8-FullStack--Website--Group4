@@ -9,7 +9,7 @@ const bankData = [
     bankLogo: "/images/chipmong-bank.png",
     bankName: "Chip Mong Bank",
     location: "Phnom Penh, Cambodia",
-    rate: 4.0,
+    rate: 5.0,
     companyOverview:
       "Founded in 2019, Chip Mong Commercial Bank Plc. offers an array of well-designed financial solutions with strong commitments to help customers grow financially. Chip Mong Bank provides a personalized banking experience with a comprehensive understanding of your industry, market, and business’ needs.",
     overviewList: {

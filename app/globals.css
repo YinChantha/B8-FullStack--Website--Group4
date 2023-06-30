@@ -49,3 +49,17 @@
 .titleText {
   @apply text-[#101828] font-semibold text-2xl
 }
+
+/*comparison saving account form style*/
+.labelStyle {
+  @apply text-[#344054] text-sm font-medium
+}
+.inputStyle {
+  @apply text-[#667085] text-base font-normal px-[14px] py-[10px] rounded-lg border-[1px] border-[#D0D5DD] shadow-sm
+}
+.selectStyle {
+  @apply text-[#344054] text-base font-medium px-[14px] py-[10px] rounded-lg border-[1px] border-[#D0D5DD] shadow-sm
+}
+.submitBtn {
+  @apply text-[#344054] font-semibold text-base py-3 rounded-lg border-[1px] border-[#D0D5DD] shadow-sm bg-white
+}
