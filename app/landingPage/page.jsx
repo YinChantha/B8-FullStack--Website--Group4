@@ -30,7 +30,7 @@ const promoData = [
 const LandingPage = () => {
   return (
     <div>
-      <section className="sect1 py-24  px-4 sm:px-4 md:px-28 ">
+      <section className="sect1 py-24  px-4 sm:px-4 md:px-28 mt-20">
         <div className="sect1-div1 flex flex-col justify-center items-center">
           <button className="flex justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl ">
             <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl shrink-0">
