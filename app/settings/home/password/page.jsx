@@ -1,11 +1,28 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Settings from "../../../components/Setting";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Navbarsetting from "../../../components/Navbarsetting";
+import { getAllfixeddeposits } from "../../../api/fixeddeposits/getAlldeposits";
 
 const page = () => {
+  const [data, setData] = useState("");
+
+  const GetAlldata = async () => {
+    try {
+      const res = await getAllfixeddeposits();
+
+      setData(res.bank);
+      console.log("data is here : ", res);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  // useEffect(() => {
+  //   console.log("data is here : ",data);
+  // }, [data]);
   const router = useRouter();
   const Homesettingpage = () => {
     router.push("/settings/home");
@@ -78,7 +95,10 @@ const page = () => {
             >
               Cabcel
             </button>
-            <button className="get-started-btn  text-white bg-red-500 rounded-lg md:w-40 w-full h-10 hover:bg-red-600">
+            <button
+              onClick={GetAlldata}
+              className="get-started-btn  text-white bg-red-500 rounded-lg md:w-40 w-full h-10 hover:bg-red-600"
+            >
               Update password
             </button>
           </div>

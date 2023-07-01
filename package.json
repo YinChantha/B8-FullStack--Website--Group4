@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.15",
     "@material-tailwind/react": "^2.0.3",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "country-state-city": "^3.1.4",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
