@@ -135,7 +135,7 @@ const page = () => {
   return (
     <div className="flex gap-1">
       <Settings />
-      <div className="bg-white w-9/12 p-4">
+      <div className="bg-white md:w-9/12 w-full p-4">
         <p className="promotionName">Settings</p>
         <Navbarsetting />
         <div className="mt-5">
@@ -145,8 +145,9 @@ const page = () => {
           </p>
         </div>
 
-        <div className="w-10/12">
-          <div className="grid grid-cols-2 mt-12">
+        <div className="md:w-11/12 w-full">
+          <hr className="border-b-1 flex border-gray-100  w-full mt-10 " />
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-12">
             <h1 className="settingfont">Name</h1>
             <div className="grid grid-cols-2 gap-3">
               <input
@@ -159,7 +160,9 @@ const page = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Phone Number</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2 ">
@@ -182,7 +185,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Email Address</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2 ">
@@ -212,7 +217,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Date of Birth</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2  ">
@@ -236,7 +243,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <div>
               <h1 className="settingfont">Your photo</h1>
               <p className="promotionContent">
@@ -287,7 +296,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Occupation</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2 ">
@@ -298,7 +309,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Country</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2 ">
@@ -310,7 +323,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Address</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2 ">
@@ -391,7 +406,9 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-2 grid-rows-2 mt-8">
             <h1 className="settingfont">Country</h1>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2 ">
@@ -404,19 +421,21 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 mt-8">
+          <hr className="border-b-1 flex border-gray-100 w-full mt-10 " />
+
+          <div className="grid md:grid-cols-1 grid-rows-1 mt-8">
             <div>
               <h1 className="settingfont">Bio</h1>
               <p className="promotionContent">Write a short introduction</p>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 mt-10">
               <div className="col-span-2 ">
                 <form>
                   <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
                     <div className="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
                       <div className="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
                         <div className="flex items-center space-x-1 sm:pr-4">
-                          <Select label="Select Version">
+                          <Select label="Font Based">
                             <Option>Bold</Option>
                             <Option>Italic</Option>
                             <Option>Normal</Option>
@@ -529,13 +548,16 @@ const page = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-end gap-3">
-            <button className="learn-more-btn text-gray-700 rounded-lg px-[180px] sm:px-[180px] py-3 sm:py-3 md:px-5 md:py-2 border-gray-300 border-2 hover:bg-gray-50">
+          <hr className="border-b-1 flex border-gray-100 w-full my-10 " />
+
+          <div className="flex md:flex-row flex-col justify-end  gap-3">
+            <button 
+            className="learn-more-btn  text-gray-700 rounded-lg md:w-24 w-full h-10 border-gray-300 border-2 hover:bg-gray-50">
               Cabcel
             </button>
             <button
               onClick={Homesettingpage}
-              className="get-started-btn text-white bg-red-500 rounded-lg px-[180px] sm:px-[180px] py-3 sm:py-3 md:px-5 md:py-2 hover:bg-red-600"
+              className="get-started-btn  text-white bg-red-500 rounded-lg md:w-24 w-full h-10 hover:bg-red-600"
             >
               Save
             </button>

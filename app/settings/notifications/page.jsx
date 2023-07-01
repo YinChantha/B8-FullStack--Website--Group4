@@ -13,7 +13,7 @@ const page = () => {
   return (
     <div className="flex gap-1  mb-28">
       <Settings />
-      <div className="bg-white w-9/12 p-4">
+      <div className="bg-white md:w-9/12 w-full p-4">
         <p className="promotionName">Notifications</p>
         <div className="mt-5">
           <h1 className="text-gray-900 font-semibold text-xl">
@@ -24,21 +24,24 @@ const page = () => {
             can turn them off anytime.
           </p>
         </div>
+        <hr className="border-b-1 flex border-gray-100 md:w-11/12 w-full mt-10 " />
 
-        <div className="grid grid-cols-2 mt-12">
+        <div className="grid md:grid-cols-2 grid-flow-row mt-12">
           <div>
             <h1 className="settingfont">Notifications from us</h1>
-            <p className="promotionContent w-8/12">
+            <p className="promotionContent md:w-8/12 w-full">
               Receive the latest news, updates and industry tutorials from us.
             </p>
           </div>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+          <div className="flex flex-col gap-6 md:mt-0 mt-5">
+            <div className="flex items-start flex-row gap-3">
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">News and updates</h1>
@@ -48,12 +51,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
-
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
               <div>
                 <h1 className="settingfont">Tips and tutorials</h1>
                 <p className="promotionContent w-full">
@@ -62,11 +66,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">User research</h1>
@@ -78,7 +84,9 @@ const page = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 mt-12">
+        <hr className="border-b-1 flex border-gray-100 md:w-11/12 w-full mt-10 " />
+
+        <div className="grid md:grid-cols-2 grid-flow-row mt-12">
           <div>
             <h1 className="settingfont">Reminders</h1>
             <p className="promotionContent w-8/12">
@@ -86,13 +94,15 @@ const page = () => {
               missed.
             </p>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 md:mt-0 mt-5">
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">Do not notify me</h1>
@@ -102,11 +112,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">Important reminders only</h1>
@@ -116,11 +128,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">All reminders</h1>
@@ -132,7 +146,9 @@ const page = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 mt-12">
+        <hr className="border-b-1 flex border-gray-100 md:w-11/12 w-full mt-10 " />
+
+        <div className="grid md:grid-cols-2 grid-flow-row mt-12">
           <div>
             <h1 className="settingfont">Promotions</h1>
             <p className="promotionContent w-8/12">
@@ -140,13 +156,15 @@ const page = () => {
               offered.
             </p>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 md:mt-0 mt-5">
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">Do not notify me</h1>
@@ -156,11 +174,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">Important reminders only</h1>
@@ -170,11 +190,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">All reminders</h1>
@@ -185,7 +207,10 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 mt-12">
+
+        <hr className="border-b-1 flex border-gray-100 md:w-11/12 w-full mt-10 " />
+
+        <div className="grid md:grid-cols-2 grid-flow-row mt-12">
           <div>
             <h1 className="settingfont">More activity about you</h1>
             <p className="promotionContent w-8/12">
@@ -193,24 +218,28 @@ const page = () => {
               reactions to your posts, and more.
             </p>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 md:mt-0 mt-5">
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">Do not notify me</h1>
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">All reminders</h1>
@@ -220,11 +249,13 @@ const page = () => {
               </div>
             </div>
             <div className="flex flex-row gap-3">
-              <input
-                id="checkbox"
-                type="checkbox"
-                className="w-4 h-4 rounded-full text-red-500 accent-red-500"
-              />
+              <div>
+                <input
+                  id="checkbox"
+                  type="checkbox"
+                  className="md:w-4 md:h-4 rounded text-red-500 accent-red-500"
+                />
+              </div>
 
               <div>
                 <h1 className="settingfont">News and updates</h1>
