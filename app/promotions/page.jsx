@@ -14,7 +14,7 @@ const Promotions = () => {
     router.push(`/promotions/${id}`);
   };
   return (
-    <div className="w-10/12 mx-auto mt-6">
+    <div className="w-10/12 mx-auto mt-20">
       <div className="py-16 ">
         <h1 className="bankName text-center">Promotions</h1>
         <p className="promotionName text-center">

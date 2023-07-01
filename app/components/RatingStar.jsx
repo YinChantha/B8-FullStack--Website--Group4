@@ -3,7 +3,6 @@ const ImageDisplay = ({ count }) => {
   const images = [];
   for (let i = 0; i < count; i++) {
     images.push(
-      //   <img key={i} src={`path/to/image-${i + 1}.jpg`} alt={`Image ${i + 1}`} />
       <div className="flex">
         <img
           key={i}

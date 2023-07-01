@@ -7,7 +7,19 @@
 
   "softwareTools": "Pharetra morbi libero id aliquam elit massa integer tellus. Quis felis aliquam ullamcorper porttitor. Pulvinar ullamcorper sit dictumst ut eget a, elementum eu. Maecenas est morbi mattis id in ac pellentesque ac.",
   "otherResources": {
-    "resource1":"Lectus leo massa amet posuere. Malesuada mattis non convallis quisque. Libero sit et imperdiet bibendum quisque dictum vestibulum in non. Pretium ultricies tempor non est diam. Enim ut enim amet amet integer cursus. Sit ac commodo pretium sed etiam turpis suspendisse at.",
-    "resource2":"Tristique odio senectus nam posuere ornare leo metus, ultricies. Blandit duis ultricies vulputate morbi feugiat cras placerat elit. Aliquam tellus lorem sed ac. Montes, sed mattis pellentesque suscipit accumsan. Cursus viverra aenean magna risus elementum faucibus molestie pellentesque. Arcu ultricies sed mauris vestibulum."
+    "resource1": "Lectus leo massa amet posuere. Malesuada mattis non convallis quisque. Libero sit et imperdiet bibendum quisque dictum vestibulum in non. Pretium ultricies tempor non est diam. Enim ut enim amet amet integer cursus. Sit ac commodo pretium sed etiam turpis suspendisse at.",
+    "resource2": "Tristique odio senectus nam posuere ornare leo metus, ultricies. Blandit duis ultricies vulputate morbi feugiat cras placerat elit. Aliquam tellus lorem sed ac. Montes, sed mattis pellentesque suscipit accumsan. Cursus viverra aenean magna risus elementum faucibus molestie pellentesque. Arcu ultricies sed mauris vestibulum."
+  },
+  "savingAcc": {
+    "saveA1": "Savings accounts are a good option for achieving your money-saving goals. You’ll want to choose a savings account that offers a competitive annual percentage yield (APY) on your money. It can pay to choose one that either doesn’t have a monthly service fee or that has a minimum balance requirement you can meet to waive the fee.",
+    "saveA2": "Here are some steps to follow as you look for the best place to stash your savings:",
+    "saveList": [
+      "Determine what the money will be used for.",
+      "Figure out when you’ll need to access the funds. Money to purchase a car in the next year might be best kept in a savings account, for example.",
+      "Shop around. You’ll want to research banks and credit unions and compare rates. Check to see if there are any minimum balance requirements or monthly maintenance fees that could negatively impact you down the line. Generally, rates are highest at online banks, but it’s possible for a brick-and-mortar bank or a credit union to offer competitive yields.",
+      "Determine your risk tolerance. Money that needs to be safe should be in a Federal Deposit Insurance Corp. (FDIC) account that’s within FDIC limits and guidelines.",
+      "Open the savings account and deposit the funds into your account.",
+      "Consider setting up a split direct deposit to automatically add to your savings."
+    ]
   }
 }
