@@ -504,7 +504,7 @@ const Header = () => {
               Login
             </a>
           </div>
-          <button className="redButton truncate">Get started</button>
+          <button className="redButton truncate">Start Compare</button>
         </div>
         <IconButton
           variant="text"
