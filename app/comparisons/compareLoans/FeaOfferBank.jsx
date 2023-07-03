@@ -54,7 +54,7 @@ const contentData = [
     minBalanceApy: "20,641,378.75 KHR",
   },
 ];
-const FeatureOfferBank = () => {
+const FeaOfferBank = () => {
   return (
     <div className="">
       {contentData.map((bank, index) => (
@@ -114,4 +114,4 @@ const FeatureOfferBank = () => {
   );
 };
 
-export default FeatureOfferBank;
+export default FeaOfferBank;
