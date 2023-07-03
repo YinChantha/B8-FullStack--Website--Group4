@@ -1,3 +1,4 @@
+"use client"
 import BankList from "@/app/components/BankList";
 import Faq from "@/app/components/Faq";
 import Link from "next/link";
@@ -9,11 +10,16 @@ import KnowSaveAcc from "./KnowSaveAcc";
 import SocialLink from "./SocialLink";
 import CompareSavingAccForm from "./CompareSaveAccForm";
 import DisplayContent from "./DisplayContent";
+import Selection from "@/app/components/Selection";
+import ExampleSelection from "@/app/components/ExampleSelection";
 
 const CompareSavingAcc = () => {
   const tableContent = "text-gray-500 font-semibold text-base";
   return (
     <div className="pt-36">
+      {/* <ExampleSelection /> */}
+      {/* <Selection /> */}
+      {/* first section */}
       <div className="sect1 pb-24  px-4 sm:px-4 md:px-28">
         <div className="saveSect1 flex flex-col justify-center items-center">
           <p className="text-red-600 font-semibold text-sm sm:text-sm md:text-base">
@@ -39,6 +45,7 @@ const CompareSavingAcc = () => {
       </div>
       <hr className="border-b-1 border-gray-100 mx-4 sm:mx-4 md:mx-28" />
       <div className="sect2 py-16 px-4 sm:px-4 md:px-28">
+        {/* heading */}
         <div className=" flex flex-col justify-center items-center">
           <p className="text-red-600 text-sm font-medium text-center">
             Features
