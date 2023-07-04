@@ -1,7 +1,7 @@
 // Layout.js
 
 import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import Header from "../../components/Header";
 import React from "react";
 
 const Layout = ({ children }) => {

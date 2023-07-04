@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import BankList from "@/app/components/BankList";
 import Faq from "@/app/components/Faq";
 import Link from "next/link";
@@ -10,8 +10,8 @@ import KnowSaveAcc from "./KnowSaveAcc";
 import SocialLink from "./SocialLink";
 import CompareSavingAccForm from "./CompareSaveAccForm";
 import DisplayContent from "./DisplayContent";
-import Selection from "@/app/components/Selection";
-import ExampleSelection from "@/app/components/ExampleSelection";
+// import Selection from "@/app/components/Selection";
+// import ExampleSelection from "@/app/components/ExampleSelection";
 
 const CompareSavingAcc = () => {
   const tableContent = "text-gray-500 font-semibold text-base";
@@ -92,7 +92,6 @@ const CompareSavingAcc = () => {
             <SocialLink />
           </div>
 
-          
           <div>
             {/* best saving accounts info */}
             <div id="article1">
@@ -153,10 +152,9 @@ const CompareSavingAcc = () => {
             </div>
             <hr className="border-b-1 border-gray-100 my-12" />
             {/* what to know about savings accounts */}
-            <KnowSaveAcc id="article3"/>
+            <KnowSaveAcc id="article3" />
           </div>
         </div>
-
       </div>
 
       <Faq />
