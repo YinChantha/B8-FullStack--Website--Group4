@@ -19,17 +19,18 @@ const ChatGPT = () => {
 
         <motion.div
           key="button"
-          onClick={() => setIsShow(!isShow)}
+          onClick={() => setIsShow(!isShow) && handleClick()}
           layout
           transition={{ duration: 0.3 }}
-          className="bg-red-500 w-20 h-20 flex items-center justify-center rounded-full hover:bg-red-400"
+          className="bg-red-500 w-20 h-20 flex items-center justify-center rounded-full hover:bg-red-400 transition-all duration-300 ease-in-out"
         >
           {!isShow && (
             <Image
               src="/images/gpt.png"
-              alt="chat-image"
+              alt="gpt"
               width={42}
               height={42}
+              className="w-auto h-auto"
             />
           )}
           {isShow && <SlArrowRight />}

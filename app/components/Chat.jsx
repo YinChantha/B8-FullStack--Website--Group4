@@ -2,10 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import Message from "./Message";
 import { LuSend } from "react-icons/lu";
 import { useState, useEffect, useRef } from "react";
-import { scrollToBottom } from "react-scroll/modules/mixins/animate-scroll";
 
 export default function Chat() {
   const [messages, setmessages] = useState([]);
@@ -66,6 +64,7 @@ export default function Chat() {
             width={50}
             height={50}
             className="rounded-full"
+            alt="profile"
           />
         </div>
         <div className="flex-col items-center mt-3">
@@ -76,26 +75,33 @@ export default function Chat() {
             {"hak.vichet19@kit.edu.kh"}
           </p>
         </div>
-        <div className="flex-col text-black">
-          <h1 className="text-[24px] font-bold text-center mt-2">Hey there,</h1>
-          <h1 className="text-[24px] font-bold text-center -mt-2">
-            How can we help you?
-          </h1>
-        </div>
-        {/* messageBox */}
         <div
           ref={chatContainerRef}
-          className="w-[500px] h-[380px] mt-5 rounded-lg scroll-smooth overflow-y-auto"
+          className="w-[500px] h-[450px] mt-5 rounded-lg scroll-smooth overflow-y-auto"
         >
+          <div>
+            {messages.length === 0 && (
+              <div className="flex flex-col items-center justify-center text-black">
+                <p className="text-[24px] font-bold text-center mt-2">
+                  Hey there,
+                </p>
+                <p className="text-[24px] font-bold text-center -mt-2">
+                  How can I assist you today?
+                </p>
+              </div>
+            )}
+          </div>
           {messages.map((message, index) => (
             <div key={index} className="flex flex-col w-full px-4">
               {/* <div className='w-[300px] '> */}
               <div
                 className={`flex flex-row w-[300px] justify-between -mb-2 ${
-                  message.sender === "You" ? " self-end" : " self-start"
+                  message.sender === "You" ? "self-end" : " self-start"
                 }`}
               >
-                <p className="flex text-[15px] text-black">{message.sender}</p>
+                <p className="flex text-[15px] text-black">
+                  {message.sender === "You" ? "" : "Chatbot"}
+                </p>
                 <p className="flex text-[12px] text-gray-600">
                   {message.timestemp}
                 </p>
@@ -128,19 +134,19 @@ export default function Chat() {
               <input
                 id="user-input"
                 type="message"
-                outline="none"
-                className="text-[15px] w-full text-gray-800 border-1 border-gray-500 rounded-lg px-4"
+                className="text-[15px] w-full text-gray-800 border-1 border-gray-500 rounded-lg px-4 outline-none"
+                autoComplete="off"
                 placeholder="Message..."
                 onKeyDown={handleInputKeyDown}
               />
             </div>
-            <button
+            <div
               onClick={handleSendMessage}
               className="flex w-[50px] h-[50px] bg-red-500 rounded-lg px-3 py-3 hover:bg-red-600"
               aria-label="Send"
             >
               <LuSend size={25} className="m-auto" />
-            </button>
+            </div>
           </div>
         </div>
       </div>
