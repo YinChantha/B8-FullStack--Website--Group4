@@ -1,7 +1,7 @@
 // account infor at Compare Saving Account page
 import React from "react";
 import Image from "next/image";
-import ImageDisplay from "@/app/components/RatingStar";
+import ImageDisplay from "@/app/components/ImageDisplay";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const bankData = [

@@ -98,7 +98,7 @@ const CompareLoansForm = () => {
         className="flex flex-col gap-6 bg-[#F9FAFB] py-8 px-6 rounded-lg border-[1px] border-[#EAECF0]"
       >
         {/* Date of birth */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 ">
           <div className="flex flex-row justify-between">
             <label for="dateOfBirth" className="labelStyle">
               Date of birth
@@ -122,22 +122,6 @@ const CompareLoansForm = () => {
               ref={inputRef}
             />
           </div>
-          {/* <select
-            id="dateOfBirth"
-            name="dateOfBirth"
-            className="selectStyle"
-            placeholder="slkfdlkf"
-          >
-            <option value="monthly">weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="yearly">Yearly</option>
-          </select> */}
-          {/* <input
-            type="number"
-            name="initial deposit"
-            className="inputStyle"
-            placeholder="Enter your initial deposit"
-          /> */}
         </div>
         {/* loan amount */}
         <div className="flex flex-col gap-3">
@@ -154,11 +138,6 @@ const CompareLoansForm = () => {
             className="inputStyle"
             placeholder="Enter your loan amount"
           />
-          {/* <select id="period" name="period" className="selectStyle">
-            <option value="monthly">weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="yearly">Yearly</option>
-          </select> */}
         </div>
         {/* annual income */}
         <div className="flex flex-col gap-3">
@@ -186,44 +165,6 @@ const CompareLoansForm = () => {
               <Option>After 5 years</Option>
             </Select>
           </div>
-          {/* <input
-            type="number"
-            name="Your Regular Deposit"
-            className="inputStyle"
-            placeholder="Enter your annual income"
-          />
-          <select
-            id="annual-income"
-            name="annual-income"
-            className="selectStyle"
-          >
-            <option value="part-time">Part Time</option>
-            <option value="fulltime">Fulltime</option>
-            <option value="yearly">After 3 years</option>
-            <option value="yearly">After 4 years</option>
-            <option value="yearly">After 5 years</option>
-          </select> */}
-          {/* <select
-            id="annual-income"
-            name="annual-income"
-            className="selectStyle"
-          >
-            <option value="part-time">Contractor</option>
-            <option value="fulltime">Employee</option>
-            <option value="yearly">House Person</option>
-            <option value="yearly">Part Time</option>
-            <option value="yearly">Retired</option>
-            <option value="yearly">Self Employed</option>
-            <option value="yearly">Student</option>
-            <option value="yearly">Unemployed</option>
-          </select> */}
-          {/* <select id="value" name="value" className="selectStyle ">
-            <option value="monthly">After 1 year</option>
-            <option value="yearly">After 2 years</option>
-            <option value="yearly">After 3 years</option>
-            <option value="yearly">After 4 years</option>
-            <option value="yearly">After 5 years</option>
-          </select> */}
         </div>
         {/* Terms */}
         <div className="flex flex-col gap-3">
@@ -242,22 +183,6 @@ const CompareLoansForm = () => {
               <Option>More than 5 years</Option>
             </Select>
           </div>
-          {/* <select
-            id="filterAcctype"
-            name="filterAcctype"
-                      className="selectStyle"
-                      label="Select your term"
-          > */}
-          {/* <option value="monthly" disabled selected hidden>
-              Selection your term
-            </option> */}
-          {/* <option value="monthly">Less than a year</option>
-            <option value="yearly">1 year</option>
-            <option value="yearly">2 years</option>
-            <option value="yearly">3 years</option>
-            <option value="yearly">4 years</option>
-            <option value="yearly">More than 5 years</option>
-          </select> */}
         </div>
         {/* update result */}
         <button type="submit" className="submitBtn">

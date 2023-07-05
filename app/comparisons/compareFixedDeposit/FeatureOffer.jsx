@@ -1,17 +1,17 @@
-import React from "react";
 import Image from "next/image";
-import ImageDisplay from "@/app/components/ImageDisplay";
+import React from "react";
+import Imageshow from "../../components/ImageDisplay";
 
-const contentData = [
+const fixedDepositData = [
   {
     bankLogo: "/images/acleda-bank.png",
     bankName: "acleda bank",
     location: "Phnom Penh, Cambodia",
     rate: 5.0,
     term: "5 years",
-    type: "Savings & MMAs",
-    apr: "4.50%",
-    minBalanceApy: "20,641,378.75 KHR",
+    type: "Monthly Interest",
+    interestRate: "4.50%",
+    totalReturn: "20,641,378.75 KHR",
   },
   {
     bankLogo: "/images/acleda-bank.png",
@@ -19,9 +19,9 @@ const contentData = [
     location: "Phnom Penh, Cambodia",
     rate: 5.0,
     term: "5 years",
-    type: "Savings & MMAs",
-    apr: "4.50%",
-    minBalanceApy: "20,641,378.75 KHR",
+    type: "Monthly Interest",
+    interestRate: "4.50%",
+    totalReturn: "20,641,378.75 KHR",
   },
   {
     bankLogo: "/images/acleda-bank.png",
@@ -29,9 +29,9 @@ const contentData = [
     location: "Phnom Penh, Cambodia",
     rate: 5.0,
     term: "5 years",
-    type: "Savings & MMAs",
-    apr: "4.50%",
-    minBalanceApy: "20,641,378.75 KHR",
+    type: "Monthly Interest",
+    interestRate: "4.50%",
+    totalReturn: "20,641,378.75 KHR",
   },
   {
     bankLogo: "/images/acleda-bank.png",
@@ -39,9 +39,9 @@ const contentData = [
     location: "Phnom Penh, Cambodia",
     rate: 5.0,
     term: "5 years",
-    type: "Savings & MMAs",
-    apr: "4.50%",
-    minBalanceApy: "20,641,378.75 KHR",
+    type: "Monthly Interest",
+    interestRate: "4.50%",
+    totalReturn: "20,641,378.75 KHR",
   },
   {
     bankLogo: "/images/acleda-bank.png",
@@ -49,15 +49,16 @@ const contentData = [
     location: "Phnom Penh, Cambodia",
     rate: 5.0,
     term: "5 years",
-    type: "Savings & MMAs",
-    apr: "4.50%",
-    minBalanceApy: "20,641,378.75 KHR",
+    type: "Monthly Interest",
+    interestRate: "4.50%",
+    totalReturn: "20,641,378.75 KHR",
   },
 ];
-const FeatureOfferBank = () => {
+
+const FeatureOffer = () => {
   return (
-    <div className="">
-      {contentData.map((bank, index) => (
+    <div>
+      {fixedDepositData.map((bank, index) => (
         <div
           key={index}
           className="flex gap-8 border-1 border-gray-200 rounded-lg shadow-md p-8 mt-6 "
@@ -81,7 +82,7 @@ const FeatureOfferBank = () => {
                   <p className="text-[#667085] text-sm">{bank.location}</p>
                   <div className="flex flex-row items-center gap-[11px]">
                     <p className="text-[#344054] text-base font-medium">5.0</p>
-                    <ImageDisplay count={bank.rate} />
+                    <Imageshow count={bank.rate} />
                   </div>
                 </div>
                 <div>
@@ -98,11 +99,11 @@ const FeatureOfferBank = () => {
                   <p className="offerTitle">Type</p>
                 </div>
                 <div>
-                  <h1 className="offerDetail">{bank.apr}</h1>
+                  <h1 className="offerDetail">{bank.interestRate}</h1>
                   <p className="offerTitle">APR</p>
                 </div>
                 <div>
-                  <h1 className="offerDetail">{bank.minBalanceApy}</h1>
+                  <h1 className="offerDetail">{bank.totalReturn}</h1>
                   <p className="offerTitle">Min. balance for APY</p>
                 </div>
               </div>
@@ -114,4 +115,4 @@ const FeatureOfferBank = () => {
   );
 };
 
-export default FeatureOfferBank;
+export default FeatureOffer;
