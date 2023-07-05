@@ -28,7 +28,7 @@ const bankData = [
 
 const overviewTexts = Object.values(bankData[0].overviewList);
 
-const BankInfo = () => {
+const BankInfoLoans = () => {
   return (
     <div className="flex w-full border-1 border-gray-200 rounded-lg shadow-md">
       <div className="m-8 w-full">
@@ -65,7 +65,6 @@ const BankInfo = () => {
                   {bank.companyOverview}
                 </p>
               </div>
-              {/* list with bullet */}
               <div className="flex flex-col mt-8 gap-3">
                 {overviewTexts.map((text, index) => (
                   <div key={index} className="flex flex-row items-center gap-2">
@@ -85,4 +84,4 @@ const BankInfo = () => {
   );
 };
 
-export default BankInfo;
+export default BankInfoLoans;

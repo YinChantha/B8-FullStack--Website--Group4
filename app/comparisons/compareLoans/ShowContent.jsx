@@ -1,8 +1,5 @@
-"use client"
 import React, { useState } from "react";
-import BankInfo from "./BankInfo";
-import FeatureOfferBank from "./FeatureOfferBank";
-import EstimateSaving from "./EstimateSaving";
+import FeaOfferBank from "./FeaOfferBank";
 
 const currencyRiel = (
   <svg
@@ -150,8 +147,8 @@ const currencyDollar = (
   </svg>
 );
 
-const DisplayContent = () => {
-  const [currency, setCurrency] = useState(true);
+const ShowContent = () => {
+    const [currency, setCurrency] = useState(true);
 
   return (
     <div>
@@ -168,7 +165,7 @@ const DisplayContent = () => {
         </p>
       </div>
       {/* feature offers */}
-      <div className="mt-8">
+      <div className="mt-8 flex flex-col items-center ">
         {/* feature offers heading and filter */}
         <div className="flex justify-between">
           <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
@@ -195,12 +192,13 @@ const DisplayContent = () => {
           </div>
         </div>
         {/* display bank info */}
-        <FeatureOfferBank />
-        <EstimateSaving />
-        <FeatureOfferBank />
+        {/* <div className="mt-6"> */}
+        <FeaOfferBank />
+        <button className="redButton mt-16">View more results</button>
+        {/* </div> */}
       </div>
     </div>
   );
 };
 
-export default DisplayContent;
+export default ShowContent;

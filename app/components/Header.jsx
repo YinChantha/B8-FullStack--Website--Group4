@@ -506,7 +506,7 @@ const Header = () => {
               Login
             </a>
           </div>
-          <button className="redButton truncate">Get started</button>
+          <button className="redButton truncate">Start Compare</button>
         </div>
         <IconButton
           variant="text"
@@ -541,7 +541,7 @@ const Header = () => {
               />
             </svg>
             <a href="" className="text-gray-600">
-              Englishz
+              English
             </a>
           </div>
 

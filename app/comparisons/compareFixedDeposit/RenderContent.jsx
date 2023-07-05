@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import BankInfo from "./BankInfo";
-import FeatureOfferBank from "./FeatureOfferBank";
-import EstimateSaving from "./EstimateSaving";
+import Bank from "./Bank";
+import FeaOfferBank from "../compareLoans/FeaOfferBank";
+import FeatureOffer from "./FeatureOffer";
 
 const currencyRiel = (
   <svg
@@ -150,9 +150,8 @@ const currencyDollar = (
   </svg>
 );
 
-const DisplayContent = () => {
+const RenderContent = () => {
   const [currency, setCurrency] = useState(true);
-
   return (
     <div>
       {/* we found 51 products */}
@@ -188,19 +187,17 @@ const DisplayContent = () => {
               name="interest-rate"
               className="selectStyle"
             >
-              <option value="rateAER">Company Provider</option>
-              <option value="rateAER">Interest Rate (AER)</option>
-              <option value="yearly">Term</option>
+              <option value="rateAER">Interest at Maturity</option>
+              <option value="rateAER">Monthly Interest</option>
             </select>
           </div>
         </div>
-        {/* display bank info */}
-        <FeatureOfferBank />
-        <EstimateSaving />
-        <FeatureOfferBank />
+              {/* display bank info */}
+             <FeatureOffer />
+             
       </div>
     </div>
   );
 };
 
-export default DisplayContent;
+export default RenderContent;
