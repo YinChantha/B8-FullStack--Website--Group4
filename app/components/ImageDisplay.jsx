@@ -1,3 +1,6 @@
+"use client"
+import React from "react";
+import Image from "next/image";
 const ImageDisplay = ({ count }) => {
   // Generate an array with the necessary number of images
   const images = [];

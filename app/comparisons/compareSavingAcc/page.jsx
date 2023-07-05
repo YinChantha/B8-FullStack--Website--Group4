@@ -3,11 +3,11 @@ import BankList from "@/app/components/BankList";
 import Faq from "@/app/components/Faq";
 import Link from "next/link";
 import BankInfo from "./BankInfo";
-import data from "./data";
+import data from "/public/data.json";
 import React from "react";
 import ChooseSavAccList from "./ChooseSavAccList";
 import KnowSaveAcc from "./KnowSaveAcc";
-import SocialLink from "./SocialLink";
+// import SocialLink from "./SocialLink";
 import CompareSavingAccForm from "./CompareSaveAccForm";
 import DisplayContent from "./DisplayContent";
 // import Selection from "@/app/components/Selection";
@@ -89,7 +89,8 @@ const CompareSavingAcc = () => {
               </div>
             </div>
             <hr className="border-b-1 border-gray-100" />
-            <SocialLink />
+            {/* social link component */}
+            {/* <SocialLink /> */}
           </div>
 
           <div>

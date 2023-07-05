@@ -3,14 +3,6 @@ import React, {useState} from "react";
 import { Listbox } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
-const people = [
-  { id: 1, name: "Durward Reynolds", unavailable: false },
-  { id: 2, name: "Kenton Towne", unavailable: false },
-  { id: 3, name: "Therese Wunsch", unavailable: false },
-  { id: 4, name: "Benedict Kessler", unavailable: true },
-  { id: 5, name: "Katelyn Rohan", unavailable: false },
-];
-
 const regularDepo = [
   { id: 1, name: "Weekly", unavailable: false },
   { id: 2, name: "Monthly", unavailable: true}, 
@@ -48,8 +40,6 @@ const mark = (
 );
 
 const CompareSaveAccForm = () => {
-  const [selectRegularDepo, setSelectRegularDepo] = useState(regularDepo[0]);
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
   return (
     <div>
       <form
@@ -88,35 +78,7 @@ const CompareSaveAccForm = () => {
             className="inputStyle"
             placeholder="Enter your regular deposit"
           />
-          {/* <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-            <Listbox.Button>{selectedPerson.name}</Listbox.Button>
-            <Listbox.Options>
-              {people.map((person) => (
-                <Listbox.Option
-                  key={person.id}
-                  value={person}
-                  className="ui-active:bg-blue-500 ui-active:text-white ui-not-active:bg-white ui-not-active:text-black"
-                >
-                  <CheckIcon className="hidden ui-selected:block" />
-                  {person.name}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
-          </Listbox> */}
-          {/* <Listbox value={selectRegularDepo} onChange={setSelectRegularDepo}>
-            <Listbox.Button>{selectRegularDepo.name}</Listbox.Button>
-            <Listbox.Options>
-              {regularDepo.map((person) => (
-                <Listbox.Option
-                  key={regularDepo.id}
-                  value={regularDepo}
-                  disabled={regularDepo.unavailable}
-                >
-                  {regularDepo.name}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
-          </Listbox> */}
+         
           <select id="period" name="period" className="selectStyle">
             <option value="monthly">weekly</option>
             <option value="monthly">Monthly</option>
