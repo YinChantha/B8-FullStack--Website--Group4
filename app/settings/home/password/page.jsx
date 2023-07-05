@@ -7,26 +7,10 @@ import Navbarsetting from "../../../components/Navbarsetting";
 import { getAllfixeddeposits } from "../../../api/fixeddeposits/getAlldeposits";
 
 const page = () => {
-  const [data, setData] = useState("");
-
-  const GetAlldata = async () => {
-    try {
-      const res = await getAllfixeddeposits();
-
-      setData(res.bank);
-      console.log("data is here : ", res);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  // useEffect(() => {
-  //   console.log("data is here : ",data);
-  // }, [data]);
-  const router = useRouter();
-  const Homesettingpage = () => {
-    router.push("/settings/home");
-  };
+  // const router = useRouter();
+  // const Homesettingpage = () => {
+  //   router.push("/settings/home");
+  // };
 
   return (
     <div className="flex gap-1">
@@ -90,15 +74,12 @@ const page = () => {
 
           <div className="flex md:flex-row flex-col justify-end gap-3 mt-8">
             <button
-              onClick={Homesettingpage}
+              // onClick={Homesettingpage}
               className="learn-more-btn  text-gray-700 rounded-lg md:w-24 w-full h-10 border-gray-300 border-2 hover:bg-gray-50"
             >
               Cabcel
             </button>
-            <button
-              onClick={GetAlldata}
-              className="get-started-btn  text-white bg-red-500 rounded-lg md:w-40 w-full h-10 hover:bg-red-600"
-            >
+            <button className="get-started-btn  text-white bg-red-500 rounded-lg md:w-40 w-full h-10 hover:bg-red-600">
               Update password
             </button>
           </div>

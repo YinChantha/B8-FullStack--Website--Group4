@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import Settings from "../../../components/Setting";
+import Settings from "../components/Setting";
 import { Select, Option } from "@material-tailwind/react";
 import TimezoneSelect from "react-timezone-select";
 import Image from "next/image";
@@ -9,10 +9,9 @@ import "react-phone-input-2/lib/style.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useRouter } from "next/navigation";
-import Navbarsetting from "../../../components/Navbarsetting";
+import Navbarsetting from "../components/Navbarsetting";
 import ReactFlagsSelect from "react-flags-select";
-
-const page = () => {
+const Mydetail = () => {
   const [flag, setFlag] = useState("KH");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [valid, setValid] = useState("true");
@@ -567,4 +566,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Mydetail;
