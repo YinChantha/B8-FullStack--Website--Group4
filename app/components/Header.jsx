@@ -539,7 +539,7 @@ const Header = () => {
               />
             </svg>
             <a href="" className="text-gray-600">
-              Englishz
+              English
             </a>
           </div>
 

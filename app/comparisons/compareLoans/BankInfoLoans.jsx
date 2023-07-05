@@ -28,7 +28,7 @@ const bankData = [
 
 const overviewTexts = Object.values(bankData[0].overviewList);
 
-const BankInfo = () => {
+const BankInfoLoans = () => {
   return (
     <div className="flex w-full border-1 border-gray-200 rounded-lg shadow-md">
       <div className="m-8 w-full">
@@ -84,4 +84,4 @@ const BankInfo = () => {
   );
 };
 
-export default BankInfo;
+export default BankInfoLoans;
