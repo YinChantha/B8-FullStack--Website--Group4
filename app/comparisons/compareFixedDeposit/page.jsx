@@ -1,11 +1,16 @@
-"use client"
+"use client";
 import React from "react";
 import BankList from "../../components/BankList";
 import Faq from "../../components/Faq";
 import CompareFixedDepoForm from "./CompareFixedDepoForm";
 import RenderContent from "./RenderContent";
+import EstimateSaving from "../compareSavingAcc/EstimateSaving";
+import Link from "next/link";
+import Bank from "./Bank";
+import data from "./data.json";
 
 const CompareFixedDeposit = () => {
+  const tableContent = "text-gray-500 font-semibold text-base";
   return (
     <div className="pt-36">
       {/* first section */}
@@ -55,9 +60,82 @@ const CompareFixedDeposit = () => {
           {/* form */}
           <CompareFixedDepoForm />
           {/* display content */}
-          <RenderContent />
+          <div>
+            <RenderContent />
+            <EstimateSaving />
+          </div>
         </div>
       </div>
+      {/* third section */}
+      {/* table of content and best savings... */}
+      <div className="flex py-16 px-4 sm:px-4 md:px-28">
+        {/* content name */}
+        <div className="flex flex-col gap-8 max-w-[264px]">
+          <hr className="border-b-1 border-gray-100" />
+          <div className="flex flex-col gap-4">
+            <h1 className="text-red-600 font-semibold text-base">
+              Table of contents
+            </h1>
+            <div className="flex flex-col gap-3">
+              <Link href="/#" className={`${tableContent}`}>
+                Best savings accounts and rates
+              </Link>
+              <Link href="/#" className={`${tableContent}`}>
+                How to choose a savings account
+              </Link>
+              <Link href="/#" className={`${tableContent}`}>
+                What to know about savings accounts
+              </Link>
+            </div>
+          </div>
+          <hr className="border-b-1 border-gray-100" />
+          {/* social link component */}
+          {/* <SocialLink /> */}
+        </div>
+        {/* content */}
+        {/* best saving account */}
+        <div id="">
+          <h1 className="text-gray-900 font-semibold text-3xl">
+            Best savings accounts and rates in June 2023
+          </h1>
+          <p className="mt-6 text-[#667085] text-lg">
+            Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam
+            suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum
+            quis montes, sit sit. Tellus aliquam enim urna, etiam. Mauris
+            posuere vulputate arcu amet, vitae nisi, tellus tincidunt. At
+            feugiat sapien varius id.
+          </p>
+          <p className="mt-5 mb-12 text-[#667085] text-lg">
+            Eget quis mi enim, leo lacinia pharetra, semper. Eget in volutpat
+            mollis at volutpat lectus velit, sed auctor. Porttitor fames arcu
+            quis fusce augue enim. Quis at habitant diam at. Suscipit tristique
+            risus, at donec. In turpis vel et quam imperdiet. Ipsum molestie
+            aliquet sodales id est ac volutpat.
+          </p>
+          {/* chipmong bank */}
+          <div className="flex flex-col gap-6">
+            <Bank />
+          </div>
+          {/* more text below bank info */}
+          {/* use style "bodyText" in body */}
+          <div className="bodyText mt-6 flex flex-col gap-6 ">
+            <p className="">{data.textBelowOverview.text1}</p>
+            <p className="">{data.textBelowOverview.text2}</p>
+            <p className="">{data.textBelowOverview.text3}</p>
+          </div>
+          <div className="mt-12">
+            <h1 className="titleText">Software and tools</h1>
+            <p className="bodyText mt-4 ">{data.softwareTools}</p>
+          </div>
+          <div>
+            <h1 className="titleText mt-12">Other resources</h1>
+            <p className="bodyText mt-12">{data.otherResources.resource1}</p>
+            <p className="bodyText mt-6"> {data.otherResources.resource2}</p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+
       {/* frequently ask questions */}
       <Faq />
     </div>

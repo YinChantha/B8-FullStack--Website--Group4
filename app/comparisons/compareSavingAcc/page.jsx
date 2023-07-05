@@ -70,6 +70,7 @@ const CompareSavingAcc = () => {
 
         {/* table of content and best savings... */}
         <div className="flex py-16 gap-8 ">
+          {/* <div className="flex flex-col gap-8 max-w-[264px]"></div> */}
           <div className="flex flex-col gap-8 max-w-[264px]">
             <hr className="border-b-1 border-gray-100" />
             <div className="flex flex-col gap-4">
@@ -80,12 +81,12 @@ const CompareSavingAcc = () => {
                 <Link href="/#" className={`${tableContent}`}>
                   Best savings accounts and rates
                 </Link>
-                <p className={`${tableContent}`}>
+                <Link href="/#" className={`${tableContent}`}>
                   How to choose a savings account
-                </p>
-                <p className={`${tableContent}`}>
+                </Link>
+                <Link href="/#" className={`${tableContent}`}>
                   What to know about savings accounts
-                </p>
+                </Link>
               </div>
             </div>
             <hr className="border-b-1 border-gray-100" />
@@ -95,7 +96,7 @@ const CompareSavingAcc = () => {
 
           <div>
             {/* best saving accounts info */}
-            <div id="article1">
+            <div id="">
               <h1 className="text-gray-900 font-semibold text-3xl">
                 Best savings accounts and rates in June 2023
               </h1>
@@ -143,7 +144,7 @@ const CompareSavingAcc = () => {
             </div>
             <hr className="border-b-1 border-gray-100 my-12" />
             {/* how to choose a savings account */}
-            <div id="article2">
+            <div id="">
               <h1 className="text-[#101828] font-semibold text-3xl">
                 How to choose a savings account
               </h1>
@@ -153,7 +154,7 @@ const CompareSavingAcc = () => {
             </div>
             <hr className="border-b-1 border-gray-100 my-12" />
             {/* what to know about savings accounts */}
-            <KnowSaveAcc id="article3" />
+            <KnowSaveAcc id="" />
           </div>
         </div>
       </div>

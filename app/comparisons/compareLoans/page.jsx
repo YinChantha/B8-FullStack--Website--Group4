@@ -93,7 +93,7 @@ const CompareLoan = () => {
 
         <div>
           {/* best saving accounts info */}
-          <div id="article1">
+          <div id="">
             <h1 className="text-gray-900 font-semibold text-3xl">
               Best savings accounts and rates in June 2023
             </h1>
@@ -136,7 +136,7 @@ const CompareLoan = () => {
           </div>
           <hr className="border-b-1 border-gray-100 my-12" />
           {/* how to choose a savings account */}
-          <div id="article2">
+          <div id="">
             <h1 className="text-[#101828] font-semibold text-3xl">
               How to choose a savings account
             </h1>
@@ -146,7 +146,7 @@ const CompareLoan = () => {
           </div>
           <hr className="border-b-1 border-gray-100 my-12" />
           {/* what to know about savings accounts */}
-          <KnowSaveAcc id="article3" />
+          <KnowSaveAcc id="" />
         </div>
       </div>
       {/* FAQ */}
