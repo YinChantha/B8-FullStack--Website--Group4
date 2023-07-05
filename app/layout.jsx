@@ -8,10 +8,16 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
-
 export default function RootLayout({ children }) {
   const router = usePathname();
-  const pathToHideNav = ["/", "promotions", "landingPage", "contact", "legal", "FAQs"];
+  const pathToHideNav = [
+    "/",
+    "promotions",
+    "landingPage",
+    "contact",
+    "legal",
+    "FAQs",
+  ];
 
   return (
     <html lang="en" className="box-border">
@@ -24,6 +30,7 @@ export default function RootLayout({ children }) {
           router === "/legal" ||
           router === "/FAQs") && <Header className="" />}
         <main className="flex-1">{children}</main>
+
         {(router === "/" ||
           router === "/promotions/[id]" ||
           router === "/promotions" ||
@@ -32,7 +39,6 @@ export default function RootLayout({ children }) {
           router === "/contact" ||
           router === "/legal" ||
           router === "/FAQs") && <Footer className="" />}
-     
       </body>
     </html>
   );
