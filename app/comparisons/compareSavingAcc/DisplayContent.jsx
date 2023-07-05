@@ -195,9 +195,7 @@ const DisplayContent = () => {
           </div>
         </div>
         {/* display bank info */}
-        {/* <div className="mt-6"> */}
         <FeatureOfferBank />
-        {/* </div> */}
         <EstimateSaving />
         <FeatureOfferBank />
       </div>

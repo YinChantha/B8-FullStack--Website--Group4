@@ -1,5 +1,8 @@
+"use client";
 import React, { useState } from "react";
-import FeaOfferBank from "./FeaOfferBank";
+import Bank from "./Bank";
+import FeaOfferBank from "../compareLoans/FeaOfferBank";
+import FeatureOffer from "./FeatureOffer";
 
 const currencyRiel = (
   <svg
@@ -147,9 +150,8 @@ const currencyDollar = (
   </svg>
 );
 
-const ShowContent = () => {
-    const [currency, setCurrency] = useState(true);
-
+const RenderContent = () => {
+  const [currency, setCurrency] = useState(true);
   return (
     <div>
       {/* we found 51 products */}
@@ -165,7 +167,7 @@ const ShowContent = () => {
         </p>
       </div>
       {/* feature offers */}
-      <div className="mt-8 flex flex-col items-center ">
+      <div className="mt-8">
         {/* feature offers heading and filter */}
         <div className="flex justify-between">
           <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
@@ -185,20 +187,17 @@ const ShowContent = () => {
               name="interest-rate"
               className="selectStyle"
             >
-              <option value="rateAER">Company Provider</option>
-              <option value="rateAER">Interest Rate (AER)</option>
-              <option value="yearly">Term</option>
+              <option value="rateAER">Interest at Maturity</option>
+              <option value="rateAER">Monthly Interest</option>
             </select>
           </div>
         </div>
-        {/* display bank info */}
-        {/* <div className="mt-6"> */}
-        <FeaOfferBank />
-        <button className="redButton mt-16">View more results</button>
-        {/* </div> */}
+              {/* display bank info */}
+             <FeatureOffer />
+             
       </div>
     </div>
   );
 };
 
-export default ShowContent;
+export default RenderContent;
