@@ -8,6 +8,7 @@ import EstimateSaving from "../compareSavingAcc/EstimateSaving";
 import Link from "next/link";
 import Bank from "./Bank";
 import data from "./data.json";
+import SocialLink from "../../components/SocialLink";
 
 const CompareFixedDeposit = () => {
   const tableContent = "text-gray-500 font-semibold text-base";
@@ -68,7 +69,7 @@ const CompareFixedDeposit = () => {
       </div>
       {/* third section */}
       {/* table of content and best savings... */}
-      <div className="flex py-16 px-4 sm:px-4 md:px-28">
+      <div className="flex py-16 px-4 sm:px-4 md:px-28 gap-8">
         {/* content name */}
         <div className="flex flex-col gap-8 max-w-[264px]">
           <hr className="border-b-1 border-gray-100" />
@@ -90,7 +91,7 @@ const CompareFixedDeposit = () => {
           </div>
           <hr className="border-b-1 border-gray-100" />
           {/* social link component */}
-          {/* <SocialLink /> */}
+          <SocialLink />
         </div>
         {/* content */}
         {/* best saving account */}
@@ -133,7 +134,6 @@ const CompareFixedDeposit = () => {
             <p className="bodyText mt-6"> {data.otherResources.resource2}</p>
           </div>
         </div>
-        <div></div>
       </div>
 
       {/* frequently ask questions */}
