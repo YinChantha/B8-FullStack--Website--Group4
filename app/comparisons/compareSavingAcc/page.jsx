@@ -46,6 +46,7 @@ const CompareSavingAcc = () => {
         <BankList />
       </div>
       <hr className="border-b-1 border-gray-100 mx-4 sm:mx-4 md:mx-28" />
+      {/* second section */}
       <div className="sect2 py-16 px-4 sm:px-4 md:px-28">
         {/* heading */}
         <div className=" flex flex-col justify-center items-center">

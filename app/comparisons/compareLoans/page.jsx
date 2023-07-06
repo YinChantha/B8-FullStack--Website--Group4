@@ -66,9 +66,10 @@ const CompareLoan = () => {
           {/* content */}
           <ShowContent />
         </div>
-      </div>
-      {/* table of content */}
+        {/* table of content */}
       <TableContentLoans />
+      </div>
+      
       {/* FAQ */}
       <Faq />
     </div>

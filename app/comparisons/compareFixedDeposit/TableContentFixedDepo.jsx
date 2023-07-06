@@ -3,6 +3,8 @@ import Link from "next/link";
 import Bank from "./Bank";
 import data from "/public/data.json";
 import SocialLink from "@/app/components/SocialLink";
+import ChooseFixedDepoList from "./ChooseFixedDepoList";
+import KnowFixDepoAcc from "./KnowFixDepoAcc";
 
 
 const TableContentFixedDepo = () => {
@@ -61,21 +63,21 @@ const TableContentFixedDepo = () => {
             </h1>
             <div className="flex flex-col gap-3">
               <Link
-                href="/comparisons/compareSavingAcc#savingacc"
+                href="/comparisons/compareFixedDeposit#savingacc"
                 className={`${tableContent}`}
                 onClick={() => setlinkBestSaveAcc(true)}
               >
                 Best savings accounts and rates
               </Link>
               <Link
-                href="/comparisons/compareSavingAcc#choosesaveacc"
+                href="/comparisons/compareFixedDeposit#choosesaveacc"
                 className={`${tableContent}`}
                 onClick={() => setlinkChooseSaveAcc(true)}
               >
                 How to choose a savings account
               </Link>
               <Link
-                href="/comparisons/compareSavingAcc#knowsaveacc"
+                href="/comparisons/compareFixedDeposit#knowsaveacc"
                 onClick={() => setLinkClicked(true)}
                 className={`${tableContent}`}
               >
@@ -113,9 +115,9 @@ const TableContentFixedDepo = () => {
             </p>
             {/* chipmong bank */}
             <div className="flex flex-col gap-6">
-              <BankInfo />
-              <BankInfo />
-              <BankInfo />
+              <Bank />
+              <Bank />
+              <Bank />
             </div>
             {/* more text below bank info */}
             {/* use style "bodyText" in body */}
@@ -145,7 +147,7 @@ const TableContentFixedDepo = () => {
             </h1>
             <p className="bodyText mt-6">{data.savingAcc.saveA1}</p>
             <p className="bodyText mt-5">{data.savingAcc.saveA2}</p>
-            <ChooseSavAccList />
+            <ChooseFixedDepoList />
           </div>
           <hr className="border-b-1 border-gray-100 my-12" />
           {/* what to know about savings accounts */}
@@ -155,7 +157,7 @@ const TableContentFixedDepo = () => {
             id="knowsaveacc"
             className={`${linkClicked ? "translate-y-20" : ""}`}
           >
-            <KnowSaveAcc />
+            <KnowFixDepoAcc />
           </div>
         </div>
       </div>

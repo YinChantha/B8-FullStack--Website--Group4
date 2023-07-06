@@ -8,30 +8,30 @@ import SocialLink from "@/app/components/SocialLink";
 
 const TableContentLoans = () => {
   // what to know about saving accounts
-  const [linkClicked, setLinkClicked] = useState(false);
+  const [linkClickedLoans, setLinkClickedLoans] = useState(false);
   // how to choose a saving account
-  const [linkChooseSaveAcc, setlinkChooseSaveAcc] = useState(false);
+  const [linkChooseSaveAccLoans, setlinkChooseSaveAccLoans] = useState(false);
   // best saving accounts and rates
-  const [linkBestSaveAcc, setlinkBestSaveAcc] = useState(false);
+  const [linkBestSaveAccLoans, setlinkBestSaveAccLoans] = useState(false);
 
   const tableContent = "text-gray-500 font-semibold text-base";
   useEffect(() => {
     const scrollToSection = () => {
-      const section = document.getElementById("knowsaveacc");
-      const section1 = document.getElementById("choosesaveacc");
+      const section = document.getElementById("knowsaveaccloans");
+      const section1 = document.getElementById("choosesaveaccloans");
       const section2 = document.getElementById("aveacc");
 
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
-        setLinkClicked(true);
+        setLinkClickedLoans(true);
       }
       if (section1) {
         section.scrollIntoView({ behavior: "smooth" });
-        setlinkChooseSaveAcc(true);
+        setlinkChooseSaveAccLoans(true);
       }
       if (section2) {
         section.scrollIntoView({ behavior: "smooth" });
-        setlinkBestSaveAcc(true);
+        setlinkBestSaveAccLoans(true);
       }
     };
 
@@ -62,22 +62,22 @@ const TableContentLoans = () => {
             </h1>
             <div className="flex flex-col gap-3">
               <Link
-                href="/comparisons/compareSavingAcc#savingacc"
+                href="/comparisons/compareLoans#savingaccloans"
                 className={`${tableContent}`}
-                onClick={() => setlinkBestSaveAcc(true)}
+                onClick={() => setlinkBestSaveAccLoans(true)}
               >
                 Best savings accounts and rates
               </Link>
               <Link
-                href="/comparisons/compareSavingAcc#choosesaveacc"
+                href="/comparisons/compareLoans#choosesaveaccloans"
                 className={`${tableContent}`}
-                onClick={() => setlinkChooseSaveAcc(true)}
+                onClick={() => setlinkChooseSaveAccLoans(true)}
               >
                 How to choose a savings account
               </Link>
               <Link
-                href="/comparisons/compareSavingAcc#knowsaveacc"
-                onClick={() => setLinkClicked(true)}
+                href="/comparisons/compareLoans#knowsaveaccloans"
+                onClick={() => setLinkClickedLoans(true)}
                 className={`${tableContent}`}
               >
                 What to know about savings accounts
@@ -92,8 +92,8 @@ const TableContentLoans = () => {
         <div>
           {/* best saving accounts info */}
           <div
-            id="savingacc"
-            className={`${linkBestSaveAcc ? "translate-y-20" : ""}`}
+            id="savingaccloans"
+            className={`${linkBestSaveAccLoans ? "translate-y-20" : ""}`}
           >
             <h1 className="text-gray-900 font-semibold text-3xl">
               Best savings accounts and rates in June 2023
@@ -138,8 +138,8 @@ const TableContentLoans = () => {
           <hr className="border-b-1 border-gray-100 my-12" />
           {/* how to choose a savings account className={styles.marginTop}*/}
           <div
-            id="choosesaveacc"
-            className={`${linkChooseSaveAcc ? "translate-y-20" : ""}`}
+            id="choosesaveaccloans"
+            className={`${linkChooseSaveAccLoans ? "translate-y-20" : ""}`}
           >
             <h1 className="text-[#101828] font-semibold text-3xl">
               How to choose a savings account
@@ -151,8 +151,8 @@ const TableContentLoans = () => {
           <hr className="border-b-1 border-gray-100 my-12" />
           {/* what to know about savings accounts */}
           <div
-            id="knowsaveacc"
-            className={`${linkClicked ? "translate-y-20" : ""}`}
+            id="knowsaveaccloans"
+            className={`${linkClickedLoans ? "translate-y-20" : ""}`}
           >
             <KnowSaveAcc />
           </div>
