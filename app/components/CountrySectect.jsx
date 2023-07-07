@@ -1,22 +1,21 @@
-"use client"
+"use client";
 
-import { Fragment, useState } from 'react'
-import { Combobox, Transition } from '@headlessui/react'
-import { RiArrowDropDownLine } from 'react-icons/ri'
+import { Fragment, useState } from "react";
+import { Combobox, Transition } from "@headlessui/react";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
-export default function CountrySelect({data, selected, setSelected}) {
-    
-  const [query, setQuery] = useState('')
+export default function CountrySelect({ data, selected, setSelected }) {
+  const [query, setQuery] = useState("");
 
   const filterCountry =
-    query === ''
+    query === ""
       ? data
       : data.filter((country) =>
           country.name
             .toLowerCase()
-            .replace(/\s+/g, '')
-            .includes(query.toLowerCase().replace(/\s+/g, ''))
-        )
+            .replace(/\s+/g, "")
+            .includes(query.toLowerCase().replace(/\s+/g, ""))
+        );
 
   return (
     <div className="w-auto">
@@ -40,20 +39,21 @@ export default function CountrySelect({data, selected, setSelected}) {
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-            afterLeave={() => setQuery('')}
+            afterLeave={() => setQuery("")}
           >
             <Combobox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {filterCountry.length === 0 && query !== '' ? (
+              {filterCountry.length === 0 && query !== "" ? (
                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                   Nothing found.
                 </div>
               ) : (
-                filterCountry.map((country) => (
+                filterCountry.map((country, index) => (
                   <Combobox.Option
-                    key={country.id}
+                    // key={country.id}
+                    key={index}
                     className={({ active }) =>
                       `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                        active ? 'bg-red-500 text-white' : 'text-gray-900'
+                        active ? "bg-red-500 text-white" : "text-gray-900"
                       }`
                     }
                     value={country}
@@ -62,7 +62,7 @@ export default function CountrySelect({data, selected, setSelected}) {
                       <>
                         <span
                           className={`block truncate ${
-                            selected ? 'font-medium' : 'font-normal'
+                            selected ? "font-medium" : "font-normal"
                           }`}
                         >
                           {country.name}
@@ -70,10 +70,13 @@ export default function CountrySelect({data, selected, setSelected}) {
                         {selected ? (
                           <span
                             className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                              active ? 'text-white' : 'text-red-500'
+                              active ? "text-white" : "text-red-500"
                             }`}
                           >
-                            <RiArrowDropDownLine className="h-5 w-5" aria-hidden="true" />
+                            <RiArrowDropDownLine
+                              className="h-5 w-5"
+                              aria-hidden="true"
+                            />
                           </span>
                         ) : null}
                       </>
@@ -86,5 +89,5 @@ export default function CountrySelect({data, selected, setSelected}) {
         </div>
       </Combobox>
     </div>
-  )
+  );
 }

@@ -1,24 +1,16 @@
-<<<<<<< HEAD:app/pages/account/page.jsx
-import React, { useState } from "react";
-=======
-"use client";
-
-import React from "react";
->>>>>>> 9df08a5d03cb97279aba673b341ea3acb8431111:app/account/page.jsx
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
+import { BiArrowBack } from "react-icons/bi";
 
 const Account = () => {
-
-  const [openNav, setOpenNav] = useState(true)
   return (
     <>
       {/* login container */}
-      <div className="w-full h-screen flex items-center my-5">
+      <div className="w-full flex items-center my-5">
         {/* left side */}
         <div className="md:w-1/2 max-w-[400px] items-center justify-center m-auto">
           <div className="flex flex-col items-center">
-            <img src="/images/logo.png" alt="logo" className="w-[50px]" />
+            <img src="/images/logo/logo.png" alt="logo" className="w-[50px]" />
             <h1 className="text-2xl font-semibold text-gray-800 mt-5">
               Log in to your account
             </h1>
@@ -52,12 +44,17 @@ const Account = () => {
               </div>
 
               <div className="text-red-600">
-                <Link href='/account/forgotpassword/userdetials'>Forgot password</Link>
+                <Link
+                  href="/account/forgotpassword/userdetials"
+                  // as="go to forgotpassword"
+                >
+                  Forgot password
+                </Link>
               </div>
             </div>
 
-            <div className="flex justify-center bg-red-500 p-2 rounded-lg mt-5 hover:bg-red-400 text-white">
-              <Link href='' >Sign up</Link>
+            <div className="signup-btn">
+              <Link href="">Sign in</Link>
             </div>
             <div className="flex flex-row justify-center gap-2 items-center rounded-lg p-2 border-2 border-gray-100 mt-3 hover:border-red-500">
               <FcGoogle className="w-[25px] h-auto" />
@@ -66,24 +63,36 @@ const Account = () => {
 
             <div className="flex justify-center gap-2 mt-5 text-gray-600 cursor-pointer">
               <p>Don't have an account?</p>
-              <Link href="/account/signup/usersignupdetials" className="text-red-600">
+              <Link
+                href="/account/signup/usersignupdetials"
+                className="text-red-600"
+                // as="go to signup"
+              >
                 Sign up
               </Link>
             </div>
-            {/* <p className=" text-gray-500 lg:block hidden text-center mt-28">© Proadvisor 2023</p> */}
           </form>
-          {/* <p className='flex text-gray-400  ml-[-40px] '>Proadvisor 2023</p> */}
+          <div className="flex flex-row items-center justify-center gap-2 mt-8 hover:text-gray-500">
+            <BiArrowBack color="gray-900" size={20} />
+            <Link
+              href="/account/"
+              className="text-gray-900 hover:text-gray-500 cursor-pointer"
+              as="/"
+            >
+              Back to home
+            </Link>
+          </div>
         </div>
 
         {/* right side */}
-        <div className="relative w-1/2 h-full mr-5 hidden md:inline">
+        <div className="relative w-1/2 h-auto mr-5 hidden md:inline items-center justify-center">
           <img
             src="/images/girl.png"
             alt="girl"
-            className="object-cover w-full h-full rounded-3xl"
+            className="object-cover w-full h-screen rounded-3xl"
           />
           <div className="absolute flex flex-col bg-white/50 bottom-0">
-            <div className="mx-4">
+            <div className="px-4">
               <h1 className="text-2xl font-semibold text-white mt-5">
                 "Proadvisor empowerd me to make informed financial decision, and
                 unlock new possibilies."
@@ -101,9 +110,6 @@ const Account = () => {
           </div>
         </div>
       </div>
-      {/* <div className="flex h-full mb-5 ml-10">
-      <p className=" text-gray-500 sm:text-center">© Proadvisor 2023</p>
-    </div> */}
     </>
   );
 };
