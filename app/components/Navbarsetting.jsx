@@ -17,7 +17,7 @@ const Navbarsetting = () => {
   };
   return (
     <div>
-      <ul className="flex gap-3">
+      <ul className="hidden md:flex gap-3">
         <li
           className="relative text-gray-600 cursor-pointer group"
           onClick={() => handleActive("details")}
