@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
             router === "/legal" ||
             router === "/FAQs") && <Footer className="" />}
         </RecoilRoot>
-        {(router === "/" ||
+        {/* {(router === "/" ||
           router === "/promotions" ||
           router === "/landingPage" ||
           // router === "/account" ||
@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
           router === "/aboutus" ||
           router === "/contact" ||
           router === "/legal" ||
-          router === "/FAQs") && <Footer className="" />}
+          router === "/FAQs") && <Footer className="" />} */}
       </body>
     </html>
   );
