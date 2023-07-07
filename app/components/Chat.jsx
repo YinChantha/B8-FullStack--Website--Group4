@@ -56,7 +56,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="w-[500px] h-[700px]">
+    <div className="w-[500px] h-[300px]">
       <div className="flex flex-col items-center p-4">
         <div className="flex-col items-center mt-2">
           <Image
