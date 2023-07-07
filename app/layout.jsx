@@ -26,6 +26,8 @@ export default function RootLayout({ children }) {
           router === "/promotions" ||
           router === "/landingPage" ||
           // router === "/account" ||
+          router === "/legal" ||
+          router === "/aboutus" ||
           router === "/contact" ||
           router === "/legal" ||
           router === "/FAQs") && <Header className="" />}
