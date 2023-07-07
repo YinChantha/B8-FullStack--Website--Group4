@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import "./globals.css";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
+import { RecoilRoot } from "recoil";
 
 export default function RootLayout({ children }) {
   const router = usePathname();
@@ -22,22 +23,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="box-border">
       <body className="flex flex-col min-h-screen">
-        {(router === "/" ||
-          router === "/promotions" ||
-          router === "/landingPage" ||
-          // router === "/account" ||
-          router === "/contact" ||
-          router === "/legal" ||
-          router === "/FAQs") && <Header className="" />}
-        <main className="flex-1">{children}</main>
-        {(router === "/" ||
-          router === "/promotions/[id]" ||
-          router === "/promotions" ||
-          router === "/landingPage" ||
-          router === "/aboutus" ||
-          router === "/contact" ||
-          router === "/legal" ||
-          router === "/FAQs") && <Footer className="" />}
+        <RecoilRoot>
+          {(router === "/" ||
+            router === "/promotions" ||
+            router === "/landingPage" ||
+            // router === "/account" ||
+            router === "/contact" ||
+            router === "/legal" ||
+            router === "/FAQs") && <Header className="" />}
+          <main className="flex-1">{children}</main>
+          {(router === "/" ||
+            router === "/promotions/[id]" ||
+            router === "/promotions" ||
+            router === "/landingPage" ||
+            router === "/aboutus" ||
+            router === "/contact" ||
+            router === "/legal" ||
+            router === "/FAQs") && <Footer className="" />}
+        </RecoilRoot>
       </body>
     </html>
   );

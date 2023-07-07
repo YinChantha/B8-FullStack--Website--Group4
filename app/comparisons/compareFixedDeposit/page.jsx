@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import BankList from "../../components/BankList";
 import Faq from "../../components/Faq";
 import CompareFixedDepoForm from "./CompareFixedDepoForm";
@@ -53,7 +53,7 @@ const CompareFixedDeposit = () => {
         {/* function compare fixed deposit */}
         <div className="flex gap-8 mt-24">
           {/* form */}
-          <CompareFixedDepoForm />
+          <CompareFixedDepoForm   />
           {/* display content */}
           <RenderContent />
         </div>

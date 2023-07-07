@@ -6,23 +6,25 @@ const page = () => {
   const [data, setData] = useState("");
   const [bankData, setBank] = useState("");
   const [termData, setTerm] = useState("");
+  const [currency, setCurrency] = useState("");
 
   const [queryParams, setQueryParams] = useState({
-    bank: '',
-    term: '',
-    // Initial query parameters
+    bank: "",
+    term: "",
+    luy: "",
   });
 
   const logData = async () => {
     console.log("The bank params is : ", bankData);
     console.log("The term params is : ", termData);
+    console.log("The term params is : ", currency);
     setQueryParams({
       bank: bankData,
-      term: termData
+      term: termData,
+      currency: currency,
     });
-    // console.log(queryParams);
+    console.log("params is : ", queryParams);
   };
-
   const GetFixedDeposits = async () => {
     try {
       const res = await getAllfixedeposits(queryParams);
@@ -51,6 +53,12 @@ const page = () => {
         type="text"
         onChange={(e) => setTerm(e.target.value)}
         placeholder="Term"
+        className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
+      />
+      <input
+        type="text"
+        onChange={(e) => setCurrency(e.target.value)}
+        placeholder="luy"
         className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
       />
       <button onClick={logData} color="py-5 px-10">

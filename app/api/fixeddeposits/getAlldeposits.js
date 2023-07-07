@@ -12,16 +12,16 @@ export async function getAllfixedeposits(queryParams) {
         delete params[key];
       }
     });
-    console.log(params
-      );
+    // console.log(params
+    //   );
     const response = await axios.get(
       "http://34.124.252.231:8080/fixeddeposits",
       {
-        params: params
+        params: params,
       }
     );
     // Process the response data here
-    console.log(response.data);
+    // console.log(response.data);
 
     if (response.status === 200) {
       const alldata = response.data;
