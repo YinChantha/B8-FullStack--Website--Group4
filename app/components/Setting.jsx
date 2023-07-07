@@ -19,16 +19,16 @@ const Setting = () => {
     router.push("/");
   };
   const Homesettingpage = () => {
-    router.push("/settings/home");
-  };
-  const MydetailPage = () => {
     router.push("/settings/home/mydetails");
   };
+  // const MydetailPage = () => {
+  //   router.push("/settings/home/mydetails");
+  // };
   const Notificationspage = () => {
     router.push("/settings/notifications");
   };
   return (
-    <div className="bg-white w-3/12 p-4 flex flex-col gap-3">
+    <div className="bg-white w-3/12 p-4  flex-col gap-3 hidden md:flex">
       <Image
         onClick={Homepage}
         className="cursor-pointer"

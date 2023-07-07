@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { currentItemsAtom, dataAtom } from "@/app/atoms/Data";
+import { useRecoilState } from "recoil";
+import { getAllfixedeposits } from "@/app/api/fixeddeposits/getAlldeposits";
+import ReactPaginate from "react-paginate";
 
 const mark = (
   <svg
@@ -31,6 +35,46 @@ const mark = (
 );
 
 const CompareFixedDepo = () => {
+  const [selection, setSelection] = useState("");
+  const [data, setData] = useRecoilState(dataAtom);
+  const [currentItems, setCurrentItems] = useRecoilState(currentItemsAtom);
+  const itemsPerPage = 4;
+  const [itemOffset, setItemOffset] = useState(0);
+  const [queryParams, setQueryParams] = useState({
+    term: "",
+  });
+  
+  const handleSelectValue = (e) => {
+    const value = e.target.value;
+    setSelection(value);
+  };
+
+  const fetchDataWithParams = async (e) => {
+    e.preventDefault();
+    console.log("Selected value:", selection);
+    try {
+      const res = await getAllfixedeposits(queryParams);
+      setData(res);
+      setCurrentItems(res?.slice(0, itemsPerPage) || []);
+      console.log(res);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    setQueryParams({
+      term: selection,
+    });
+    // setItemOffset(0);
+  }, [selection, setQueryParams]);
+
+  useEffect(() => {
+    const updatedCurrentItems =
+      data?.slice(itemOffset, itemOffset + itemsPerPage) || [];
+    setCurrentItems(updatedCurrentItems);
+  }, [itemOffset, data, setCurrentItems]);
+
   return (
     <div>
       <form
@@ -46,7 +90,6 @@ const CompareFixedDepo = () => {
             </label>
             {mark}
           </div>
-
           <input
             type="number"
             name="initial deposit"
@@ -63,16 +106,24 @@ const CompareFixedDepo = () => {
             {mark}
           </div>
 
-          <select id="term" name="term" className="selectStyle ">
-            <option value="monthly">Less than a year</option>
-            <option value="yearly">2 months</option>
-            <option value="yearly">3 months</option>
-            <option value="yearly">4 months</option>
-            <option value="yearly">5 months</option>
-            <option value="yearly">More than 5 months</option>
+          <select className="selectStyle " onClick={handleSelectValue}>
+            <option>Less than a year</option>
+            <option value="2">2 months</option>
+            <option value="3">3 months</option>
+            <option value="4">4 months</option>
+            <option value="5">5 months</option>
+            <option value="6">6 months</option>
+            <option value="6">7 months</option>
+            <option value="6">8 months</option>
+            <option value="6">9 months</option>
+            <option value="6">10 months</option>
           </select>
         </div>
-        <button type="submit" className="submitBtn">
+        <button
+          onClick={fetchDataWithParams}
+          type="submit"
+          className="submitBtn"
+        >
           Update result
         </button>
       </form>

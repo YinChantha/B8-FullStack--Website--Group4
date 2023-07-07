@@ -1,8 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Bank from "./Bank";
 import FeaOfferBank from "../compareLoans/FeaOfferBank";
 import FeatureOffer from "./FeatureOffer";
+import { useRecoilState } from "recoil";
+import { dataAtom, currentItemsAtom } from "@/app/atoms/Data";
+import { getAllfixedeposits } from "@/app/api/fixeddeposits/getAlldeposits";
 
 const currencyRiel = (
   <svg
@@ -152,6 +155,63 @@ const currencyDollar = (
 
 const RenderContent = () => {
   const [currency, setCurrency] = useState(true);
+  const [data, setData] = useRecoilState(dataAtom);
+  const [currentItems, setCurrentItems] = useRecoilState(currentItemsAtom);
+  const itemsPerPage = 4;
+  const [itemOffset, setItemOffset] = useState(0);
+  const [selection, setSelection] = useState("");
+  const [riel, setRiel] = useState("");
+  const [dola, setDola] = useState("");
+  const [queryParams, setQueryParams] = useState({
+    currency: "",
+  });
+
+  const handleDola = () => {
+    setRiel("khr");
+    setQueryParams({
+      currency: riel,
+    });
+    setCurrency(!currency);
+    fetchDataWithParams();
+  };
+  const handleRiel = () => {
+    setDola("usd");
+    setQueryParams({
+      currency: dola,
+    });
+    setCurrency(!currency);
+    fetchDataWithParams();
+  };
+
+  const fetchDataWithParams = async () => {
+    try {
+      const res = await getAllfixedeposits(queryParams);
+      setData(res);
+      setCurrentItems(res?.slice(0, itemsPerPage) || []);
+      console.log("Result of luy is : ", res);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    setQueryParams({
+      currency: dola,
+    });
+    // setItemOffset(0);
+  }, [dola, setQueryParams]);
+  useEffect(() => {
+    setQueryParams({
+      currency: riel,
+    });
+    // setItemOffset(0);
+  }, [riel, setQueryParams]);
+
+  useEffect(() => {
+    const updatedCurrentItems =
+      data?.slice(itemOffset, itemOffset + itemsPerPage) || [];
+    setCurrentItems(updatedCurrentItems);
+  }, [itemOffset, data, setCurrentItems]);
   return (
     <div>
       {/* we found 51 products */}
@@ -173,15 +233,11 @@ const RenderContent = () => {
           <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
           <div className="flex gap-3">
             {currency ? (
-              <button onClick={() => setCurrency(!currency)}>
-                {currencyRiel}
-              </button>
+              <button onClick={handleDola}>{currencyRiel}</button>
             ) : (
-              <button onClick={() => setCurrency(!currency)}>
-                {currencyDollar}
-              </button>
+              <button onClick={handleRiel}>{currencyDollar}</button>
             )}
-
+            {/* <button onClick={fetchDataWithParams}>Testing luy calling</button> */}
             <select
               id="interest-rate"
               name="interest-rate"
@@ -190,6 +246,12 @@ const RenderContent = () => {
               <option value="rateAER">Interest at Maturity</option>
               <option value="rateAER">Monthly Interest</option>
             </select>
+            {/* <select className="selectStyle " onClick={handleSelectValue}>
+              <option>Less than a year</option>
+              <option value="mot">MOT</option>
+              <option value="mat">MAT</option>
+              
+            </select> */}
           </div>
         </div>
         {/* display bank info */}
