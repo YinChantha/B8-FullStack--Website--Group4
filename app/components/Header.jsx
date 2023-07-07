@@ -24,6 +24,7 @@ import {
   GiftIcon,
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
+import ChatGPT from "app/components/ChatGPT";
 
 const Comparisons = [
   {
@@ -452,6 +453,7 @@ const Header = () => {
 
   return (
     <div>
+      <ChatGPT />
       <div className="top-0 fixed w-full z-[9999] flex bg-white items-center justify-between md:justify-around border py-2">
         <div className="flex gap-2">
           <Typography
