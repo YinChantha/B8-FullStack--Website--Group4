@@ -192,9 +192,8 @@ const RenderContent = () => {
             </select>
           </div>
         </div>
-              {/* display bank info */}
-             <FeatureOffer />
-             
+        {/* display bank info */}
+        <FeatureOffer />
       </div>
     </div>
   );
