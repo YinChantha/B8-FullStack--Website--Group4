@@ -156,7 +156,7 @@ const DisplayContent = () => {
   return (
     <div>
       {/* we found 51 products */}
-      <div>
+      <div className="text-center sm:text-center md:text-start">
         <h1 className="text-[#101828] font-medium text-xl">
           Good news! We’ve found{" "}
           <span className="text-[#12B76A]">51 products</span> for you to take a
@@ -168,9 +168,9 @@ const DisplayContent = () => {
         </p>
       </div>
       {/* feature offers */}
-      <div className="mt-8">
+      <div className="mt-12 sm:mt-12 md:mt-8">
         {/* feature offers heading and filter */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex flex-col sm:flex-col gap-4 sm:gap-4 md:flex md:flex-row justify-between">
           <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
           <div className="flex gap-3">
             {currency ? (

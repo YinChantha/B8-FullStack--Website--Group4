@@ -60,9 +60,8 @@ const FeatureOfferBank = () => {
       {contentData.map((bank, index) => (
         <div
           key={index}
-          className="flex gap-8 border-1 border-gray-200 rounded-lg shadow-md p-8 mt-6 "
+          className="flex flex-col sm:flex sm:flex-col gap-8 sm:gap-8 md:flex md:flex-row md:gap-8 border-1 border-gray-200 rounded-lg shadow-md p-8 mt-6 justify-center items-center sm:justify-center sm:items-center md:items-start bg-green-100"
         >
-          {/* <div className="w-1/4"> */}
           <div className="">
             <Image
               src={bank.bankLogo}
@@ -72,11 +71,11 @@ const FeatureOfferBank = () => {
               className="w-auto h-auto"
             />
           </div>
-          <div className="w-full ">
-            <div>
-              {/* <div className="flex flex-col gap-[4px]"> */}
-              <div className="flex flex-row justify-between">
-                <div className="flex flex-col gap-[4px]">
+          <div className="w-full">
+            <div className="flex flex-col justify-center items-center sm:grid sm:grid-rows-2 sm:grid-flow-col ">
+              <div className="text-center">
+                {/* rating */}
+                <div className="text-left">
                   <h1 className="companyName">{bank.bankName}</h1>
                   <p className="text-[#667085] text-sm">{bank.location}</p>
                   <div className="flex flex-row items-center gap-[11px]">
@@ -84,11 +83,10 @@ const FeatureOfferBank = () => {
                     <ImageDisplay count={bank.rate} />
                   </div>
                 </div>
-                <div>
-                  <button className="redButton ">Product details</button>
-                </div>
               </div>
-              <div className="mt-8 flex gap-8">
+
+              {/* info */}
+              <div className="text-center sm:flex sm:gap-10">
                 <div>
                   <h1 className="offerDetail">{bank.term}</h1>
                   <p className="offerTitle">term</p>
@@ -105,6 +103,9 @@ const FeatureOfferBank = () => {
                   <h1 className="offerDetail">{bank.minBalanceApy}</h1>
                   <p className="offerTitle">Min. balance for APY</p>
                 </div>
+              </div>
+              <div className="sm:order-3">
+                <button className="redButton ">Product details</button>
               </div>
             </div>
           </div>

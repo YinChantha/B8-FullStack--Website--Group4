@@ -63,8 +63,8 @@ const CompareSavingAcc = () => {
           </p>
         </div>
 
-        {/* fuction compare loan */}
-        <div className="flex gap-8 mt-24">
+        {/* fuction compare saving accounts */}
+        <div className=" flex flex-col sm:flex-col gap-16 sm:gap-16 md:flex md:flex-row md:gap-8 mt-24">
           {/* form */}
           <CompareSavingAccForm />
           {/* display content */}
