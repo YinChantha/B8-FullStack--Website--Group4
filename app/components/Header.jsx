@@ -28,20 +28,20 @@ import ChatGPT from "app/components/ChatGPT";
 
 const Comparisons = [
   {
-    src: "/images/comparisons/compare-loans.png",
+    src: "/images/compare-loans.png",
     title: "Compare Loans",
     description: "Compare different loan options to make an informed decision.",
     path: "/comparisons/compareLoans",
   },
   {
-    src: "/images/comparisons/compare-save-acc.png",
+    src: "/images/compare-save-acc.png",
     title: "Compare Saving Accounts",
     description:
       "Explore a wide range of savings accounts & find the best option for you.",
     path: "/comparisons/compareSavingAcc",
   },
   {
-    src: "/images/comparisons/compare-fixed-dep.png",
+    src: "/images/compare-fixed-dep.png",
     title: "Compare Fixed Deposit Accounts",
     description: "Maximize your savings with fixed deposit account comparison.",
     path: "/comparisons/compareFixedDeposit",
@@ -152,7 +152,7 @@ function NavListMenu() {
               <div className="flex flex-col gap-3">
                 <div>
                   <Image
-                    src="/images/comparisons/compare-pic.png"
+                    src="/images/compare-pic.png"
                     alt="compare"
                     width={400}
                     height={50}
