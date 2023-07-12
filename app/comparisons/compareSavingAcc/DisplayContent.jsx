@@ -154,9 +154,9 @@ const DisplayContent = () => {
   const [currency, setCurrency] = useState(true);
 
   return (
-    <div>
+    <div className="mt-24">
       {/* we found 51 products */}
-      <div className="text-center sm:text-center md:text-start">
+      <div className="text-center ">
         <h1 className="text-[#101828] font-medium text-xl">
           Good news! We’ve found{" "}
           <span className="text-[#12B76A]">51 products</span> for you to take a
@@ -167,38 +167,7 @@ const DisplayContent = () => {
           promotions from banks and financial institutions in Cambodia.
         </p>
       </div>
-      {/* feature offers */}
-      <div className="mt-12 sm:mt-12 md:mt-8">
-        {/* feature offers heading and filter */}
-        <div className="flex sm:flex flex-col sm:flex-col gap-4 sm:gap-4 md:flex md:flex-row justify-between">
-          <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
-          <div className="flex gap-3">
-            {currency ? (
-              <button onClick={() => setCurrency(!currency)}>
-                {currencyRiel}
-              </button>
-            ) : (
-              <button onClick={() => setCurrency(!currency)}>
-                {currencyDollar}
-              </button>
-            )}
-
-            <select
-              id="interest-rate"
-              name="interest-rate"
-              className="selectStyle"
-            >
-              <option value="rateAER">Company Provider</option>
-              <option value="rateAER">Interest Rate (AER)</option>
-              <option value="yearly">Term</option>
-            </select>
-          </div>
-        </div>
-        {/* display bank info */}
-        <FeatureOfferBank />
-        <EstimateSaving />
-        <FeatureOfferBank />
-      </div>
+      <div></div>
     </div>
   );
 };

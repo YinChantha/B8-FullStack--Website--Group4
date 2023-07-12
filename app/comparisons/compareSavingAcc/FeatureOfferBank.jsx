@@ -72,8 +72,8 @@ const FeatureOfferBank = () => {
             />
           </div>
           <div className="w-full">
-            <div className="flex flex-col justify-center items-center sm:grid sm:grid-rows-2 sm:grid-flow-col ">
-              <div className="text-center">
+            <div className="md:flex md:flex-col md:justify-center md:items-center grid grid-rows-2 grid-flow-col sm:grid sm:grid-rows-2 sm:grid-flow-col ">
+              <div className="text-center bg-yellow-100 flex justify-between">
                 {/* rating */}
                 <div className="text-left">
                   <h1 className="companyName">{bank.bankName}</h1>
@@ -82,6 +82,9 @@ const FeatureOfferBank = () => {
                     <p className="text-[#344054] text-base font-medium">5.0</p>
                     <ImageDisplay count={bank.rate} />
                   </div>
+                </div>
+                <div className="">
+                  <button className="redButton ">Product details</button>
                 </div>
               </div>
 
@@ -104,7 +107,8 @@ const FeatureOfferBank = () => {
                   <p className="offerTitle">Min. balance for APY</p>
                 </div>
               </div>
-              <div className="sm:order-3">
+              {/* product details button */}
+              <div className="block sm:block md:hidden">
                 <button className="redButton ">Product details</button>
               </div>
             </div>

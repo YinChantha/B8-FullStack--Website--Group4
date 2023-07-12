@@ -1,79 +1,110 @@
 import React from "react";
 
+const whiteMark = (
+  <svg
+    width="21"
+    height="21"
+    viewBox="0 0 21 21"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_1278_95221)">
+      <path
+        d="M10.6668 6.67078V10.0041M10.6668 13.3374H10.6752M19.0002 10.0041C19.0002 14.6065 15.2692 18.3374 10.6668 18.3374C6.06446 18.3374 2.3335 14.6065 2.3335 10.0041C2.3335 5.40174 6.06446 1.67078 10.6668 1.67078C15.2692 1.67078 19.0002 5.40174 19.0002 10.0041Z"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1278_95221">
+        <rect
+          width="20"
+          height="20"
+          fill="white"
+          transform="translate(0.666748 0.00415039)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 const EstimateSaving = () => {
   return (
-    <div className="bg-[#101828] text-white p-8 rounded-lg mt-6 border-1 border-[#101828] shadow-sm">
+    <div className="bg-[#101828] text-white p-8 rounded-lg border-1 border-[#101828] shadow-sm mt-12">
       <div className="p-5">
-        <h1 className="text-[32px] font-bold">
-          Estimate your savings in seconds
-        </h1>
+        <div className="flex flex-col justify-center items-center text-center">
+          <h1 className="text-[30px] sm:text-[30px] font-semibold sm:font-semibold md:text-[32px] md:font-bold text-center sm:text-center md:text-left mb-8 sm:mb-8">
+            Estimate your savings in seconds
+          </h1>
+          <p className="max-w-[738px]">
+            We provide comprehensive and up-to-date information, empowering you
+            to make informed decisions based on your unique needs and
+            preferences.
+          </p>
+        </div>
+
         {/* input */}
         <form
           action="/send-data-here"
           method="post"
-          className="flex mt-7 gap-12"
+          className="flex flex-col sm:flex sm:flex-col md:flex md:flex-row mt-7 gap-6 sm:gap-6 md:gap-8"
         >
-          <div className="flex flex-col gap-[6px]">
-            <label>Initial Delabelosit</label>
+          {/* initial depsit */}
+          <div className="flex flex-col md:gap-[6px] sm:gap-3 gap-3 w-full">
+            <div className="flex justify-between">
+              <label>Initial Deposit</label>
+              {whiteMark}
+            </div>
+
             <input
               type="number"
               placeholder="$10,000"
-              className="inputStyle max-w-[185px] "
+              className="inputStyle w-full"
             />
           </div>
-          <div className="flex flex-col gap-[6px]">
-            <label>Monthly contribution</label>
-            <input
-              type="number"
-              placeholder="$10,000"
-              className="inputStyle max-w-[182px]"
-            />
-          </div>
-          <div className="flex flex-col gap-[6px]">
-            <label for="investment" className="">
-              Investment period
-            </label>
+          {/* Interest Rate */}
+          <div className="flex flex-col md:gap-[6px] sm:gap-3 gap-3 w-full">
+            <div className="flex justify-between">
+              <label for="investment" className="">
+                Interest Rate
+              </label>
+              {whiteMark}
+            </div>
             <select
               id="invest-period"
               name="invest-period"
-              className="selectStyle min-w-[182px]"
+              className="selectStyle w-full"
             >
               <option value="monthly">1 year</option>
               <option value="monthly">2 years</option>
               <option value="yearly">3 years</option>
             </select>
           </div>
-          <div className="flex flex-col gap-[6px]">
-            <label>APY</label>
-            <input
-              type="number"
-              placeholder="$10,000"
-              className="inputStyle max-w-[182px]"
-            />
+          {/* term */}
+          <div className="flex flex-col md:gap-[6px] sm:gap-3 gap-3 w-full">
+            <div className="flex justify-between">
+              <label for="investment" className="">
+                Term
+              </label>
+              {whiteMark}
+            </div>
+
+            <select
+              id="invest-period"
+              name="invest-period"
+              className="selectStyle w-full"
+            >
+              <option value="monthly">Less than a year</option>
+              <option value="monthly">2 months</option>
+              <option value="yearly">3 months</option>
+              <option value="monthly">4 months</option>
+              <option value="yearly">5 months</option>
+              <option value="yearly">More than 5 months</option>
+            </select>
           </div>
         </form>
-        <hr className="border-b-1 border-gray-800 mt-8" />
-        <div className="flex justify-between  mt-6">
-          <div>
-            <p>Interest earned</p>
-            <p>Total contributions</p>
-            <p>Initial deposit</p>
-          </div>
-          <div>
-            <p>$12,866.23</p>
-            <p>$24,000</p>
-            <p>$10,000</p>
-          </div>
-        </div>
-        <hr className="border-b-1 border-gray-800 mt-8" />
-        <div className="flex justify-between  mt-6">
-          <div>
-            <p>Total savings</p>
-          </div>
-          <div>
-            <p>$46,866.23</p>
-          </div>
-        </div>
       </div>
     </div>
   );
