@@ -27,17 +27,7 @@ const FeatureOfferBank = () => {
   }, []);
   return (
     <>
-      <table className="w-full mt-5 mx-5 mb-3">
-        <thead>
-          <tr className="flex justify-between mx-4 mt-5">
-            <th>Compnay</th>
-            <th className="ml-[50px]">Interest Rate</th>
-            <th className="mr-[25px]">Term</th>
-            <th className="mr-[100px]">Saving Value</th>
-          </tr>
-        </thead>
-      </table>
-      <div className="overflow-y-auto max-h-[1000px]">
+      <div className="overflow-y-auto max-h-[1000px] mt-5">
         {loading ? (
           <div className="flex justify-center items-center h-full mt-32">
             <img
@@ -48,14 +38,22 @@ const FeatureOfferBank = () => {
           </div>
         ) : (
           <div className="">
-            {bankData.data.savings.map((bank, index) => (
-              <div
-                key={index}
-                className="flex gap-8 border-1 border-gray-200 bg-white shadow-md p-4 "
-              >
-                <div className="w-full ">
-                  <div className="flex flex-row justify-between items-center">
-                    <div className="flex flex-row gap-5">
+            <table className="w-full gap-8 border-1 border-gray-200 bg-white shadow-md p-4 relative">
+              <thead className="w-full sticky bg-white top-[-1px] left-0 border-none">
+                <tr className=" mx-4 mt-5">
+                  <th>Compnay</th>
+                  <th className="ml-[50px]">Interest Rate</th>
+                  <th className="mr-[25px]">2 months</th>
+                  <th className="mr-[100px]">3 months</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bankData.data.savings.map((bank, index) => (
+                  <tr
+                    key={index}
+                    className="padding-4 border border-b-2 [&>td]:p-4"
+                  >
+                    <td className="flex flex-row gap-5 ml-5">
                       <Image
                         // src={bank.bankLogo}
                         src="/images/vichet.png"
@@ -80,35 +78,24 @@ const FeatureOfferBank = () => {
                             />
                           </div>
                         </div>
-                        {/* <div>
-                        <button className="redButton ">Product details</button>
-                      </div> */}
                       </div>
-                    </div>
-
-                    {/* <div className="flex flex-col">
-                      <h1 className="offerDetail">{"Waiting"}</h1>
-                      <p className="offerTitle">term</p>
-                    </div> */}
-                    <div className="flex flex-col">
+                    </td>
+                    <td className="text-center bg-gray-100">
                       <h1 className="offerDetail">{bank.currency}</h1>
                       <p className="offerTitle">Type</p>
-                    </div>
-                    <div className="flex flex-col">
-                      <h1 className="offerDetail">{"Waiting"}</h1>
-                      <p className="offerTitle">APR</p>
-                    </div>
-                    <div className="flex flex-col">
-                      <h1 className="offerDetail">{"Waiting"}</h1>
-                      <p className="offerTitle">Min. balance for APY</p>
-                    </div>
-                  </div>
-                  {/* <div className="block sm:block md:hidden">
-                      <button className="redButton ">Product details</button>
-                    </div> */}
-                </div>
-              </div>
-            ))}
+                    </td>
+                    <td className="text-center">
+                      <h1 className="offerDetail">{"Money $"}</h1>
+                      <p className="offerTitle">Value (Gorss)</p>
+                    </td>
+                    <td className="text-center">
+                      <h1 className="offerDetail">{"money $"}</h1>
+                      <p className="offerTitle">Value (Gross)</p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
