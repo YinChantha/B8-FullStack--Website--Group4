@@ -1,11 +1,18 @@
-"use client"
+"use client";
 import React from "react";
 import BankList from "../../components/BankList";
 import Faq from "../../components/Faq";
 import CompareFixedDepoForm from "./CompareFixedDepoForm";
 import RenderContent from "./RenderContent";
+import EstimateSaving from "../compareSavingAcc/EstimateSaving";
+import Link from "next/link";
+import Bank from "./Bank";
+import data from "./data.json";
+import SocialLink from "../../components/SocialLink";
+import TableContentFixedDepo from "./TableContentFixedDepo";
 
 const CompareFixedDeposit = () => {
+  const tableContent = "text-gray-500 font-semibold text-base";
   return (
     <div className="pt-36">
       {/* first section */}
@@ -53,11 +60,18 @@ const CompareFixedDeposit = () => {
         {/* function compare fixed deposit */}
         <div className="flex gap-8 mt-24">
           {/* form */}
-          <CompareFixedDepoForm />
+          <CompareFixedDepoForm   />
           {/* display content */}
-          <RenderContent />
+          <div>
+            <RenderContent />
+            <EstimateSaving />
+          </div>
         </div>
+        {/* table of content and best savings... */}
+      <TableContentFixedDepo />
       </div>
+      
+
       {/* frequently ask questions */}
       <Faq />
     </div>

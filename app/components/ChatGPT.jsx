@@ -45,7 +45,7 @@ const ChatGPT = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="absolute bottom-full right-0 mb-4 sm:h-[550px] bg-gray-400 rounded-lg  shadow-lg shadow-red-200 overflow-hidden"
+              className="absolute bottom-full right-0 mb-4 sm:h-[550px] bg-white rounded-lg shadow-xl shadow-gray-400 overflow-hidden"
             >
               {/* chat */}
               {user ? <Chat /> : <SignIn />}

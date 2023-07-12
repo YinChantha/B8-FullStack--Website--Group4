@@ -3,7 +3,7 @@ import React from "react";
 export default function Legal() {
   return (
     <>
-      <div className="w-full h-auto">
+      <div className="w-full h-auto mt-[74px]">
         <div className="flex flex-col items-center bg-gray-100 p-20">
           <div className="flex flex-col items-center max-w-[700px] ">
             <p className="bankName">Privacy Policy</p>

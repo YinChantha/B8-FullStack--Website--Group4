@@ -9,7 +9,7 @@ const bankData = [
     bankLogo: "/images/chipmong-bank.png",
     bankName: "Chip Mong Bank",
     location: "Phnom Penh, Cambodia",
-    rate: 5.0,
+    rate: 3.0,
     companyOverview:
       "Founded in 2019, Chip Mong Commercial Bank Plc. offers an array of well-designed financial solutions with strong commitments to help customers grow financially. Chip Mong Bank provides a personalized banking experience with a comprehensive understanding of your industry, market, and business’ needs.",
     overviewList: {
@@ -50,7 +50,7 @@ const BankInfo = () => {
                   <h1 className="companyName">{bank.bankName}</h1>
                   <p className="text-[#667085] text-sm">{bank.location}</p>
                   <div className="flex flex-row items-center gap-[11px]">
-                    <p className="text-[#344054] text-base font-medium">5.0</p>
+                    <p className="text-[#344054] text-base font-medium">{bank.rate}</p>
                     <ImageDisplay count={bank.rate} />
                   </div>
                 </div>

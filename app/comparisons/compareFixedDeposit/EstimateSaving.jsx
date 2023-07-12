@@ -2,16 +2,16 @@ import React from "react";
 
 const EstimateSaving = () => {
   return (
-    <div className="bg-[#474a50] text-white p-8 rounded-lg mt-6 border-1 border-[#101828] shadow-sm">
-      <div className="flex flex-col p-5">
-        <h1 className="text-[32px] font-bold text-center">
+    <div className="bg-[#101828] text-white p-8 rounded-lg mt-6 border-1 border-[#101828] shadow-sm">
+      <div className="p-5">
+        <h1 className="text-[32px] font-bold">
           Estimate your savings in seconds
         </h1>
         {/* input */}
         <form
           action="/send-data-here"
           method="post"
-          className="flex lg:flex-row md:flex-col sm:flex-col items-center mt-7 gap-12"
+          className="flex mt-7 gap-12"
         >
           <div className="flex flex-col gap-[6px]">
             <label>Initial Delabelosit</label>
