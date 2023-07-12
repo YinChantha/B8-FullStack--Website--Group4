@@ -14,7 +14,6 @@ const Footer = () => {
             rates and financial information.
           </span>
         </p>
-        {/* <div className="foot-sect1-btn flex sm:flex-col sm:gap-y-3 lg:flex-row gap-x-3 w-96 justify-end text-base"></div> */}
         <div className="foot-sect1-btn flex flex-col-reverse gap-y-3 text-base font-semibold sm:flex sm:flex-col-reverse sm:text-base sm:gap-y-3 md:text-base md:flex md:flex-row md:gap-x-3">
           <button className=" text-gray-700 rounded-lg px-5 py-3 border-gray-300 border-2 hover:bg-gray-50">
             Learn more
@@ -39,19 +38,18 @@ const Footer = () => {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-8 md:grid-cols-5 md:gap-x-8 lg:gap-x-12">
-          {/* <div className="flex flex-row gap-28 mt-0"> */}
           <div className="foot-comparisons flex flex-col ">
             <p className="text-gray-400 font-semibold text-sm pb-4">
               Comparisons
             </p>
             <div className="text-gray-500 font-semibold text-base flex flex-col ">
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/comparisons/compareLoans" className="hover:bg-gray-50 hover:text-gray-600">
                 Loans
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/comparisons/compareSavingAcc" className="hover:bg-gray-50 hover:text-gray-600">
                 Saving Accounts
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/comparisons/compareFixedDeposit" className="hover:bg-gray-50 hover:text-gray-600">
                 Fixed Deposit
               </Link>
             </div>
@@ -65,9 +63,9 @@ const Footer = () => {
               >
                 About us
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Media kit
-              </Link>
+              </Link> */}
               <Link
                 href="/contact"
                 className="hover:bg-gray-50 hover:text-gray-600"
@@ -76,25 +74,23 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          {/* </div> */}
-          {/* <div className="flex flex-row gap-28 "> */}
           <div className="foot-resources flex flex-col">
             <p className="text-gray-400 font-semibold text-sm pb-4">
               Resources
             </p>
             <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/resources/financialArticles" className="hover:bg-gray-50 hover:text-gray-600">
                 Articles
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              <Link href="/resources/guidesTutorials" className="hover:bg-gray-50 hover:text-gray-600">
                 Guides
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Tutorials
-              </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              </Link> */}
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Help centre
-              </Link>
+              </Link> */}
               <Link
                 href="/FAQs"
                 className="hover:bg-gray-50 hover:text-gray-600"
@@ -109,42 +105,41 @@ const Footer = () => {
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Twitter
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 LinkedIn
-              </Link>
+              </Link> */}
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Facebook
               </Link>
               <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 GitHub
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Dribbble
-              </Link>
+              </Link> */}
             </div>
           </div>
-          {/* </div> */}
           <div className="foot-legal flex flex-col">
             <p className="text-gray-400 font-semibold text-sm pb-4">Legal</p>
             <div className="text-gray-500 font-semibold text-base flex flex-col">
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Terms
-              </Link>
+              </Link> */}
               <Link
                 href="/legal"
                 className="hover:bg-gray-50 hover:text-gray-600"
               >
                 Privacy
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Cookies
-              </Link>
-              <Link href="/settings/home/mydetails" className="hover:bg-gray-50 hover:text-gray-600">
+              </Link> */}
+              <Link href="/settings/home" className="hover:bg-gray-50 hover:text-gray-600">
                 Settings
               </Link>
-              <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
+              {/* <Link href="/" className="hover:bg-gray-50 hover:text-gray-600">
                 Contact
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
