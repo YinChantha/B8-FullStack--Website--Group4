@@ -32,15 +32,17 @@ export async function getAllfixedeposits(queryParams) {
     console.error(error);
   }
 }
-// getall fixdeposits filter by bank
-// export async function getAlldepositsBybank(bank) {
-//   try {
-//     const data = await axios.get(`http://34.124.252.231:8080/fixeddeposits?bank=${bank}`);
-// if (data.status === 200) {
-//   const alldata = data.data;
-//   return alldata;
-// }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+// getall fixdeposits bank
+export async function getAlldepositsBybank(bank) {
+  try {
+    const data = await axios.get(
+      `http://34.143.206.144:8080/fixeddeposits/all    `
+    );
+    if (data.status === 200) {
+      const alldata = data.data;
+      return alldata;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}

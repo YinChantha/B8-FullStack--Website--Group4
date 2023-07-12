@@ -58,19 +58,18 @@ const CompareFixedDeposit = () => {
           </p>
         </div>
         {/* function compare fixed deposit */}
-        <div className="flex gap-8 mt-24">
+        <div className="">
           {/* form */}
-          <CompareFixedDepoForm   />
+          <CompareFixedDepoForm />
           {/* display content */}
-          <div>
+          {/* <div>
             <RenderContent />
             <EstimateSaving />
-          </div>
+          </div> */}
         </div>
         {/* table of content and best savings... */}
-      <TableContentFixedDepo />
+        <TableContentFixedDepo />
       </div>
-      
 
       {/* frequently ask questions */}
       <Faq />
