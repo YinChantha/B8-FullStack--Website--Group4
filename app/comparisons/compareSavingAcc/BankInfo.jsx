@@ -52,7 +52,7 @@ const overviewTexts = Object.values(bankData[0].overviewList);
 const BankInfo = () => {
   const [seeMore, setSeeMore] = useState(false);
   return (
-    <div className="flex w-full border-1 border-gray-200 rounded-lg shadow-md bg-green-100">
+    <div className="flex w-full border-1 border-gray-200 rounded-lg shadow-md">
       <div className="m-8 w-full">
         {bankData.map((bank, index) => (
           <div

@@ -47,7 +47,7 @@ const CompareSaveAccForm = () => {
         method="post"
         className=" gap-8 bg-[#F9FAFB] py-8 px-6 rounded-lg border-[1px] border-[#EAECF0] mt-12"
       >
-        <div className="flex lg:flex-row md:flex-col sm:flex-col gap-8 ">
+        <div className="flex md:flex-row flex-col sm:flex-col gap-8 ">
           {/* select your bank */}
           <div className="flex flex-col gap-3 w-full">
             <div className="flex flex-row justify-between">
@@ -98,8 +98,11 @@ const CompareSaveAccForm = () => {
           </div>
         </div>
         {/* update result */}
-        <div className=" flex justify-end items-center mt-8">
-          <button type="submit" className="redButton ">
+        <div className=" flex md:justify-end items-center mt-8  ">
+          <button
+            type="submit"
+            className="redButton w-full sm:w-full md:max-w-[155px] font-semibold "
+          >
             Update result
           </button>
         </div>

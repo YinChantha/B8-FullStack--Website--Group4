@@ -16,6 +16,8 @@ import ExchangeRate from "./ExchangeRate";
 import EstimateSaving from "./EstimateSaving";
 import ChartComponent from "./ChartBar";
 import ChartFilter from "./ChartFilter";
+import PromotionOffer from "@/app/components/PromotionOffer";
+import Image from "next/image";
 import FeatureOfferBank from "./FeatureOfferBank";
 // import Selection from "@/app/components/Selection";
 // import ExampleSelection from "@/app/components/ExampleSelection";
@@ -95,13 +97,8 @@ const CompareSavingAcc = () => {
         </div>
         {/* estimate saving form */}
         <EstimateSaving />
+        <PromotionOffer />
         <DisplayContent />
-        {/* <div className=" flex flex-col sm:flex-col gap-16 sm:gap-16 md:flex md:flex-row md:gap-8 mt-24"> */}
-        {/* form */}
-
-        {/* display content */}
-        {/* 
-        </div> */}
 
         {/* table of content and best savings... */}
         <TableOfContent />
