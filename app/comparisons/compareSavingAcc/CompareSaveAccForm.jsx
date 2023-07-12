@@ -1,13 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import { Listbox } from "@headlessui/react";
-import { CheckIcon } from "@heroicons/react/20/solid";
-
-const regularDepo = [
-  { id: 1, name: "Weekly", unavailable: false },
-  { id: 2, name: "Monthly", unavailable: true },
-  { id: 3, name: "Yearly", unavailable: false },
-];
+import React from "react";
 
 const mark = (
   <svg
