@@ -167,7 +167,7 @@ const ShowContent = () => {
       {/* feature offers */}
       <div className="mt-8 flex flex-col items-center ">
         {/* feature offers heading and filter */}
-        <div className="flex justify-between">
+        <div className="flex justify-between w-full">
           <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
           <div className="flex gap-3">
             {currency ? (

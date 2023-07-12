@@ -53,10 +53,10 @@ const TableOfContent = () => {
   return (
     <div>
       {/* table of content and best savings... */}
-      <div className="flex py-16 gap-8 ">
-        <div className="flex flex-col gap-8 max-w-[264px]">
-          <hr className="border-b-1 border-gray-100" />
-          <div className="flex flex-col gap-4">
+      <div className="flex flex-col sm:flex sm:flex-col md:flex md:flex-row py-16 md:gap-[60px] ">
+        <div className="hidden sm:hidden md:block md:flex-col md:gap-8 max-w-[308px]">
+          <hr className="border-b-1 border-gray-100 md:mb-8" />
+          <div className="flex flex-col gap-4 min-w-[264px]">
             <h1 className="text-red-600 font-semibold text-base">
               Table of contents
             </h1>
@@ -84,7 +84,7 @@ const TableOfContent = () => {
               </Link>
             </div>
           </div>
-          <hr className="border-b-1 border-gray-100" />
+          <hr className="border-b-1 border-gray-100 md:my-8" />
           {/* social link component */}
           <SocialLink />
         </div>
@@ -150,8 +150,6 @@ const TableOfContent = () => {
           </div>
           <hr className="border-b-1 border-gray-100 my-12" />
           {/* what to know about savings accounts */}
-          {/* className=
-          {`${styles.marginTop} ${linkClicked ? "translate-y-20" : ""}`} */}
           <div
             id="knowsaveacc"
             className={`${linkClicked ? "translate-y-20" : ""}`}

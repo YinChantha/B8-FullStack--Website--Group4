@@ -361,11 +361,11 @@ export default function ProductDetails() {
   );
 }
 
-export async function getServerSideProps(query) {
-  const { id } = query;
-  return {
-    props: {
-      product,
-    },
-  };
-}
+// export async function getServerSideProps(query) {
+//   const { id } = query;
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// }
