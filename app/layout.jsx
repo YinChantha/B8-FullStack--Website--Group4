@@ -11,19 +11,18 @@ import { RecoilRoot } from "recoil";
 export default function RootLayout({ children }) {
   const router = usePathname();
   const pathToHideNav = [
-    
     "/",
-   
+
     "promotions",
-   
+
     "landingPage",
-   
+
     "contact",
-   
+
     "legal",
-   
+
     "FAQs",
-  ,
+    ,
   ];
 
   return (
@@ -33,7 +32,6 @@ export default function RootLayout({ children }) {
           {(router === "/" ||
             router === "/promotions" ||
             router === "/landingPage" ||
-            // router === "/account" ||
             router === "/contact" ||
             router === "/legal" ||
             router === "/FAQs") && <Header className="" />}
@@ -47,25 +45,6 @@ export default function RootLayout({ children }) {
             router === "/legal" ||
             router === "/FAQs") && <Footer className="" />}
         </RecoilRoot>
-        {/* {(router === "/" ||
-          router === "/promotions" ||
-          router === "/landingPage" ||
-          // router === "/account" ||
-          router === "/legal" ||
-          router === "/aboutus" ||
-          router === "/contact" ||
-          router === "/legal" ||
-          router === "/FAQs") && <Header className="" />}
-        <main className="flex-1">{children}</main>
-
-        {(router === "/" ||
-          router === "/promotions/[id]" ||
-          router === "/promotions" ||
-          router === "/landingPage" ||
-          router === "/aboutus" ||
-          router === "/contact" ||
-          router === "/legal" ||
-          router === "/FAQs") && <Footer className="" />} */}
       </body>
     </html>
   );

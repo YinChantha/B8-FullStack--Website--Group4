@@ -18,6 +18,7 @@ import ChartComponent from "./ChartBar";
 import ChartFilter from "./ChartFilter";
 import PromotionOffer from "@/app/components/PromotionOffer";
 import Image from "next/image";
+import FeatureOfferBank from "./FeatureOfferBank";
 // import Selection from "@/app/components/Selection";
 // import ExampleSelection from "@/app/components/ExampleSelection";
 
@@ -73,6 +74,8 @@ const CompareSavingAcc = () => {
         {/* fuction compare saving accounts */}
         <CompareSavingAccForm />
         <DisplayContent />
+        {/* fetch banks data */}
+        <FeatureOfferBank />
         <Chart />
         <ChartComponent className=''/>
         <ExchangeRate />
