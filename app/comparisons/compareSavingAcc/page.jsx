@@ -77,7 +77,7 @@ const CompareSavingAcc = () => {
         {/* fetch banks data */}
         <FeatureOfferBank />
         <Chart />
-        <ChartComponent className=''/>
+        <ChartComponent className="" />
         <ExchangeRate />
         <ChartFilter />
         {/* estimate your saving */}
@@ -97,6 +97,7 @@ const CompareSavingAcc = () => {
         </div>
         {/* estimate saving form */}
         <EstimateSaving />
+        <FeatureOfferBank />
         <PromotionOffer />
         <DisplayContent />
 
