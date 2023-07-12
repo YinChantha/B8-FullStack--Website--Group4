@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 const Faq = () => {
   const [showAnswer1, setShowAnswer1] = useState(false);
@@ -214,9 +215,9 @@ const Faq = () => {
             friendly team.
           </p>
         </div>
-        <button className="py-2.5 px-4.5 font-semibold text-base text-white bg-red-600 rounded-lg">
+        <Link href="/contact" className="py-2.5 px-4.5 font-semibold text-base text-white bg-red-600 rounded-lg">
           Get in touch
-        </button>
+        </Link>
       </div>
     </section>
   );

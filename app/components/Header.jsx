@@ -506,7 +506,12 @@ const Header = () => {
               Login
             </a>
           </div>
-          <Link href="/account" className="redButton truncate">Start Compare</Link>
+          <Link
+            href="/account/signup/usersignupdetials"
+            className="redButton font-semibold truncate"
+          >
+            Start Compare
+          </Link>
         </div>
         <IconButton
           variant="text"

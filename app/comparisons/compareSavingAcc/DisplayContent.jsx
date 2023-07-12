@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import BankInfo from "./BankInfo";
 import FeatureOfferBank from "./FeatureOfferBank";
@@ -154,9 +154,9 @@ const DisplayContent = () => {
   const [currency, setCurrency] = useState(true);
 
   return (
-    <div>
+    <div className="mt-24">
       {/* we found 51 products */}
-      <div className='flex flex-col items-center'>
+      <div className="text-center ">
         <h1 className="text-[#101828] font-medium text-xl text-center">
           Good news! We’ve found{" "}
           <span className="text-[#12B76A]">51 products</span> for you to take a
@@ -167,9 +167,7 @@ const DisplayContent = () => {
           promotions from banks and financial institutions in Cambodia.
         </p>
       </div>
-      {/* feature offers */}
-      <div className="mt-8">
-        {/* feature offers heading and filter */}
+      {/* <div className="mt-8">
         <div className="flex justify-between">
           <p className="text-[#344054] text-xl font-semibold">Feature offers</p>
           <div className="flex gap-3">
@@ -194,11 +192,10 @@ const DisplayContent = () => {
             </select>
           </div>
         </div>
-        {/* display bank info */}
         <FeatureOfferBank />
         <EstimateSaving />
         <FeatureOfferBank />
-      </div>
+      </div> */}
     </div>
   );
 };

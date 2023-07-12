@@ -24,7 +24,8 @@ const Footer = () => {
         </div>
       </div>
       <hr className="border-b-1 border-gray-100" />
-      <div className="foot-sect2 flex flex-col mt-12 gap-y-12 sm:flex sm:flex-col sm:my-12 sm:gap-y-12 md:my-16 md:flex md:flex-row md:gap-x-8 ">
+      {/* section2 */}
+      <div className="foot-sect2 flex flex-col my-12 gap-y-12 sm:flex sm:flex-col sm:my-12 sm:gap-y-12 md:my-16 md:flex md:flex-row md:gap-x-8 ">
         <div className="company-logo-text gap-y-6 sm:gap-y-6 md:gap-y-8 md:flex-1">
           <img
             src="/images/logo/brand-logo.png"
