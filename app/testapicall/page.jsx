@@ -26,7 +26,7 @@ const page = () => {
     console.log("The term params is : ", termData);
     console.log("The term params is : ", currency);
     setQueryParams({
-      bank: `${bank1}&${bank2}`,
+      bank: "aba",
       currency: "KHR",
       rateAt: "Maturity",
     });

@@ -4,7 +4,7 @@ import Faq from "@/app/components/Faq";
 import Link from "next/link";
 import BankInfo from "./BankInfo";
 import data from "/public/data.json";
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import ChooseSavAccList from "./ChooseSavAccList";
 import KnowSaveAcc from "./KnowSaveAcc";
 // import SocialLink from "./SocialLink";
@@ -73,6 +73,8 @@ const CompareSavingAcc = () => {
 
         {/* fuction compare saving accounts */}
         <CompareSavingAccForm />
+        {/* test display banks selected */}
+        
         <DisplayContent />
         {/* fetch banks data */}
         <FeatureOfferBank />
