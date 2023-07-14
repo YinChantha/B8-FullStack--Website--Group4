@@ -62,7 +62,6 @@ const FeatureOfferBank = () => {
           </div>
         ) : (
           <div className="">
-            <p>Hello how are doing?</p>
             <table className="w-full gap-8 border-1 border-gray-200 bg-white shadow-md p-4 relative">
               <thead className="w-full sticky bg-white top-[-1px] left-0 border-none">
                 <tr className=" mx-4 mt-5">
