@@ -1,17 +1,32 @@
 "use client";
 
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import { FiArrowUpRight } from "react-icons/fi";
 import { RiSendPlaneLine } from "react-icons/ri";
 import posts from "./Posts";
 import AllPosts from "./AllPosts";
-import { Faq } from "@/app/components/Faq";
+import ReactPaginate from "react-paginate";
+import Faq from "@/app/components/Faq";
 
 const GuidesAndTutorials = () => {
+  const itemsPerPage = 2;
+  const pageRangeDisplayed = 3;
+  const marginPagesDisplayed = 1;
+  const [itemOffset, setItemOffset] = useState(0);
+  const endOffset = itemOffset + itemsPerPage;
+
+  const currentItems = AllPosts?.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil((AllPosts?.length || 0) / itemsPerPage);
+
+  const handlePageClick = (event) => {
+    const selectedPage = event.selected;
+    const newOffset = selectedPage * itemsPerPage;
+    setItemOffset(newOffset);
+  };
+
   return (
     <>
       <div className="max-w-screen mx-auto px-5 py-20 md:mx-10">
@@ -106,7 +121,7 @@ const GuidesAndTutorials = () => {
           </div>
 
           <h1 className="promotionName mt-20">All blogs posts</h1>
-          <div className="flex justify-center mt-5">
+          <div className="flex flex-col justify-center mt-5">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex flex-col gap-1 bg-gray-100 rounded-lg">
                 <div className="flex flex-col mx-8 my-8">
@@ -131,7 +146,7 @@ const GuidesAndTutorials = () => {
                   </div>
                 </div>
               </div>
-              {AllPosts.map((post) => (
+              {currentItems.map((post) => (
                 <Link
                   href={`/resources/guidesTutorials/allpostTutor/${post.id}`}
                   key={post.id}
@@ -164,10 +179,27 @@ const GuidesAndTutorials = () => {
                 </Link>
               ))}
             </div>
+            <div className="flex justify-center mt-8">
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel="next >"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={pageRangeDisplayed}
+                marginPagesDisplayed={marginPagesDisplayed}
+                pageCount={pageCount}
+                previousLabel="< previous"
+                renderOnZeroPageCount={null}
+                containerClassName="flex justify-center"
+                pageClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
+                activeClassName="bg-blue-500 text-white"
+                previousClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
+                nextClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
+                breakClassName="inline-block px-2 py-1 mx-1 text-gray-700"
+              />
+            </div>
           </div>
         </div>
-        {/* <Faq /> */}
-        
+        <Faq />
       </div>
     </>
   );

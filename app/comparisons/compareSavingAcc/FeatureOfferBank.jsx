@@ -10,13 +10,14 @@ import ImageDisplay from "@/app/components/ImageDisplay";
 const FeatureOfferBank = () => {
   const [bankData, setBankData] = useRecoilState(bankDataAtom);
   const [loading, setLoading] = useState(true);
+  console.log(bankData, "This's my Bank Data");
 
   useEffect(() => {
     try {
       const fetchData = async () => {
         const result = await fetch(" http://34.143.206.144:8080/savings/all");
         const data = await result.json();
-        console.log(data, "result");
+        // console.log(data, "result");
         setBankData(data);
         setLoading(false);
       };
