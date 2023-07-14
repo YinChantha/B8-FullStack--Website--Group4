@@ -1,35 +1,44 @@
 "use client";
 import React, { useState } from "react";
-import { getAllfixedeposits } from "../api/fixeddeposits/getAlldeposits";
+import {
+  getAllfixedepositlist,
+  getAllfixedeposits,
+  getAllfixeddepositlist,
+} from "../api/fixeddeposits/getAlldeposits";
 
 const page = () => {
   const [data, setData] = useState("");
   const [bankData, setBank] = useState("");
+  const [bank1, setBank1] = useState("");
+  const [bank2, setBank2] = useState("");
   const [termData, setTerm] = useState("");
   const [currency, setCurrency] = useState("");
 
   const [queryParams, setQueryParams] = useState({
     bank: "",
-    term: "",
-    luy: "",
+    currency: "KHR",
+    rateAt: "Maturity",
   });
 
+
   const logData = async () => {
-    console.log("The bank params is : ", bankData);
+    console.log("The bank params is : ", [bank1, bank2]);
     console.log("The term params is : ", termData);
     console.log("The term params is : ", currency);
     setQueryParams({
-      bank: bankData,
-      term: termData,
-      currency: currency,
+      bank: `${bank1}&${bank2}`,
+      currency: "KHR",
+      rateAt: "Maturity",
     });
     console.log("params is : ", queryParams);
   };
+
+
   const GetFixedDeposits = async () => {
     try {
-      const res = await getAllfixedeposits(queryParams);
-      setData(res);
-      console.log("data is here : ", res);
+      const res = await getAllfixeddepositlist(queryParams);
+      setData(res.data.bankTermRate);
+      console.log("data is here : ", res.data.bankTermRate);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -45,14 +54,14 @@ const page = () => {
       </button>
       <input
         type="text"
-        onChange={(e) => setBank(e.target.value)}
-        placeholder="Bank"
+        onChange={(e) => setBank1(e.target.value)}
+        placeholder="Bank1"
         className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
       />
       <input
         type="text"
-        onChange={(e) => setTerm(e.target.value)}
-        placeholder="Term"
+        onChange={(e) => setBank2(e.target.value)}
+        placeholder="Bank2"
         className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
       />
       <input

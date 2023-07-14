@@ -1,307 +1,107 @@
 import React, { useEffect, useState } from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import ReactPaginate from "react-paginate";
-import { getAlldepositsBybank } from "../../api/fixeddeposits/getAlldeposits";
+import {
+  getAlldepositsBybank,
+  getAllfixeddepositlist,
+} from "../../api/fixeddeposits/getAlldeposits";
+import ChartFilter from "../compareSavingAcc/ChartFilter";
+import ChartComponent from "../compareSavingAcc/ChartBar";
 const TABLE_HEAD = [
-  "Company",
-  "Interest Rate",
-  "Term",
-  "Openwith",
-  "Condition",
-  "Date",
-];
-
-const TABLE_ROWS = [
-  {
-    bank: "WOORI",
-    logo: "hi",
-    rate: 9.1,
-    rateAt: "0",
-    currency: "KHR",
-    term: 36,
-    condition: "FIX DESPOSIT",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "SHINHAN",
-    logo: "hi",
-    rate: 9.1,
-    rateAt: "0",
-    currency: "KHR",
-    term: 36,
-    condition: "FIX DESPOSIT",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "WOORI",
-    logo: "hi",
-    rate: 9.1,
-    rateAt: "0",
-    currency: "KHR",
-    term: 36,
-    condition: "FIX DESPOSIT",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "SHINHAN",
-    logo: "hi",
-    rate: 9.1,
-    rateAt: "0",
-    currency: "KHR",
-    term: 36,
-    condition: "FIX DESPOSIT",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "WOORI",
-    logo: "hi",
-    rate: 9.1,
-    rateAt: "0",
-    currency: "KHR",
-    term: 36,
-    condition: "FIX DESPOSIT",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "SHINHAN",
-    logo: "hi",
-    rate: 9.1,
-    rateAt: "0",
-    currency: "KHR",
-    term: 36,
-    condition: "FIX DESPOSIT",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ABA",
-    logo: "https://i.pinimg.com/originals/e2/33/f5/e233f5b0c5a358449398f202b03f063a.jpg",
-    rate: 9,
-    rateAt: "0",
-    currency: "KHR",
-    term: 60,
-    condition: "FIX DEPOSIT",
-    openwith: "COUNTER",
-    update_date: "2023-7-8",
-  },
-  {
-    bank: "ACLEDA",
-    logo: "https://www.acledabank.com.kh/kh/assets/download_material/download-logo-blue.jpg",
-    rate: 8.3,
-    rateAt: "3",
-    currency: "KHR",
-    term: 72,
-    condition: "Long Term",
-    openwith: "MOBILE",
-    update_date: "2023-7-8",
-  },
+  "Month of ",
+  "Month of",
+  "Month of",
+  "Month of",
+  "Month of",
+  "Month of",
 ];
 
 const CompareFixedDepoForm = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const itemsPerPage = 4; // Number of items to display per page
-  const [currentPage, setCurrentPage] = useState(0);
+  const [queryParams, setQueryParams] = useState({
+    bank: "",
+    currency: "KHR",
+    rateAt: "Maturity",
+  });
+  // const [data, setData] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const itemsPerPage = 4;
+  // const pageRangeDisplayed = 3;
+  // const marginPagesDisplayed = 1;
+  // const [itemOffset, setItemOffset] = useState(0);
+  // const endOffset = itemOffset + itemsPerPage;
+  // const currentItems = data?.slice(itemOffset, endOffset);
+  // const pageCount = Math.ceil((data?.length || 0) / itemsPerPage);
+  // const handlePageClick = (event) => {
+  //   const selectedPage = event.selected;
+  //   const newOffset = selectedPage * itemsPerPage;
+  //   setItemOffset(newOffset);
+  // };
+  // const itemsPerPage = 4; // Number of items to display per page
+  // const [currentPage, setCurrentPage] = useState(0);
 
-  // Calculate the index range of the current page
-  const startIndex = currentPage * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  // // Calculate the index range of the current page
+  // const startIndex = currentPage * itemsPerPage;
+  // const endIndex = startIndex + itemsPerPage;
 
-  // Get the sliced data for the current page
-  const displayedData = data.slice(startIndex, endIndex);
+  // // Get the sliced data for the current page
+  // // const displayedData = data.slice(startIndex, endIndex);
+  // const displayedData = data.slice(0, itemsPerPage);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  // const totalPages = Math.ceil(data.length / itemsPerPage);
 
-  const handlePageClick = (selectedPage) => {
-    setCurrentPage(selectedPage.selected);
-  };
+  // // const handlePageClick = (selectedPage) => {
+  // //   setCurrentPage(selectedPage.selected);
+  // // };
 
-  const fetchDataWithParams = async (e) => {
-    e.preventDefault();
-    console.log("Selected value:", data);
-    try {
-      const res = await getAlldepositsBybank();
-      setData(res.data.fixdDeposits);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+  // const handlePageClick = (selectedPage) => {
+  //   const newStartIndex = selectedPage.selected * itemsPerPage;
+  //   const newEndIndex = newStartIndex + itemsPerPage;
+  //   setCurrentPage(selectedPage.selected);
+  //   // Update the displayed data based on the new index range
+  //   const newDisplayedData = data.slice(newStartIndex, newEndIndex);
+  //   // Use newDisplayedData directly or assign it to a new variable
+  //   // depending on how you want to use it in your component
+  // };
+
+  // const fetchDataWithParams = async (e) => {
+  //   e.preventDefault();
+  //   console.log("Selected value:", data);
+  //   try {
+  //     const res = await getAlldepositsBybank();
+  //     setData(res.data.fixdDeposits);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await getAlldepositsBybank();
+  //       setData(res.data.fixdDeposits);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getAlldepositsBybank();
-        setData(res.data.fixdDeposits);
-        setLoading(false);
+        const res = await getAllfixeddepositlist(queryParams);
+        setData(res.data.bankTermRate);
+        console.log("data is here : ", res.data.bankTermRate);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false);
       }
     };
     fetchData();
   }, []);
 
-  const pageRangeDisplayed = 2;
-  const marginPagesDisplayed = 1; 
   return (
     <div>
       <div className="p-10 bg-gray-200 rounded-md mt-10">
@@ -497,7 +297,7 @@ const CompareFixedDepoForm = () => {
         </div>
         <div className="flex justify-end mt-5 ">
           <button
-            onClick={fetchDataWithParams}
+            // onClick={fetchDataWithParams}
             type="submit"
             className="redButton"
           >
@@ -517,7 +317,8 @@ const CompareFixedDepoForm = () => {
             promotions from banks and financial institutions in Cambodia.
           </p>
         </div>
-        <div className="mt-6">
+        <ChartComponent />
+        {/* <div className="mt-6">
           {loading ? (
             <div className="flex justify-center items-center h-full mt-32">
               <img
@@ -548,118 +349,226 @@ const CompareFixedDepoForm = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {displayedData.map(
-                    (
-                      {
-                        logo,
-                        bank,
-                        rate,
-                        rateAt,
-                        currency,
-                        term,
-                        condition,
-                        openwith,
-                        update_date,
-                      },
-                      index
-                    ) => {
-                      const isLast = index === displayedData.length - 1;
-                      const classes = isLast
-                        ? "p-4"
-                        : "p-4 border-b border-blue-gray-50";
-                      const uniqueKey = `${bank}-${index}`;
+                {currentItems.map((data, index) => {
+                    const isLast = index === currentItems.length - 1;
+                    const classes = isLast
+                      ? "p-4"
+                      : "p-4 border-b border-blue-gray-50";
+                    const uniqueKey = `${data.bank}-${index}`;
 
-                      return (
-                        <tr key={bank}>
-                          <td className={classes}>
-                            <div className="flex items-center gap-2">
-                              <img
-                                className="h-14 w-14 rounded-full"
-                                src={logo}
-                                alt="logo"
-                              />
-                              <div>
-                                <p className="text-gray-900 font-semibold text-sm">
-                                  {bank}
-                                </p>
-                                <p className="text-gray-500 font-serif text-sm">
-                                  {currency}
-                                </p>
-                              </div>
-                            </div>
-                          </td>
-                          <td className={classes}>
+                    return (
+                      <tr key={uniqueKey}>
+                        <td className={classes}>
+                          <div className="flex items-center gap-2">
+                            <img
+                              className="h-14 w-14 rounded-full"
+                              src={data.logo}
+                              alt="logo"
+                            />
                             <div>
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className="text-gray-900 font-semibold text-sm"
-                              >
-                                {rate} %
-                              </Typography>
+                              <p className="text-gray-900 font-semibold text-sm">
+                                {data.bank}
+                              </p>
                               <p className="text-gray-500 font-serif text-sm">
-                                Rate at {rateAt}
+                                {data.currency}
                               </p>
                             </div>
-                          </td>
-                          <td className={classes}>
+                          </div>
+                        </td>
+                        <td className={classes}>
+                          <div>
                             <Typography
                               variant="small"
                               color="blue-gray"
-                              className="font-normal"
-                            >
-                              {term}
-                            </Typography>
-                          </td>
-                          <td className={classes}>
-                            <Typography
-                              variant="small"
-                              color="blue-gray"
-                              className="font-normal"
-                            >
-                              {openwith}
-                            </Typography>
-                          </td>
-                          <td className={classes}>
-                            <Typography
-                              as="a"
-                              href="#"
-                              variant="small"
-                              color="blue"
                               className="text-gray-900 font-semibold text-sm"
                             >
-                              {condition}
+                              {data.rate} %
                             </Typography>
-                          </td>
-                          <td className={classes}>
-                            <Typography
-                              as="a"
-                              href="#"
-                              variant="small"
-                              color="blue"
-                              className="text-gray-900 font-semibold text-sm"
-                            >
-                              {update_date}
-                            </Typography>
-                          </td>
-                        </tr>
-                      );
-                    }
-                  )}
+                            <p className="text-gray-500 font-serif text-sm">
+                              Rate at {data.rateAt}
+                            </p>
+                          </div>
+                        </td>
+                        <td className={classes}>
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal"
+                          >
+                            {data.term}
+                          </Typography>
+                        </td>
+                        <td className={classes}>
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal"
+                          >
+                            {data.openwith}
+                          </Typography>
+                        </td>
+                        <td className={classes}>
+                          <Typography
+                            as="a"
+                            href="#"
+                            variant="small"
+                            color="blue"
+                            className="text-gray-900 font-semibold text-sm"
+                          >
+                            {data.condition}
+                          </Typography>
+                        </td>
+                        <td className={classes}>
+                          <Typography
+                            as="a"
+                            href="#"
+                            variant="small"
+                            color="blue"
+                            className="text-gray-900 font-semibold text-sm"
+                          >
+                            {data.update_date}
+                          </Typography>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </Card>
           )}
+        </div> */}
+
+        {/* data of the table term */}
+
+        <div className="flex flex-col">
+          <div className="overflow-x-auto">
+            <div className="p-1.5 w-full inline-block align-middle">
+              <div className="overflow-hidden border rounded-lg">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                      >
+                        Bank
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                      >
+                        Term 1
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                      >
+                        Term 2
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
+                      >
+                        Term 3
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                      >
+                        Term 4
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                      >
+                        Term 5
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                        ABA
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 3%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        023-7-8: 3.88 %,<br></br> 2023-7-10: 3.88%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 4.75%, <br></br>2023-7-10: 4.75%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 5.25%,<br></br>
+                        2023-7-10: 5.25%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 5.75%,<br></br>
+                        2023-7-10: 5.75%
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                        ACLEDA
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 3.33%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 3.9 %,<br></br> 2023-7-10: 3.9%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 4.75%, <br></br>2023-7-10: 4.75%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 5%,<br></br>
+                        2023-7-10: 5.%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 5.3%,<br></br>
+                        2023-7-10: 5.3%
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                        SATHAPANA
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 4%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 5.5 %,<br></br> 2023-7-10: 5.5%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 4.75%, <br></br>2023-7-10: 4.75%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 6.25%,<br></br>
+                        2023-7-10: 6.25%
+                      </td>
+                      <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                        2023-7-8: 6.75%,<br></br>
+                        2023-7-10: 6.75%
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
+
+        {/* data of the table term */}
         {/* Pagination controls */}
-        <div className="flex justify-center mt-8">
+        {/* <div className="flex justify-center mt-8">
           <ReactPaginate
             breakLabel="..."
             nextLabel="next >"
             onPageChange={handlePageClick}
             pageRangeDisplayed={pageRangeDisplayed}
             marginPagesDisplayed={marginPagesDisplayed}
-            pageCount={totalPages}
+            pageCount={pageCount}
             previousLabel="< previous"
             renderOnZeroPageCount={null}
             containerClassName="flex justify-center"
@@ -669,7 +578,7 @@ const CompareFixedDepoForm = () => {
             nextClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
             breakClassName="inline-block px-2 py-1 mx-1 text-gray-700"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

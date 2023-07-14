@@ -56,7 +56,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="w-[500px] h-[300px]">
+    <div className="flex flex-col w-[400px] h-[500px] sm:w-[450px] sm:h-full sm:pt-1 pt-[-2px]">
       <div className="flex flex-col items-center p-4">
         <div className="flex-col items-center mt-2">
           <Image
@@ -67,7 +67,7 @@ export default function Chat() {
             alt="profile"
           />
         </div>
-        <div className="flex-col items-center mt-3">
+        <div className="flex-col items-center sm:mt-3 mt-1">
           <h1 className="font-bold text-[18px] text-center text-black -mt-3">
             {"Hak Vichet"}
           </h1>
@@ -77,7 +77,7 @@ export default function Chat() {
         </div>
         <div
           ref={chatContainerRef}
-          className="w-[500px] h-[450px] mt-5 rounded-lg scroll-smooth overflow-y-auto"
+          className="sm:w-[440px] sm:h-[320px] w-[390px] h-[280px] mt-5 rounded-lg scroll-smooth overflow-y-auto"
         >
           <div>
             {messages.length === 0 && (
@@ -116,7 +116,7 @@ export default function Chat() {
                 <p
                   className={`${
                     message.sender === "You"
-                      ? "flex text-[20px] text-white items-end justify-end"
+                      ? "flex text-[20px] text-white"
                       : "flex text-black text-[20px] mx-auto"
                   }`}
                 >
@@ -134,7 +134,7 @@ export default function Chat() {
               <input
                 id="user-input"
                 type="message"
-                className="text-[15px] w-full text-gray-800 border-1 border-gray-500 rounded-lg px-4 outline-none"
+                className="text-[15px] font-semibold w-full text-gray-800 border-1 border-gray-500 rounded-lg px-4 outline-none"
                 autoComplete="off"
                 placeholder="Message..."
                 onKeyDown={handleInputKeyDown}

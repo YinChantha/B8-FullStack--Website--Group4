@@ -1,13 +1,5 @@
-"use client"
-import React, {useState} from "react";
-import { Listbox } from "@headlessui/react";
-import { CheckIcon } from "@heroicons/react/20/solid";
-
-const regularDepo = [
-  { id: 1, name: "Weekly", unavailable: false },
-  { id: 2, name: "Monthly", unavailable: true}, 
-  { id: 3, name: "Yearly", unavailable: false },
-];
+"use client";
+import React from "react";
 
 const mark = (
   <svg
@@ -45,86 +37,67 @@ const CompareSaveAccForm = () => {
       <form
         action="/send-data-here"
         method="post"
-        className="flex flex-col gap-6 bg-[#F9FAFB] py-8 px-6 rounded-lg border-[1px] border-[#EAECF0]"
+        className=" gap-8 bg-[#F9FAFB] py-8 px-6 rounded-lg border-[1px] border-[#EAECF0] mt-12"
       >
-        {/* initial deposit */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="initial deposit" className="labelStyle">
-              Your initial deposit
-            </label>
-            {mark}
-          </div>
+        <div className="flex md:flex-row flex-col sm:flex-col gap-8 ">
+          {/* select your bank */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle">
+                Select Filter
+              </label>
+              {mark}
+            </div>
 
-          <input
-            type="number"
-            name="initial deposit"
-            className="inputStyle"
-            placeholder="Enter your initial deposit"
-          />
-        </div>
-        {/* regular deposit */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="Your Regular Deposit" className="labelStyle">
-              Your Regular Deposits
-            </label>
-            {mark}
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">ABA</option>
+              <option value="yearly">After 2 years</option>
+              <option value="yearly">After 3 years</option>
+              <option value="yearly">After 4 years</option>
+              <option value="yearly">After 5 years</option>
+            </select>
           </div>
+          {/* select filter */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle">
+                Select your bank
+              </label>
+              {mark}
+            </div>
 
-          <input
-            type="number"
-            name="Your Regular Deposit"
-            className="inputStyle"
-            placeholder="Enter your regular deposit"
-          />
-         
-          <select id="period" name="period" className="selectStyle">
-            <option value="monthly">weekly</option>
-            <option value="monthly">Monthly</option>
-            <option value="yearly">Yearly</option>
-          </select>
-        </div>
-        {/* value */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="value" className="labelStyle">
-              Value
-            </label>
-            {mark}
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">Interest Rate (AER)</option>
+              <option value="yearly">After 2 years</option>
+              <option value="yearly">After 3 years</option>
+              <option value="yearly">After 4 years</option>
+              <option value="yearly">After 5 years</option>
+            </select>
           </div>
+          {/* Select currency */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle truncate">
+                Select currency
+              </label>
+              {mark}
+            </div>
 
-          <select id="value" name="value" className="selectStyle ">
-            <option value="monthly">After 1 year</option>
-            <option value="yearly">After 2 years</option>
-            <option value="yearly">After 3 years</option>
-            <option value="yearly">After 4 years</option>
-            <option value="yearly">After 5 years</option>
-          </select>
-        </div>
-        {/* filter account type */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="filterAcctype" className="labelStyle">
-              Filter by account type
-            </label>
-            {mark}
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">USD</option>
+              <option value="yearly">Riels</option>
+            </select>
           </div>
-
-          <select
-            id="filterAcctype"
-            name="filterAcctype"
-            className="selectStyle"
-          >
-            <option value="monthly">Money Market</option>
-            <option value="monthly">Saving & MMAs</option>
-            <option value="yearly">CDs</option>
-          </select>
         </div>
         {/* update result */}
-        <button type="submit" className="submitBtn">
-          Update result
-        </button>
+        <div className=" flex md:justify-end items-center mt-8  ">
+          <button
+            type="submit"
+            className="redButton w-full sm:w-full md:max-w-[155px] font-semibold "
+          >
+            Update result
+          </button>
+        </div>
       </form>
     </div>
   );
