@@ -34,6 +34,21 @@ const FeatureOfferBank = () => {
       console.log(error);
     }
   }, []);
+
+  const renderBankLogo = (bankName) => {
+    console.log(bankName, "bankName");
+    switch (bankName) {
+      case "ACLEDA":
+        return "/acleda.png";
+      case "ABA bank":
+        return "/aba.png";
+      case "VATTANAC":
+        return "/images/vattanac.png";
+      default:
+        return "/acleda.png";
+    }
+  };
+
   return (
     <>
       <div className="overflow-y-auto max-h-[1000px] mt-5">
@@ -68,8 +83,8 @@ const FeatureOfferBank = () => {
                       <td className="flex flex-row gap-5 ml-5">
                         <Image
                           // src={bank.bankLogo}
-                          src="/images/vichet.png"
-                          alt={bank.bankName}
+                          src={renderBankLogo(bank.bank)}
+                          alt={bank.bank}
                           width={184}
                           height={48}
                           className="w-[60px] h-[60px] rounded-full"
@@ -116,8 +131,8 @@ const FeatureOfferBank = () => {
                       <td className="flex flex-row gap-5 ml-5">
                         <Image
                           // src={bank.bankLogo}
-                          src="/images/vichet.png"
-                          alt={bank.bankName}
+                          src={renderBankLogo(bank.bank)}
+                          alt={bank.bank}
                           width={184}
                           height={48}
                           className="w-[60px] h-[60px] rounded-full"

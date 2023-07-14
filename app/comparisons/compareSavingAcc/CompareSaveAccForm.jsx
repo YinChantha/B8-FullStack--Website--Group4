@@ -10,12 +10,6 @@ import { fetchAllBankData } from "./fetchAllBankData";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { selectedBankState } from "./atom";
 
-// const banks = [
-//   { label: "ABA", value: "ABA" },
-//   { label: "ACELEDA", value: "ACELEDA" },
-//   { label: "WING", value: "WING", disabled: false },
-//   { label: "PRINCE", value: "PRINCE", disabled: false },
-// ];
 
 const currency = [
   { value: "KHM", label: "KHM" },
@@ -48,16 +42,6 @@ const CompareSaveAccForm = () => {
     fecthData();
   }, []);
 
-  // const handleBankSelection = (event) => {
-  //   const { value, checked } = event.target;
-  //   if (checked) {
-  //     setSelectedBank((preSelectedBank) => [...preSelectedBank, value]);
-  //   } else {
-  //     setSelectedBank((preSelectedBank) => {
-  //       preSelectedBank.filter((bank) => bank !== value);
-  //     });
-  //   }
-  // };
 
   // sort bank name
   const sortedBanks = [...new Set(bankData.map((bank) => bank.bank))].sort();
