@@ -10,12 +10,27 @@ const ChartFilter = () => {
   useEffect(() => {
     const seriesData = [
       {
-        name: "series1",
+        name: "ABA",
         data: [31, 40, 28, 51, 42, 109, 100],
       },
       {
-        name: "series2",
+        name: "WING",
         data: [11, 32, 45, 32, 34, 52, 41],
+      },
+      {
+        name: "PRINCE",
+        data: [11, 32, 80, 32, 34, 29, 41],
+      },
+      {
+        name: "ACELEDA",
+        data: [33, 32, 45, 32, 44, 52, 41],
+      },{
+        name: "STABANA",
+        data: [0, 22, 45, 33, 34, 52, 41],
+      },
+      {
+        name: "LYHOUR",
+        data: [100, 10, 88, 32, 34, 99, 41],
       },
     ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GoSearch } from "react-icons/go";
@@ -10,17 +10,26 @@ import { AllPostItems } from "./AllPostsItems";
 import { RiSendPlaneLine } from "react-icons/ri";
 import { Fahkwang } from "next/font/google";
 import Faq from "@/app/components/Faq";
+import ReactPaginate from "react-paginate";
 
-export const getStatus = async () => {
-  const res = await fetch("");
-  const data = await res.json();
 
-  return {
-    props: { posts: data },
-  };
-};
 
 const FinancialArticles = () => {
+  const itemsPerPage = 5;
+  const pageRangeDisplayed = 3;
+  const marginPagesDisplayed = 1;
+  const [itemOffset, setItemOffset] = useState(0);
+  const endOffset = itemOffset + itemsPerPage;
+
+  const currentItems = AllPostItems?.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil((AllPostItems?.length || 0) / itemsPerPage);
+
+  const handlePageClick = (event) => {
+    const selectedPage = event.selected;
+    const newOffset = selectedPage * itemsPerPage;
+    setItemOffset(newOffset);
+  };
+
   return (
     <>
       <div className="max-w-screen mx-auto px-5 pt-20 md:mx-20">
@@ -122,7 +131,7 @@ const FinancialArticles = () => {
             </div>
           </div>
           <h1 className="promotionName mt-20 ">All blogs posts</h1>
-          <div className="flex justify-center mt-5">
+          <div className="flex flex-col justify-center mt-5">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex w-full bg-gray-200 border-2 border-gray-300 rounded-lg">
                 <div className="flex flex-col mx-8 my-8">
@@ -147,7 +156,7 @@ const FinancialArticles = () => {
                   </div>
                 </div>
               </div>
-              {AllPostItems.map((post) => (
+              {currentItems.map((post) => (
                 <Link
                   href={`/resources/financialArticles/allPost/${post.id}`}
                   key={post.id}
@@ -185,6 +194,24 @@ const FinancialArticles = () => {
                   </div>
                 </Link>
               ))}
+            </div>
+            <div className="flex justify-center mt-8">
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel="next >"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={pageRangeDisplayed}
+                marginPagesDisplayed={marginPagesDisplayed}
+                pageCount={pageCount}
+                previousLabel="< previous"
+                renderOnZeroPageCount={null}
+                containerClassName="flex justify-center"
+                pageClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
+                activeClassName="bg-blue-500 text-white"
+                previousClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
+                nextClassName="inline-block px-2 py-1 mx-1 text-gray-700 cursor-pointer"
+                breakClassName="inline-block px-2 py-1 mx-1 text-gray-700"
+              />
             </div>
           </div>
         </div>
