@@ -371,15 +371,7 @@ function NavList() {
   return (
     <List>
       <div className="flex md:flex-row flex-col md:pt-0 pt-16">
-        {/* <Typography
-          as="a"
-          href="#"
-          variant="small"
-          color="blue-gray"
-          // className="flex justify-center items-center text-gray-500 font-semibold text-base gap-2 w-28 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
-          className="flex md:justify-center justify-start items-center text-gray-500 font-semibold text-base w-24 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
-          onClick={handleCompare}
-        > */}
+        
         <Typography
           as="a"
           href="#"
