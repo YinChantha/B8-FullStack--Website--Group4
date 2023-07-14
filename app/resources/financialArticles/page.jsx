@@ -12,23 +12,10 @@ import { Fahkwang } from "next/font/google";
 import Faq from "@/app/components/Faq";
 import ReactPaginate from "react-paginate";
 
-// export const getStatus = async () => {
-//   const res = await fetch("");
-//   const data = await res.json();
 
-//   return {
-//     props: { posts: data },
-//   };
-// };
 
 const FinancialArticles = () => {
-  // useState
-  // const [promotionData, setPromotionData] = useState(PostItems);
-  // pagination
-
-  // const [data, setData] = useRecoilState(dataAtom);
-  // const [pageLoading, setPageLoading] = useState(true);
-  const itemsPerPage = 2;
+  const itemsPerPage = 5;
   const pageRangeDisplayed = 3;
   const marginPagesDisplayed = 1;
   const [itemOffset, setItemOffset] = useState(0);

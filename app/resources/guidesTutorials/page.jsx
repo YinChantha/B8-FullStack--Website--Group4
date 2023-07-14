@@ -12,7 +12,7 @@ import ReactPaginate from "react-paginate";
 import Faq from "@/app/components/Faq";
 
 const GuidesAndTutorials = () => {
-  const itemsPerPage = 2;
+  const itemsPerPage = 5;
   const pageRangeDisplayed = 3;
   const marginPagesDisplayed = 1;
   const [itemOffset, setItemOffset] = useState(0);

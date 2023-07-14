@@ -276,12 +276,7 @@ function NavListMenu() {
       <div className="block md:hidden">
         <Collapse open={isMobileMenuOpen} className="flex flex-col gap-3">
           {renderItems}
-          <Image
-            src="/images/comparisons/compare-pic.png"
-            alt="compare"
-            width={600}
-            height={40}
-          />
+          <Image src="/compare-pic.png" alt="compare" width={600} height={40} />
 
           <div className="flex items-center gap-2">
             <svg
