@@ -146,20 +146,24 @@ export async function getAlldepositsBybank(bank) {
 // }
 export async function getAllfixeddepositlist(queryParams) {
   try {
-    const { bank, ...restParams } = queryParams;
+    const { banks=[], ...restParams } = queryParams;
 
-    const banks = bank.split("&").map((item) => item.split("=")[1]);
-    const params = {
-      ...restParams,
-      bank: banks,
-    };
+    console.log("bank", banks);
+    console.log("restParams", restParams);
 
-    // Remove empty values from the query parameters
-    Object.keys(params).forEach((key) => {
-      if (params[key] === "") {
-        delete params[key];
-      }
-    });
+      const params = new URLSearchParams();
+      banks.forEach((bankValue) => {
+        params.append('bank', bankValue);
+      });
+      Object.keys(restParams).forEach((key) => {
+        params.append(key, restParams[key]);
+      });
+
+      // console
+
+
+
+
 
     const response = await axios.get(
       "http://34.143.206.144:8080/fixeddeposits/hist",

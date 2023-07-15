@@ -15,7 +15,7 @@ const page = () => {
   const [currency, setCurrency] = useState("");
 
   const [queryParams, setQueryParams] = useState({
-    bank: "",
+    bank: ["aba",'wing'],
     currency: "KHR",
     rateAt: "Maturity",
   });
@@ -26,7 +26,7 @@ const page = () => {
     console.log("The term params is : ", termData);
     console.log("The term params is : ", currency);
     setQueryParams({
-      bank: "aba",
+      bank: ['aba','wing'],
       currency: "KHR",
       rateAt: "Maturity",
     });
