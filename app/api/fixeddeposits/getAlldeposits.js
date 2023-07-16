@@ -159,10 +159,6 @@ export async function getAllfixeddepositlist(queryParams) {
         params.append(key, restParams[key]);
       });
 
-      // console
-
-
-
 
 
     const response = await axios.get(
