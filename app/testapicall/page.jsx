@@ -37,43 +37,7 @@ const Bank = [
   { id: 10, name: "VATTANAC" },
 ];
 const page = () => {
-  const [data, setData] = useState("");
-  // const [bankData, setBank] = useState("");
-  const [bank1, setBank1] = useState("");
-  const [bank2, setBank2] = useState("");
-  const [rate, setRate] = useState("Maturity");
-  const [currency, setCurrency] = useState("KHR");
 
-  const [queryParams, setQueryParams] = useState({
-    bank: "",
-    term: "",
-    currency: "",
-    rateAt: "",
-  });
-
-  // to set value on the params based
-  const logData = async () => {
-    console.log("The bank params is : ", [bank1, bank2]);
-    console.log("The term params is : ", currency);
-    console.log("The term params is : ", rate);
-    setQueryParams({
-      bank: ["aba", "wing"],
-      term: term,
-      currency: currency,
-      rateAt: rate,
-    });
-    console.log("params is : ", queryParams);
-  };
-
-  const GetFixedDeposits = async () => {
-    try {
-      const res = await getAllfixeddepositlist(queryParams);
-      setData(res.data.bankTermRate);
-      console.log("data is here : ", res.data.bankTermRate);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
 
   // const handleFormSubmit = (event) => {
   //   event.preventDefault();
@@ -81,11 +45,13 @@ const page = () => {
   //   console.log(selectedBank, "selectedBank");
   //   setSelectedBankRecoil(selectedBank.map((bank) => bank.value));
   // };
-
+  const [data , setData] = useState('')
   const [selectedBank, setSelectedBank] = useState([]);
   const [query, setQuery] = useState("");
   const [selectedTerm, setSelectedTerm] = useState([]);
   const [queryterm, setQueryterm] = useState("");
+  const [rate, setRate] = useState("Maturity");
+  const [currency, setCurrency] = useState("KHR");
 
   const filteredBank =
     query === ""
@@ -108,35 +74,36 @@ const page = () => {
 
   const handleBankChange = (selectedOptions) => {
     setSelectedBank(selectedOptions);
-    // selectedOptions.forEach((option) => {
-    //   console.log("Option Bank : ", option.name);
-    // });
   };
   const handleTermChange = (selectedOptions) => {
     setSelectedTerm(selectedOptions);
-    // selectedOptions.forEach((option) => {
-    //   console.log("Option Bank : ", option.name);
-    // });
   };
-  console.log("Selected Banks:");
-  selectedBank.forEach((option) => {
-    console.log(option.name);
-  });
 
   const handleCurrencyChange = (event) => {
     const response = event.target.value;
     setCurrency(response);
-    console.log("Currency Selected Value:", response);
   };
-  console.log("Selected Term is :");
-  selectedTerm.forEach((option) => {
-    console.log(option.name);
-  });
 
   const handleRateatChange = (event) => {
     const response = event.target.value;
     setRate(response);
-    console.log("Rateat Selected Value:", response);
+  };
+
+  const GetFixedDeposits = async () => {
+    const bankName = selectedBank.map(bank => bank.name.toLowerCase())
+    const term = selectedTerm.map(term => term.name)
+    try {
+      const res = await getAllfixeddepositlist({
+        currency: currency,
+        rateAt: rate,
+        bank: bankName,
+        term
+      });
+      setData(res.data.bankTermRate);
+      console.log("data is here : ", res.data.bankTermRate);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   return (

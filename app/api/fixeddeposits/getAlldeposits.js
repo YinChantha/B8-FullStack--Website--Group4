@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import qs from 'querystring'
 // getall fixdeposits
 export async function getAllfixedeposits(queryParams) {
   try {
@@ -146,25 +146,26 @@ export async function getAlldepositsBybank(bank) {
 // }
 export async function getAllfixeddepositlist(queryParams) {
   try {
-    const { banks=[], ...restParams } = queryParams;
+    const { banks } = queryParams;
+    console.log(queryParams,'-----------------');
 
-    console.log("bank", banks);
-    console.log("restParams", restParams);
-
-      const params = new URLSearchParams();
-      banks.forEach((bankValue) => {
-        params.append('bank', bankValue);
-      });
-      Object.keys(restParams).forEach((key) => {
-        params.append(key, restParams[key]);
-      });
+      // const params = new URLSearchParams();
+      // banks.forEach((bankValue) => {
+      //   params.append('bank', bankValue);
+      // });
+      // Object.keys(restParams).forEach((key) => {
+      //   params.append(key, restParams[key]);
+      // });
 
 
 
     const response = await axios.get(
       "http://34.143.206.144:8080/fixeddeposits/hist",
       {
-        params: params,
+        params: queryParams,
+        paramsSerializer: params => {
+          return qs.stringify(params)
+        }
       }
     );
 
