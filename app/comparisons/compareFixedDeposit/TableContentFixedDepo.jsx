@@ -89,7 +89,6 @@ const TableContentFixedDepo = () => {
           {/* social link component */}
           <SocialLink />
         </div>
-
         <div>
           {/* best saving accounts info */}
           <div

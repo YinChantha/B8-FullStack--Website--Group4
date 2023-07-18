@@ -74,7 +74,7 @@ const CompareSavingAcc = () => {
         {/* fuction compare saving accounts */}
         <CompareSavingAccForm />
         {/* test display banks selected */}
-        
+
         <DisplayContent />
         {/* fetch banks data */}
         <FeatureOfferBank />
@@ -106,7 +106,6 @@ const CompareSavingAcc = () => {
         {/* table of content and best savings... */}
         <TableOfContent />
       </div>
-
       <Faq />
     </div>
   );

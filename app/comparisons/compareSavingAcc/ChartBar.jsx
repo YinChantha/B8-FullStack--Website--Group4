@@ -7,18 +7,18 @@ const ChartComponent = () => {
   useEffect(() => {
     const options = {
       series: [
-        {
-          name: "ABA",
-          data: [31, 40, 28, 51, 42, 109, 100],
-        },
-        {
-          name: "ACELEDA",
-          data: [11, 32, 45, 32, 34, 52, 41],
-        },
-        {
-          name: "SATHAPANA",
-          data: [11, 2, 45, 8, 34, 100, 80],
-        },
+        // {
+        //   name: "ABA",
+        //   data: [31, 40, 28, 51, 42, 109, 100],
+        // },
+        // {
+        //   name: "ACELEDA",
+        //   data: [11, 32, 45, 32, 34, 52, 41],
+        // },
+        // {
+        //   name: "SATHAPANA",
+        //   data: [11, 2, 45, 8, 34, 100, 80],
+        // },
       ],
       chart: {
         height: 350,

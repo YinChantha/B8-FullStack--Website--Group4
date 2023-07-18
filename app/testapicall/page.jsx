@@ -4,6 +4,7 @@ import {
   getAllfixedepositlist,
   getAllfixedeposits,
   getAllfixeddepositlist,
+  getAllfixeddeposithistory,
 } from "../api/fixeddeposits/getAlldeposits";
 import { MultiSelect } from "react-multi-select-component";
 import { fetchAllBankData } from "../comparisons/compareSavingAcc/fetchAllBankData";
@@ -37,15 +38,13 @@ const Bank = [
   { id: 10, name: "VATTANAC" },
 ];
 const page = () => {
-
-
   // const handleFormSubmit = (event) => {
   //   event.preventDefault();
   //   // setShowSelectedBank(true);
   //   console.log(selectedBank, "selectedBank");
   //   setSelectedBankRecoil(selectedBank.map((bank) => bank.value));
   // };
-  const [data , setData] = useState('')
+  const [data, setData] = useState("");
   const [selectedBank, setSelectedBank] = useState([]);
   const [query, setQuery] = useState("");
   const [selectedTerm, setSelectedTerm] = useState([]);
@@ -90,15 +89,16 @@ const page = () => {
   };
 
   const GetFixedDeposits = async () => {
-    const bankName = selectedBank.map(bank => bank.name.toLowerCase())
-    const term = selectedTerm.map(term => term.name)
+    const bankName = selectedBank.map((bank) => bank.name.toLowerCase());
+    const term = selectedTerm.map((term) => term.name);
     try {
-      const res = await getAllfixeddepositlist({
+      const res = await getAllfixeddeposithistory({
         currency: currency,
         rateAt: rate,
         bank: bankName,
-        term
+        term,
       });
+
       setData(res.data.bankTermRate);
       console.log("data is here : ", res.data.bankTermRate);
     } catch (error) {
@@ -114,29 +114,6 @@ const page = () => {
       >
         Test Api Call
       </button>
-      {/* <input
-        type="text"
-        onChange={(e) => setBank1(e.target.value)}
-        placeholder="Bank1"
-        className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
-      />
-      <input
-        type="text"
-        onChange={(e) => setBank2(e.target.value)}
-        placeholder="Bank2"
-        className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
-      /> */}
-      {/* <input
-        type="text"
-        onChange={(e) => setCurrency(e.target.value)}
-        placeholder="luy"
-        className="shadow rounded-sm text-gray-800 px-2 py-2 w-full focus:outline-none my-2"
-      /> */}
-
-      {/* <button onClick={logData} color="py-5 px-10">
-        Testing
-      </button> */}
-
       <div className="flex flex-col gap-3 w-full relative z-10">
         <label for="value" className="labelStyle">
           Select your bank
@@ -212,7 +189,7 @@ const page = () => {
         <label for="value" className="labelStyle">
           Select your Rate
         </label>
-        <Combobox  value={selectedTerm} onChange={handleTermChange} multiple>
+        <Combobox value={selectedTerm} onChange={handleTermChange} multiple>
           <div className="relative mt-1">
             <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
               <Combobox.Input
@@ -279,7 +256,6 @@ const page = () => {
           </div>
         </Combobox>
       </div>
-      
 
       <div className="flex flex-col gap-3 w-full">
         <div className="flex flex-row justify-between">
@@ -305,7 +281,6 @@ const page = () => {
           <option value="Quarterly">Quarterly</option>
         </select>
       </div>
-     
     </div>
   );
 };
