@@ -11,19 +11,18 @@ import { RecoilRoot } from "recoil";
 export default function RootLayout({ children }) {
   const router = usePathname();
   const pathToHideNav = [
-    
     "/",
-   
+
     "promotions",
-   
+
     "landingPage",
-   
+
     "contact",
-   
+
     "legal",
-   
+
     "FAQs",
-  ,
+    ,
   ];
 
   return (
@@ -33,7 +32,6 @@ export default function RootLayout({ children }) {
           {(router === "/" ||
             router === "/promotions" ||
             router === "/landingPage" ||
-            // router === "/account" ||
             router === "/contact" ||
             router === "/legal" ||
             router === "/FAQs") && <Header className="" />}

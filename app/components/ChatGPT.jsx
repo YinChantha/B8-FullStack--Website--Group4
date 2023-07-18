@@ -10,7 +10,7 @@ const ChatGPT = () => {
   const [user, setUser] = React.useState(true);
 
   return (
-    <div className="fixed bottom-5 right-5 z-[999] ">
+    <div className="fixed sm:bottom-5 sm:right-5 bottom-2 right-2 z-[999] ">
       <div
         className="relative cursor-pointer text-white text-4xl flex
         items-end justify-center gap-2"
@@ -22,18 +22,17 @@ const ChatGPT = () => {
           onClick={() => setIsShow(!isShow) && handleClick()}
           layout
           transition={{ duration: 0.3 }}
-          className="bg-red-500 w-20 h-20 flex items-center justify-center rounded-full hover:bg-red-400 transition-all duration-300 ease-in-out"
+          className="bg-red-500 w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full hover:bg-red-400 transition-all duration-300 ease-in-out"
         >
           {!isShow && (
-            <Image
+            <img
               src="/images/gpt.png"
-              alt="gpt"
-              width={42}
-              height={42}
-              className="w-auto h-auto"
+              className="sm:w-full sm:h-full sm:p-4 w-full h-full p-3"
             />
           )}
-          {isShow && <SlArrowRight />}
+          {isShow && (
+            <SlArrowRight className="font-bold sm:w-full sm:h-full sm:p-4 w-full h-full p-3" />
+          )}
         </motion.div>
 
         <AnimatePresence>
@@ -46,7 +45,7 @@ const ChatGPT = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
-              className="absolute bottom-full right-0 mb-4 h-[700px] bg-white rounded-lg  shadow-lg overflow-hidden"
+              className="absolute bottom-full right-0 mb-4 sm:h-[550px] bg-white rounded-lg shadow-xl shadow-gray-400 overflow-hidden"
             >
               {/* chat */}
               {user ? <Chat /> : <SignIn />}

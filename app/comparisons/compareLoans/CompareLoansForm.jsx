@@ -1,24 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { Listbox } from "@headlessui/react";
-import { CheckIcon } from "@heroicons/react/20/solid";
-import { Select, Option } from "@material-tailwind/react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-const people = [
-  { id: 1, name: "Durward Reynolds", unavailable: false },
-  { id: 2, name: "Kenton Towne", unavailable: false },
-  { id: 3, name: "Therese Wunsch", unavailable: false },
-  { id: 4, name: "Benedict Kessler", unavailable: true },
-  { id: 5, name: "Katelyn Rohan", unavailable: false },
-];
-
-const regularDepo = [
-  { id: 1, name: "Weekly", unavailable: false },
-  { id: 2, name: "Monthly", unavailable: true },
-  { id: 3, name: "Yearly", unavailable: false },
-];
+import React from "react";
 
 const mark = (
   <svg
@@ -51,143 +32,94 @@ const mark = (
 );
 
 const CompareLoansForm = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const inputRef = useRef(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
-    <div className="relative ">
-      <span className="absolute inset-y-0 right-3 flex items-center">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M5 7.5L10 12.5L15 7.5"
-            stroke="#475467"
-            stroke-width="1.66667"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </span>
-      <input
-        type="text"
-        placeholder="Select a date"
-        className="border w-full border-gray-500 text-gray-700 p-3 pl-5 rounded-md"
-        value={value}
-        onClick={onClick}
-        ref={ref}
-        readOnly
-      />
-    </div>
-  ));
-  const [selectRegularDepo, setSelectRegularDepo] = useState(regularDepo[0]);
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
   return (
     <div>
       <form
         action="/send-data-here"
         method="post"
-        className="flex flex-col gap-6 bg-[#F9FAFB] py-8 px-6 rounded-lg border-[1px] border-[#EAECF0]"
+        className=" gap-8 bg-[#F9FAFB] py-8 px-6 rounded-lg border-[1px] border-[#EAECF0] mt-12"
       >
-        {/* Date of birth */}
-        <div className="flex flex-col gap-3 ">
-          <div className="flex flex-row justify-between">
-            <label for="dateOfBirth" className="labelStyle">
-              Date of birth
-            </label>
-            {mark}
-          </div>
-          <div>
-            <style>{`.react-datepicker-wrapper,.react-datepicker__input-container {width: 100% !important;}`}</style>
-            <DatePicker
-              selected={selectedDate}
-              onChange={handleDateChange}
-              dateFormat="cccc/d/MMM/yyyy"
-              popperPlacement="bottom-start"
-              popperModifiers={{
-                preventOverflow: {
-                  enabled: true,
-                  escapeWithReference: false,
-                },
-              }}
-              customInput={<CustomInput />}
-              ref={inputRef}
-            />
-          </div>
-        </div>
-        {/* loan amount */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="Your Regular Deposit" className="labelStyle">
-              Loan amount
-            </label>
-            {mark}
-          </div>
+        <div className="flex md:flex-row flex-col sm:flex-col gap-8 ">
+          {/* select your bank */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle">
+                Select your bank
+              </label>
+              {mark}
+            </div>
 
-          <input
-            type="number"
-            name="Your Regular Deposit"
-            className="inputStyle"
-            placeholder="Enter your loan amount"
-          />
-        </div>
-        {/* annual income */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="value" className="labelStyle">
-              Your annual income
-            </label>
-            {mark}
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">ABA</option>
+              <option value="yearly">ACLEDA</option>
+              <option value="yearly">Chip Mong bank</option>
+              <option value="yearly">Sathapana bank</option>
+              <option value="yearly">Vattanac bank</option>
+            </select>
           </div>
-          <div>
-            <Select className="bg-white  " label="select">
-              <Option>Fulltime</Option>
-              <Option>Part time</Option>
-              <Option>After 3 years</Option>
-              <Option>After 4 years</Option>
-              <Option>After 5 years</Option>
-            </Select>
+          {/* Loan type */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle">
+                Loan type
+              </label>
+              {mark}
+            </div>
+
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">Auto</option>
+              <option value="monthly">Business</option>
+              <option value="yearly">Car</option>
+              <option value="monthly">Education</option>
+              <option value="monthly">Home Improvement</option>
+              <option value="yearly">Housing</option>
+              <option value="monthly">Micro</option>
+              <option value="monthly">Mortgages</option>
+              <option value="yearly">Personal</option>
+              <option value="monthly">Small & Medium Enterprise</option>
+              <option value="monthly">Secured Personal</option>
+              <option value="yearly">Term</option>
+            </select>
           </div>
-          <div>
-            <Select className="bg-white" label="select">
-              <Option>Fulltime</Option>
-              <Option>Part time</Option>
-              <Option>After 3 years</Option>
-              <Option>After 4 years</Option>
-              <Option>After 5 years</Option>
-            </Select>
+          {/* select filter */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle">
+                Select Filter
+              </label>
+              {mark}
+            </div>
+
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">Company provider</option>
+              <option value="monthly">Interest Rate (AER)</option>
+              <option value="yearly">Term</option>
+            </select>
           </div>
-        </div>
-        {/* Terms */}
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-row justify-between">
-            <label for="filterAcctype" className="labelStyle">
-              Terms
-            </label>
-            {mark}
-          </div>
-          <div>
-            <Select className="bg-white" label="Select your term">
-              <Option>1 year</Option>
-              <Option>2 years</Option>
-              <Option>3 years</Option>
-              <Option>4 years</Option>
-              <Option>More than 5 years</Option>
-            </Select>
+          {/* Select currency */}
+          <div className="flex flex-col gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label for="value" className="labelStyle truncate">
+                Select currency
+              </label>
+              {mark}
+            </div>
+
+            <select id="value" name="value" className="selectStyle ">
+              <option value="monthly">USD</option>
+              <option value="yearly">Riels</option>
+            </select>
           </div>
         </div>
         {/* update result */}
-        <button type="submit" className="submitBtn">
-          Update result
-        </button>
+        <div className=" flex md:justify-end items-center mt-8  ">
+          <button
+            type="submit"
+            className="redButton w-full sm:w-full md:max-w-[155px] font-semibold "
+          >
+            Update result
+          </button>
+        </div>
       </form>
     </div>
   );

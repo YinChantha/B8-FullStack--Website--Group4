@@ -28,20 +28,20 @@ import ChatGPT from "app/components/ChatGPT";
 
 const Comparisons = [
   {
-    src: "/images/comparisons/compare-loans.png",
+    src: "/images/compare-loans.png",
     title: "Compare Loans",
     description: "Compare different loan options to make an informed decision.",
     path: "/comparisons/compareLoans",
   },
   {
-    src: "/images/comparisons/compare-save-acc.png",
+    src: "/images/compare-save-acc.png",
     title: "Compare Saving Accounts",
     description:
       "Explore a wide range of savings accounts & find the best option for you.",
     path: "/comparisons/compareSavingAcc",
   },
   {
-    src: "/images/comparisons/compare-fixed-dep.png",
+    src: "/images/compare-fixed-dep.png",
     title: "Compare Fixed Deposit Accounts",
     description: "Maximize your savings with fixed deposit account comparison.",
     path: "/comparisons/compareFixedDeposit",
@@ -152,7 +152,7 @@ function NavListMenu() {
               <div className="flex flex-col gap-3">
                 <div>
                   <Image
-                    src="/images/comparisons/compare-pic.png"
+                    src="/images/compare-pic.png"
                     alt="compare"
                     width={400}
                     height={50}
@@ -276,12 +276,7 @@ function NavListMenu() {
       <div className="block md:hidden">
         <Collapse open={isMobileMenuOpen} className="flex flex-col gap-3">
           {renderItems}
-          <Image
-            src="/images/comparisons/compare-pic.png"
-            alt="compare"
-            width={600}
-            height={40}
-          />
+          <Image src="/compare-pic.png" alt="compare" width={600} height={40} />
 
           <div className="flex items-center gap-2">
             <svg
@@ -376,15 +371,7 @@ function NavList() {
   return (
     <List>
       <div className="flex md:flex-row flex-col md:pt-0 pt-16">
-        {/* <Typography
-          as="a"
-          href="#"
-          variant="small"
-          color="blue-gray"
-          // className="flex justify-center items-center text-gray-500 font-semibold text-base gap-2 w-28 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
-          className="flex md:justify-center justify-start items-center text-gray-500 font-semibold text-base w-24 hover:text-gray-600 hover:bg-gray-50 rounded-lg"
-          onClick={handleCompare}
-        > */}
+        
         <Typography
           as="a"
           href="#"
@@ -506,7 +493,12 @@ const Header = () => {
               Login
             </a>
           </div>
-          <button className="redButton truncate">Start Compare</button>
+          <Link
+            href="/account/signup/usersignupdetials"
+            className="redButton font-semibold truncate"
+          >
+            Start Compare
+          </Link>
         </div>
         <IconButton
           variant="text"

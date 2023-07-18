@@ -30,7 +30,7 @@ const whiteMark = (
   </svg>
 );
 
-const EstimateSaving = () => {
+const EstimateCompareLoans = () => {
   return (
     <div className="bg-[#101828] text-white p-8 rounded-lg border-1 border-[#101828] shadow-sm mt-12">
       <div className="p-5">
@@ -61,14 +61,36 @@ const EstimateSaving = () => {
             <input
               type="number"
               placeholder="$10,000"
-              className="inputStyle w-full"
+              className="selectStyle w-full"
             />
+          </div>
+          {/* Loan type */}
+          <div className="flex flex-col md:gap-[6px] sm:gap-3 gap-3 w-full">
+            <div className="flex flex-row justify-between">
+              <label>Loan type</label>
+              {whiteMark}
+            </div>
+
+            <select id="value" name="value" className="selectStyle ">
+              <option value="auto">Auto</option>
+              <option value="business">Business</option>
+              <option value="car">Car</option>
+              <option value="education">Education</option>
+              <option value="home-improvement">Home Improvement</option>
+              <option value="housing">Housing</option>
+              <option value="micro">Micro</option>
+              <option value="mortages">Mortgages</option>
+              <option value="personal">Personal</option>
+              <option value="small-medium-enterprise">Small & Medium Enterprise</option>
+              <option value="secured-personal">Secured Personal</option>
+              <option value="term">Term</option>
+            </select>
           </div>
           {/* Interest Rate */}
           <div className="flex flex-col md:gap-[6px] sm:gap-3 gap-3 w-full">
             <div className="flex justify-between">
               <label for="investment" className="">
-                Interest Rate
+                Interest Rate (AER)
               </label>
               {whiteMark}
             </div>
@@ -77,9 +99,9 @@ const EstimateSaving = () => {
               name="invest-period"
               className="selectStyle w-full"
             >
-              <option value="monthly">1 year</option>
-              <option value="monthly">2 years</option>
-              <option value="yearly">3 years</option>
+              <option value="company-provider">Company provider</option>
+              <option value="aer">Interest Rate (AER)</option>
+              <option value="term">Term</option>
             </select>
           </div>
           {/* term */}
@@ -96,12 +118,12 @@ const EstimateSaving = () => {
               name="invest-period"
               className="selectStyle w-full"
             >
-              <option value="monthly">Less than a year</option>
-              <option value="monthly">2 months</option>
-              <option value="yearly">3 months</option>
-              <option value="monthly">4 months</option>
-              <option value="yearly">5 months</option>
-              <option value="yearly">More than 5 months</option>
+              <option value="a-year">Less than a year</option>
+              <option value="two-months">2 months</option>
+              <option value="three-months">3 months</option>
+              <option value="four-months">4 months</option>
+              <option value="five-months">5 months</option>
+              <option value="more-five-months">More than 5 months</option>
             </select>
           </div>
         </form>
@@ -110,4 +132,4 @@ const EstimateSaving = () => {
   );
 };
 
-export default EstimateSaving;
+export default EstimateCompareLoans;

@@ -99,7 +99,7 @@ const AboutUs = () => {
 
   return (
     <>
-      <div className="w-full h-auto mb-10">
+      <div className="w-full h-auto mb-10 pt-28">
         <div className="flex flex-col lg:mx-20 mt-20 items-center">
           <div className="flex flex-row w-[400px] justify-center items-center bg-red-50 font-medium text-sm gap-3 py-1.5 pl-1 pr-2.5 rounded-2xl shrink-0">
             <p className="text-white bg-red-500 px-2.5 py-0.5 rounded-2xl shrink-0">
